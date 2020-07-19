@@ -7,4 +7,9 @@ contentItems:
     subtitle: aa
     link: aa
     linktext: aa
+  - image: /img/lanyards-2.jpg
+    title: Fast Track Custom Lanyards
+    subtitle: aa
+    link: aa
+    linktext: aa
 ---
