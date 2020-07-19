@@ -1,15 +1,16 @@
 ---
-layout: smallBoxes
+layout: iconified
 title: sdfsdf
 contentItems:
-  - title: dsfds
-    subtitle: sdfsdf
+  - image: /img/bookcase-istock-1.jpg
     link: sdffdsf
     linktext: sdfdsfs
-    image: /img/bookcase-istock-1.jpg
-  - title: sdfsdf
-    subtitle: sdfdsf
+    subtitle: sdfsdf
+    title: dsfds
+  - image: /img/bookcase-istock-1.jpg
     link: asdsa
     linktext: asdasdsd
-    image: /img/bookcase-istock-1.jpg
+    subtitle: sdfdsf
+    title: sdfsdf
 ---
+
