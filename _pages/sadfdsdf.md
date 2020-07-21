@@ -1,9 +1,11 @@
 ---
 layout: featuredproducts
 slug: home
-title: sadfdsdf
+title: Dex Products Homepage
 sections:
-  - homepage_3boxes
   - homepage_slider_top
+  - homepage_3boxes
+  - homepage_best_sellers
   - homepage_aboutus
+  - homepage_3icons
 ---
