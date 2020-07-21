@@ -1,5 +1,5 @@
 ---
-layout: featuredproducts
+layout: section-featuredproducts
 title: homepage_best_sellers
 contentItems:
   - title: item1
