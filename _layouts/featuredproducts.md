@@ -1,5 +1,4 @@
 ---
-name: featuredproducts
+name: section-featuredproducts
 title: Featured Products
 ---
-
