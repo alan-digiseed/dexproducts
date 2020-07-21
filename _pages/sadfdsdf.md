@@ -1,5 +1,5 @@
 ---
-layout: featuredproducts
+layout: page-homepage
 slug: home
 title: Dex Products Homepage
 sections:
