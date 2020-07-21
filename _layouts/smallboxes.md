@@ -1,5 +1,4 @@
 ---
-name: smallBoxes
+name: section-smallBoxes
 title: Small boxes
 ---
-
