@@ -3,13 +3,13 @@ layout: titlesection
 title: about_title
 contentItems:
   - title: ABOUT
-    subtitle: xx
-    link: xx
-    linktext: xx
+    subtitle: ""
+    link: ""
+    linktext: ""
     image: /img/asset-8.png
   - title: ABOUT
     image: /img/box-header.png
-    subtitle: x
-    link: x
-    linktext: x
+    subtitle: ""
+    link: ""
+    linktext: ""
 ---
