@@ -1,4 +1,4 @@
 ---
-name: fullscreen_textbox
+name: section-fullscreen-textbox
 title: Full Screen Text Box
 ---
