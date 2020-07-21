@@ -1,5 +1,4 @@
 ---
-name: largeBoxes
+name: section-largeBoxes
 title: Large Boxes
 ---
-
