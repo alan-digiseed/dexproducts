@@ -27,7 +27,51 @@ collections:
     fields: 
       - {label: "Name", name: "name", widget: "string"}
       - {label: "Title", name: "title", widget: "string"}
-      
+  
+  
+  - name: pages
+    label: Pages
+    editor:
+      preview: true
+    folder: _pages
+    slug: '{{slug}}'
+    create: true # Allow users to create new documents in this collection
+    fields:
+      - {label: "Layout", name: "layout", widget: "relation", collection: "layouts", searchFields: ["name"], valueField: "name" }
+      - {label: Slug, name: slug, widget: string }
+      - {label: Title, name: title, widget: string }
+      - {label: Featured Image, name: featuredImage, widget: image, required: false }
+      - {label: Body, name: body, widget: markdown, required: false }
+      - label: "Sections"
+        name: "sections"
+        widget: "relation"
+        collection: "pageSections"
+        searchFields: ["title"]
+        valueField: "title"
+        multiple: true
+        required: false        
+      - label: 'Meta'
+        required: false
+        name: 'meta'
+        widget: 'object'
+        fields:
+          - {label: Title, name: title, widget: string, required: false }
+          - {
+              label: Description,
+              name: description,
+              widget: text,
+              required: false,
+            }
+          - {
+              label: Canonical Link,
+              name: canonicalLink,
+              widget: string,
+              required: false,
+            }
+          - {label: Noindex, name: noindex, widget: boolean, required: false }
+
+  
+  
   - name: "pageSections" 
     label: "Page Sections" 
     folder: "_pagesections"
@@ -42,7 +86,7 @@ collections:
         widget: "list"
         fields:
         - {label: "Title", name: "title", widget: "string"}
-        - {label: "Subtitle", name: "subtitle", widget: "string" }
-        - {label: "Link", name: "link", widget: "string" }
-        - {label: "LinkText", name: "linktext", widget: "string" }        
-        - {label: "Image", name: "image", widget: "image" }        
+        - {label: "Subtitle", name: "subtitle", widget: "string", required: false }
+        - {label: "Link", name: "link", widget: "string", required: false}
+        - {label: "LinkText", name: "linktext", widget: "string", required: false }        
+        - {label: "Image", name: "image", widget: "image", required: false }        
