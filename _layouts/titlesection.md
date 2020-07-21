@@ -1,4 +1,4 @@
 ---
-name: titleSection
-title: Title
+name: titlesection
+title: Title Section
 ---
