@@ -1,4 +1,5 @@
 ---
+type: pageSection
 layout: titlesection
 title: about_title
 contentItems:

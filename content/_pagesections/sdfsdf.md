@@ -1,4 +1,5 @@
 ---
+type: pageSection
 layout: iconified
 title: sdfsdf
 contentItems:

@@ -1,4 +1,5 @@
 ---
+type: pageSection
 layout: section-featuredproducts
 title: homepage_best_sellers
 contentItems:

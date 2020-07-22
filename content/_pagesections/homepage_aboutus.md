@@ -1,4 +1,5 @@
 ---
+type: pageSection
 layout: largeBoxes
 title: homepage_aboutus
 contentItems:

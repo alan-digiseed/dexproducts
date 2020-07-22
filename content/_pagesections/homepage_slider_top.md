@@ -1,4 +1,5 @@
 ---
+type: pageSection
 layout: sliderFullWidth
 title: homepage_slider_top
 contentItems:

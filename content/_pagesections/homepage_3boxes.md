@@ -1,4 +1,5 @@
 ---
+type: pageSection
 layout: smallBoxes
 title: homepage_3boxes
 contentItems:

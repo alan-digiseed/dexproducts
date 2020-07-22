@@ -1,6 +1,7 @@
 ---
+type: page
 layout: page-homepage
-slug: home
+slug: mypage
 title: Dex Products Homepage
 sections:
   - homepage_slider_top
