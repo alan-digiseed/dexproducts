@@ -1,0 +1,14 @@
+{
+	"title": "about_title",
+	"layout": "titlesection",
+	"contentItems": [
+		{
+			"title": "ABOUT",
+			"image": "/img/asset-8.png"
+		},
+		{
+			"title": "ABOUT",
+			"image": "/img/box-header.png"
+		}
+	]
+}

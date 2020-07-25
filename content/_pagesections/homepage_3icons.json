@@ -1,0 +1,18 @@
+{
+	"title": "homepage_3icons",
+	"layout": "iconified",
+	"contentItems": [
+		{
+			"title": "Easy to use website makes it a breeze to quote for your clients",
+			"image": "/img/1.png"
+		},
+		{
+			"title": "We Offer Fast Turn Around On Orders",
+			"image": "/img/2.png"
+		},
+		{
+			"title": "Many Different Branding Solutions to Personalise Your Products",
+			"image": "/img/3.png"
+		}
+	]
+}

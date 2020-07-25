@@ -1,21 +1,4 @@
-[{
-	"title": "homepage_3icons",
-	"layout": "iconified",
-	"contentItems": [
-		{
-			"title": "Easy to use website makes it a breeze to quote for your clients",
-			"image": "/img/1.png"
-		},
-		{
-			"title": "We Offer Fast Turn Around On Orders",
-			"image": "/img/2.png"
-		},
-		{
-			"title": "Many Different Branding Solutions to Personalise Your Products",
-			"image": "/img/3.png"
-		}
-	]
-},
+[
 {
 	"title": "homepage_3boxes",
 	"layout": "smallBoxes",
@@ -38,16 +21,20 @@
 	]
 },
 {
-	"title": "about_title",
-	"layout": "titlesection",
+	"title": "homepage_3icons",
+	"layout": "iconified",
 	"contentItems": [
 		{
-			"title": "ABOUT",
-			"image": "/img/asset-8.png"
+			"title": "Easy to use website makes it a breeze to quote for your clients",
+			"image": "/img/1.png"
 		},
 		{
-			"title": "ABOUT",
-			"image": "/img/box-header.png"
+			"title": "We Offer Fast Turn Around On Orders",
+			"image": "/img/2.png"
+		},
+		{
+			"title": "Many Different Branding Solutions to Personalise Your Products",
+			"image": "/img/3.png"
 		}
 	]
 },
@@ -62,6 +49,20 @@
 		{
 			"title": "Fast Track Custom Lanyards",
 			"image": "/img/lanyards-2.jpg"
+		}
+	]
+},
+{
+	"title": "about_title",
+	"layout": "titlesection",
+	"contentItems": [
+		{
+			"title": "ABOUT",
+			"image": "/img/asset-8.png"
+		},
+		{
+			"title": "ABOUT",
+			"image": "/img/box-header.png"
 		}
 	]
 },
@@ -86,17 +87,5 @@
 			"image": "/img/mtp027-euroauz-matt.png"
 		}
 	]
-},
-{
-	"title": "homepage_aboutus",
-	"layout": "largeBoxes",
-	"contentItems": [
-		{
-			"title": "About DEX",
-			"subtitle": "Who we are",
-			"image": "/img/istockphoto-902787158-2048x2048.jpg"
-		}
-	]
 }
-
 ]

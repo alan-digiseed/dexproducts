@@ -1,0 +1,22 @@
+{
+	"title": "homepage_best_sellers",
+	"layout": "section-featuredproducts",
+	"contentItems": [
+		{
+			"title": "item1",
+			"image": "/img/sa008_1_l.jpg"
+		},
+		{
+			"title": "item2",
+			"image": "/img/umbrella.png"
+		},
+		{
+			"title": "item3",
+			"image": "/img/nwb020_1_l.jpg"
+		},
+		{
+			"title": "item4",
+			"image": "/img/mtp027-euroauz-matt.png"
+		}
+	]
+}
