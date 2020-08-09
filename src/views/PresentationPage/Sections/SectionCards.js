@@ -7,42 +7,57 @@ import GridItem from "../../../components/Grid/GridItem.js";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 
-import cardsStyle from "../../../pagestyles/presentationSections/cardsStyle.js";
+import Card from "../../../components/Card/Card.js";
+import CardBody from "../../../components/Card/CardBody.js";
+import Button from "../../../components/CustomButtons/Button.js";
+import Icon from "@material-ui/core/Icon";
 
-import cardsTest from "../../../images/cards-test.png";
+import cardsStyle from "../../../pagestyles/presentationSections/cardsStyle.js";
 
 const useStyles = makeStyles(cardsStyle);
 
-export default function SectionCards() {
+const SectionCards = (props) => {
   const classes = useStyles();
+  console.log(JSON.stringify(props));
+
   return (
     <div className={classNames(classes.section, classes.sectionDark)}>
       <div className={classes.container}>
         <GridContainer justify="center">
-          <GridItem md={7} sm={7}>
-            <div className={classes.imageContainer}>
-              <img src={cardsTest} alt="views" />
-            </div>
-          </GridItem>
-          <GridItem md={4} sm={5} className={classes.mlAuto}>
-            <div className={classes.sectionDescription}>
-              <h3 className={classes.title}>Unconventional Cards</h3>
-              <h6 className={classes.description}>
-                One Card for Every Problem
-              </h6>
-              <h5 className={classes.description}>
-                We love cards and everybody on the web seems to. We have gone
-                above and beyond with options for you to organise your
-                information. From cards designed for blog posts, to product
-                cards or user profiles, you will have many options to choose
-                from. All the cards follow the material principles and have a
-                design that stands out.
-              </h5>
-            </div>
-          </GridItem>
+          {props.section.contentItems.map( ci => {
+            return (
+              <GridItem xs={12} sm={4} md={4}>
+                <Card
+                  raised
+                  background
+                  style={{ backgroundImage: `url(${ci.image})` }}
+                >
+                  <CardBody background>
+                    <h6 className={classes.cardCategory}>{ci.title}</h6>
+                    {ci.subtitle && 
+                      <a href={ci.callToActionUrl} onClick={e => e.preventDefault()}>
+                        <h3 className={classes.cardTitleWhite}>
+                          {ci.subtitle}
+                        </h3>
+                      </a>}
+                    {ci.description &&
+                      <p>
+                      {ci.description}
+                      </p>}
+                    {ci.callToAction &&
+                        <Button href={ci.callToActionUrl} round color="danger">
+                          <Icon></Icon> {ci.callToAction}
+                        </Button>}
+                  </CardBody>
+                </Card>
+              </GridItem>		
+            );
+          })
+        } 
         </GridContainer>
       </div>
     </div>
   );
 }
- 
+
+export default SectionCards;

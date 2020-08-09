@@ -1,0 +1,25 @@
+{
+	"id": "homepage_3boxes",
+	"title": "",	
+	"layout": "smallBoxes",
+	"contentItems": [
+		{
+			"title": "New Products",
+			"image": "/img/pens.png",
+			"callToAction": "Discover",
+			"callToActionUrl": "https://www.google.com"
+		},
+		{
+			"title": "Sale Items",
+			"image": "/img/sa008_1_l.jpg",
+			"callToAction": "Discover",
+			"callToActionUrl": "https://www.google.com"			
+		},
+		{
+			"title": "Generate Quotes Easily",
+			"image": "/img/istockphoto-902787158-2048x2048.jpg",
+			"callToAction": "Learn How",
+			"callToActionUrl": "https://www.google.com"			
+		}
+	]
+}

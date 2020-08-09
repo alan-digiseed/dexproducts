@@ -1,0 +1,71 @@
+type Product implements Node {
+	productCode: String!
+        name: String!       
+        category1: String!
+        category2: String
+        category3: String
+        category4: String
+        category5: String
+        category6: String
+        description: String!
+        additionalInfo: String!
+        parts: [ProductPart]
+	isOnSale: Boolean
+ 	isFreightFree: Boolean
+	isOverseasSourcing: Boolean
+	images: [String]
+	printOptions: [ProductPrintOption]
+    packing: ProductPacking	
+	priceList: [ProductPriceList]
+	productDisclaimer: String
+}
+
+type ProductPart {
+	partName: String
+	colors: [string]
+	length: Int
+	width: Int
+	height: Int
+}
+
+type ProductPrintOption {
+	printType: String!
+	description: String!
+}
+
+type ProductPacking {
+	description: String
+	cartonHeight: Int
+	cartonWidth: Int
+	cartonLength: Int
+	cartonQuantity: Int
+	cartonWeight: Float
+}
+
+
+type BlankProduct {
+	description: String
+	prices: [BlankProductPrice]	
+}
+
+type BlankProductPrice {
+	qty: Int
+	unitPrice: Float
+}
+
+
+type ProductPriceLists {
+	type: String
+	blankProducts: [BlankProduct]
+	services: [ProductService]
+}
+
+type ProductService {
+	days: Int
+	serviceName: String
+	description: String
+	unitPrice: Float
+	newSetup: Int
+	minimumQuantity: Int
+	maxQty: Int
+}	

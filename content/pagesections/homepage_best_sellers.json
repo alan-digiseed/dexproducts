@@ -1,5 +1,6 @@
 {
-	"title": "homepage_best_sellers",
+	"id": "homepage_best_sellers",
+	"title": "Best Sellers",
 	"layout": "section-featuredproducts",
 	"contentItems": [
 		{

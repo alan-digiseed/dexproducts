@@ -1,0 +1,13 @@
+{
+	"type": "page",
+	"layout": "page-homepage",
+	"slug": "home",
+	"title": "Dex Products Homepage",
+	"sections": [
+		"homepage_slider_top",
+		"homepage_3boxes",
+		"homepage_best_sellers",
+		"homepage_aboutus",
+		"homepage_3icons"
+	]
+}

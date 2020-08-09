@@ -2,7 +2,7 @@ const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.onCreateNode = ({ node, getNode, actions}) => {
-    if (node.internal.type === `MarkdownRemark`) {
+    if (node.internal.type === `PagesJson` && node.type==='page') {
         const { createNodeField } = actions
 
         let slug = createFilePath({ node, getNode, basePath: `pages` })
@@ -20,32 +20,46 @@ exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions
 
     const result = await graphql(`
-      query {
-        allMarkdownRemark {
-          edges {
-            node {
-              frontmatter {
-                layout
-                type
-              }
-              fields {
-                slug
-              }
-            }
+    {
+      allPagesJson {
+          nodes {
+            slug
+            layout
           }
         }
       }
-    `)
+    `);
 
-    result.data.allMarkdownRemark.edges.filter(e => e.node.frontmatter.type === 'page').forEach(({ node }) => {
-        createPage({
-          path: node.fields.slug,
-          component: path.resolve(`./src/templates/${node.frontmatter.layout}.js`),
-          context: {
-            // Data passed to context is available
-            // in page queries as GraphQL variables.
-            slug: node.fields.slug,
-          },
-        })
+    result.data.allPagesJson.nodes.forEach(( node ) => {
+      createPage({
+         path: node.slug != "home" ? node.slug : "/",
+         component: path.resolve(`./src/templates/${node.layout}.js`),
+         context: {
+           // Data passed to context is available
+           // in page queries as GraphQL variables.
+           slug: node.slug,
+         },      
       })
+    });
+}
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
+
+  const typeDefs = `
+    type PagesJson implements Node {
+        sections: [PagesectionsJson] @link
+    }
+
+    type PagesectionsJsonContentItems implements Node {
+      id: String
+      title: String
+      subtitle: String
+      description: String
+      callToAction: String
+      callToActionUrl: String
+    }`
+
+
+    createTypes(typeDefs)
 }

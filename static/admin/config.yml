@@ -72,25 +72,22 @@ collections:
 
   
   
-  - name: "pageSectionInfo" 
-    label: "Page Section Info" 
-    files: 
-      - label: "Page Sections"
-        name: "pageSections"      
-        file: "content/_pagesections/pageSections.json"
-        format: "json"
-        create: true 
-        slug: "{{slug}}"
-        fields: 
-          - {label: "Layout", name: "layout", widget: "relation", collection: "layouts", searchFields: ["name"], valueField: "name" }
-          - {label: "Title", name: "title", widget: "string"}
-          - label: "Content Items"
-            name: "contentItems"
-            collapsed: false
-            widget: "list"
-            fields:
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Subtitle", name: "subtitle", widget: "string", required: false }
-              - {label: "Link", name: "link", widget: "string", required: false}
-              - {label: "LinkText", name: "linktext", widget: "string", required: false }        
-              - {label: "Image", name: "image", widget: "image", required: false }        
+  - name: "pageSections" 
+    label: "Page Sections" 
+    folder: "content/_pagesections"
+    format: "json"
+    create: true 
+    slug: "{{slug}}"
+    fields: 
+      - {label: "Layout", name: "layout", widget: "relation", collection: "layouts", searchFields: ["name"], valueField: "name" }
+      - {label: "Title", name: "title", widget: "string"}
+      - label: "Content Items"
+        name: "contentItems"
+        collapsed: false
+        widget: "list"
+        fields:
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: "Subtitle", name: "subtitle", widget: "string", required: false }
+        - {label: "Link", name: "link", widget: "string", required: false}
+        - {label: "LinkText", name: "linktext", widget: "string", required: false }        
+        - {label: "Image", name: "image", widget: "image", required: false }        

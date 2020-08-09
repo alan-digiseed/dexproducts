@@ -22,12 +22,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-transformer-remark`,
-    {
-      resolve: `gatsby-transformer-json`,
-      options: {
-         typeName: ({ node }) => node.name.charAt(0).toUpperCase() + node.name.slice(1)
-      }
-    },
+    `gatsby-transformer-json`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,

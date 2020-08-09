@@ -20,6 +20,7 @@ import SectionCarousel from "../views/PresentationPage/Sections/SectionCarousel.
 import SectionDescription from "../views/PresentationPage/Sections/SectionDescription.js";
 import SectionComponents from "../views/PresentationPage/Sections/SectionComponents.js";
 import SectionCards from "../views/PresentationPage/Sections/SectionCards.js";
+import SectionProducts from "../views/PresentationPage/Sections/SectionProducts.js";
 import SectionContent from "../views/PresentationPage/Sections/SectionContent.js";
 import SectionSections from "../views/PresentationPage/Sections/SectionSections.js";
 import SectionExamples from "../views/PresentationPage/Sections/SectionExamples.js";
@@ -38,7 +39,8 @@ const useStyles = makeStyles(presentationStyle);
 
 export default function PresentationPage({data}) {
 
-  const page = data.markdownRemark;
+  const page = data.pagesJson;
+  console.log(JSON.stringify(page));
 
   React.useEffect(() => {
     window.scrollTo(0, 0);
@@ -47,7 +49,7 @@ export default function PresentationPage({data}) {
   const classes = useStyles();
   return (
     <div>
-      <Header
+      {/* <Header
         brand={<img src={logo} />}
         links={<HeaderLinks dropdownHoverColor="info" />}
         fixed
@@ -56,9 +58,9 @@ export default function PresentationPage({data}) {
           height: 400,
           color: "info"
         }}
-      />
+      /> */}
 
-        <h1>{page.frontmatter.title}</h1>
+        <h1>{page.title}</h1>
 
       {/* <Parallax
         image={require("../images/bg4.jpg")}
@@ -81,11 +83,11 @@ export default function PresentationPage({data}) {
         </div>
       </Parallax> */}
       <div className={classNames(classes.main, classes.mainRaised)}>
-        {/* page.frontmatter.sections. */}
-        <SectionCarousel />
+        {(page.sections.some(s => s.title === 'homepage_slider_top') >= 0) &&<SectionCarousel section={page.sections.find(s => s.title === 'homepage_slider_top')} />}
+        {(page.sections.some(s => s.id === 'homepage_3boxes') >= 0) &&<SectionCards section={page.sections.find(s => s.id === 'homepage_3boxes')} />}
+        {(page.sections.some(s => s.id === 'homepage_best_sellers') >= 0) &&<SectionProducts section={page.sections.find(s => s.id === 'homepage_best_sellers')} />}
         <SectionDescription />
         <SectionComponents />
-        <SectionCards />
         <SectionContent />
         <SectionSections />
         <SectionExamples />
@@ -187,12 +189,20 @@ export default function PresentationPage({data}) {
 }
 
 export const query = graphql`
-  query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
-      frontmatter {
+   query {
+      pagesJson(fields: { slug: { eq: "/" } }) {
         title
+        sections {
+          id
+          title
+          contentItems {
+            image
+            subtitle
+            title
+            callToAction
+            callToActionUrl
+          }
+        }
       }
     }
-  }
 `
