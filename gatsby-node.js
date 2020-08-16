@@ -41,7 +41,41 @@ exports.createPages = async ({ graphql, actions }) => {
          },      
       })
     });
+    
+    createProductPages({actions, graphql});
 }
+
+const  createProductPages = async ({actions, graphql}) => {
+
+  const { createPage } = actions
+
+  const result = await graphql(`
+    {
+      allProductsJson {
+          nodes {
+            id
+            name
+            productCode
+          }
+        }
+      }`);
+
+    if (result.errors) {
+      console.error(result.errors)
+    }
+
+    result.data.allProductsJson.nodes.forEach(( node ) => {
+
+    createPage({
+        path: `/products/${node.productCode}`,
+        component: path.resolve(`src/templates/product.js`),
+        context: {
+          id: node.id
+        }
+      })
+    })
+  
+};
 
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions

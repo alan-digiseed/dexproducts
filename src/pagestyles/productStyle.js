@@ -8,11 +8,11 @@ import {
   cardTitle,
   grayColor,
   roseColor
-} from "assets/jss/material-kit-pro-react.js";
+} from "../shared/material-kit-pro-react.js";
 
-import tooltipsStyle from "assets/jss/material-kit-pro-react/tooltipsStyle.js";
-import imagesStyles from "assets/jss/material-kit-pro-react/imagesStyles.js";
-import customSelectStyle from "assets/jss/material-kit-pro-react/customSelectStyle.js";
+import tooltipsStyle from "../shared/tooltipsStyle.js";
+import imagesStyles from "../shared/imagesStyles.js";
+import customSelectStyle from "../shared/customSelectStyle.js";
 
 const productStyle = {
   mlAuto,
@@ -87,6 +87,17 @@ const productStyle = {
         height: "auto",
         textAlign: "center"
       }
+    }
+  },
+  pricingCalculator: {
+    "& $title": {
+      color: grayColor[1],
+      textDecoration: "none",
+      fontWeight: "bolder",
+      marginTop: "30px",
+      marginBottom: "25px",
+      fontSize: "15px",
+      fontFamily: `"Roboto", "Helvetica", "Arial", sans-serif`
     }
   },
   titleRow: {

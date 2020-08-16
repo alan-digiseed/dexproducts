@@ -3,9 +3,9 @@ import React from "react";
 import PropTypes from "prop-types";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-import ExpansionPanel from "@material-ui/core/ExpansionPanel";
-import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
-import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
+import MaterialAccordion from "@material-ui/core/Accordion";
+import MaterialAccordionSummary from "@material-ui/core/AccordionSummary";
+import MaterialAccordionDetails from "@material-ui/core/AccordionDetails";
 
 // @material-ui/icons
 import ExpandMore from "@material-ui/icons/ExpandMore";
@@ -46,34 +46,34 @@ export default function Accordion(props) {
     <div className={classes.root}>
       {collapses.map((prop, key) => {
         return (
-          <ExpansionPanel
+          <MaterialAccordion
             expanded={active === key || active.indexOf(key) !== -1}
             onChange={handleChange(key)}
             key={key}
             classes={{
-              root: classes.expansionPanel,
-              expanded: classes.expansionPanelExpanded
+              root: classes.accordion,
+              expanded: classes.accordionExpanded
             }}
           >
-            <ExpansionPanelSummary
+            <MaterialAccordionSummary
               expandIcon={<ExpandMore />}
               classes={{
-                root: `${classes.expansionPanelSummary} ${
-                  classes[activeColor + "ExpansionPanelSummary"]
+                root: `${classes.accordionSummary} ${
+                  classes[activeColor + "AccordionSummary"]
                 }`,
-                expanded: `${classes.expansionPanelSummaryExpaned} ${
-                  classes[activeColor + "ExpansionPanelSummaryExpaned"]
+                expanded: `${classes.accordionSummaryExpaned} ${
+                  classes[activeColor + "AccordionSummaryExpaned"]
                 }`,
-                content: classes.expansionPanelSummaryContent,
-                expandIcon: classes.expansionPanelSummaryExpandIcon
+                content: classes.accordionSummaryContent,
+                expandIcon: classes.accordionSummaryExpandIcon
               }}
             >
               <h4 className={classes.title}>{prop.title}</h4>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails className={classes.expansionPanelDetails}>
+            </MaterialAccordionSummary>
+            <MaterialAccordionDetails className={classes.accordionDetails}>
               {prop.content}
-            </ExpansionPanelDetails>
-          </ExpansionPanel>
+            </MaterialAccordionDetails>
+          </MaterialAccordion>
         );
       })}
     </div>
