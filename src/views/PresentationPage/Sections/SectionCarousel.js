@@ -11,25 +11,35 @@ import Card from "../../../components/Card/Card.js";
 
 import carouselStyle from "../../../pagestyles/componentsSections/carouselStyle.js";
 
-import image1 from "../../../images/bg.jpg";
-import image2 from "../../../images/bg2.jpg";
-import image3 from "../../../images/bg3.jpg";
+import correctionTapesImage from "../../../images/slider/CORRECTION TAPE -2.jpg";
+import potPlantImage from "../../../images/slider/DESK PLANT POT -2.jpg";
+import lanyardsImage from "../../../images/slider/LANYARDS -2.jpg";
+import lipBalmImage from "../../../images/slider/LIP BALMS -2.jpg";
+import stressShapesImage from "../../../images/slider/STRESS SHAPES -2.jpg";
 
 const useStyles = makeStyles(carouselStyle);
 
-const slides = [
-    {
-        caption: "Yellowstone National Park, United States",
-        image: image1
+  const slides = [
+      {
+        caption: "Custom Branded Correction Tapes",
+        image: correctionTapesImage
     },
     {
-        caption: "Somewhere Beyond, United States",
-        image: image2
+        caption: "Mini Desk Plant Pots",
+        image: potPlantImage
     },
     {
-        caption: "Yellowstone National Park, United States",
-        image: image3
-    }
+        caption: "Fast Track Custom Lanyards",
+        image: lanyardsImage
+    },
+    {
+      caption: "Custom Branded Lip Balms",
+      image: lipBalmImage
+  },
+  {
+    caption: "Stress less with branded Stress Shapes",
+    image: stressShapesImage
+}
 ];
 
 
@@ -44,28 +54,20 @@ export default function SectionCarousel() {
     autoplay: true
   };
   return (
-    <div className={classes.section} id="carousel">
-      <div className={classes.container}>
-        <GridContainer>
-          <GridItem xs={12} sm={10} md={8} className={classes.marginAuto}>
-            <Card>
-              <Carousel {...settings}>
-                  { slides.map( s => 
-                   <div>
-                        <img src={s.image} alt={s.caption} className="slick-image" />
-                        <div className="slick-caption">
-                            <h4>
-                                <LocationOn className="slick-icons" />
-                                {s.caption}
-                            </h4>
-                        </div>
-                    </div>) 
-                    }
-              </Carousel>
-            </Card>
-          </GridItem>
-        </GridContainer>
-      </div>
+    <div className={classes.carousel} id="carousel">
+      <Carousel {...settings}>
+          { slides.map( s => 
+            <div>
+                <img src={s.image} alt={s.caption} className="slick-image" />
+                <div className="slick-caption">
+                    <h4>
+                        <LocationOn className="slick-icons" />
+                        {s.caption}
+                    </h4>
+                </div>
+            </div>) 
+            }
+      </Carousel>
     </div>
   );
 }

@@ -12,7 +12,7 @@ import {
 const cardsStyle = {
   section: {
     ...section,
-    padding: "50px 0px"
+    padding: "0px 30px"
   },
   sectionDark,
   container,

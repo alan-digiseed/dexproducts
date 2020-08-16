@@ -5,12 +5,16 @@ import {
   coloredShadow,
   grayColor,
   dangerColor,
-  mlAuto
+  mlAuto,
+  mrAuto
 } from "../../shared/material-kit-pro-react.js";
 
 import tooltipsStyle from "../../shared/tooltipsStyle.js";
 
 const styles = {
+  title: {
+    textAlign: "center"
+  }, 
   cardTitle,
   container,
   ...tooltipsStyle,

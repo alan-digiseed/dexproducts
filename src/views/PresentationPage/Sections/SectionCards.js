@@ -21,8 +21,7 @@ const SectionCards = (props) => {
   console.log(JSON.stringify(props));
 
   return (
-    <div className={classNames(classes.section, classes.sectionDark)}>
-      <div className={classes.container}>
+    <div className={classNames(classes.section)}>
         <GridContainer justify="center">
           {props.section.contentItems.map( ci => {
             return (
@@ -55,7 +54,6 @@ const SectionCards = (props) => {
           })
         } 
         </GridContainer>
-      </div>
     </div>
   );
 }

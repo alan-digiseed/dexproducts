@@ -15,6 +15,9 @@ const presentationStyle = {
     ...main
     /*overflow: "hidden"*/
   },
+  carousel: {
+    marginTop:"-50px"
+  },
   mainRaised,
   parallax: {
     height: "90vh",

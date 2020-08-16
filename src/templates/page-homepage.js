@@ -10,10 +10,10 @@ import ListItem from "@material-ui/core/ListItem";
 // core components
 import Header from "../components/Header/Header.js";
 import HeaderLinks from "../components/Header/HeaderLinks.js";
-// import Parallax from "../components/Parallax/Parallax.js";
+import Parallax from "../components/Parallax/Parallax.js";
 import Footer from "../components/Footer/Footer.js";
-// import GridContainer from "../components/Grid/GridContainer.js";
-// import GridItem from "../components/Grid/GridItem.js";
+import GridContainer from "../components/Grid/GridContainer.js";
+import GridItem from "../components/Grid/GridItem.js";
 import Button from "../components/CustomButtons/Button.js";
 // sections for this page
 import SectionCarousel from "../views/PresentationPage/Sections/SectionCarousel.js";
@@ -49,51 +49,26 @@ export default function PresentationPage({data}) {
   const classes = useStyles();
   return (
     <div>
-      {/* <Header
+      <Header
         brand={<img src={logo} />}
         links={<HeaderLinks dropdownHoverColor="info" />}
         fixed
-        color="transparent"
+        color="white"
         changeColorOnScroll={{
           height: 400,
           color: "info"
         }}
-      /> */}
-
-        <h1>{page.title}</h1>
-
-      {/* <Parallax
-        image={require("../images/bg4.jpg")}
-        className={classes.parallax}
-      >
-        <div className={classes.container}>
-          <GridContainer>
-            <GridItem>
-              <div className={classes.brand}>
-                <h1>
-                  Material Kit React
-                  <span className={classes.proBadge}>PRO</span>
-                </h1>
-                <h3 className={classes.title}>
-                  A Badass Material-UI Kit based on Material Design.
-                </h3>
-              </div>
-            </GridItem>
-          </GridContainer>
-        </div>
-      </Parallax> */}
-      <div className={classNames(classes.main, classes.mainRaised)}>
-        {(page.sections.some(s => s.title === 'homepage_slider_top') >= 0) &&<SectionCarousel section={page.sections.find(s => s.title === 'homepage_slider_top')} />}
+      />
+      {(page.sections.some(s => s.title === 'homepage_slider_top') >= 0) &&<div className={classes.carousel}><SectionCarousel section={page.sections.find(s => s.title === 'homepage_slider_top')} /></div>}
         {(page.sections.some(s => s.id === 'homepage_3boxes') >= 0) &&<SectionCards section={page.sections.find(s => s.id === 'homepage_3boxes')} />}
         {(page.sections.some(s => s.id === 'homepage_best_sellers') >= 0) &&<SectionProducts section={page.sections.find(s => s.id === 'homepage_best_sellers')} />}
-        <SectionDescription />
-        <SectionComponents />
-        <SectionContent />
-        <SectionSections />
-        <SectionExamples />
-        <SectionFreeDemo />
-        <SectionOverview />
-      </div>
+      <SectionDescription />
+      <SectionComponents />
+      <SectionContent />
+      <SectionSections />
+      <SectionExamples />
+      <SectionFreeDemo />
+      <SectionOverview />
       <SectionPricing />
       <Footer
         theme="white"
