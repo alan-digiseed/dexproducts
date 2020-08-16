@@ -92,8 +92,35 @@ exports.createSchemaCustomization = ({ actions }) => {
       description: String
       callToAction: String
       callToActionUrl: String
-    }`
+    }
 
+    type productsJson implements Node {
+      additionalInfo: String
+      category1: String
+      category2: String
+      category3: String
+      description: String
+      id: String
+      images: String
+      isFreightFree: Boolean
+      isOnSale: Boolean
+      isOverseasSourcing: Boolean
+      name: String
+      packing: ProductsJsonPacking
+      parts: [ProductsJsonParts]
+      priceLists: ProductsJsonPriceLists
+      printOptions: ProductsJsonPrintOptions
+      productCode: String
+      productDisclaimer: String
+    }
+      
+      type ProductsJsonParts implements Node {
+        partName: String
+        colours: [String]
+        width: String
+        height: String
+        length: String
+      }`
 
-    createTypes(typeDefs)
+      createTypes(typeDefs)
 }
