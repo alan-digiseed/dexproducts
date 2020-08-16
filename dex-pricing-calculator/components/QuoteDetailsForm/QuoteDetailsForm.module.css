@@ -1,0 +1,8 @@
+thead td {
+    text-align: center;
+}
+
+tbody td input {
+    text-align: center;
+    width: 40px;
+}
