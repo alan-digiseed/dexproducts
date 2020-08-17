@@ -18,15 +18,9 @@ import Button from "../components/CustomButtons/Button.js";
 // sections for this page
 import SectionCarousel from "../views/PresentationPage/Sections/SectionCarousel.js";
 import SectionDescription from "../views/PresentationPage/Sections/SectionDescription.js";
-import SectionComponents from "../views/PresentationPage/Sections/SectionComponents.js";
 import SectionCards from "../views/PresentationPage/Sections/SectionCards.js";
 import SectionProducts from "../views/PresentationPage/Sections/SectionProducts.js";
-import SectionContent from "../views/PresentationPage/Sections/SectionContent.js";
-import SectionSections from "../views/PresentationPage/Sections/SectionSections.js";
-import SectionExamples from "../views/PresentationPage/Sections/SectionExamples.js";
-import SectionFreeDemo from "../views/PresentationPage/Sections/SectionFreeDemo.js";
 import SectionOverview from "../views/PresentationPage/Sections/SectionOverview.js";
-import SectionPricing from "../views/PresentationPage/Sections/SectionPricing.js";
 
 import logo from "../images/logo.png";
 
@@ -54,34 +48,19 @@ export default function PresentationPage({data}) {
         links={<HeaderLinks dropdownHoverColor="info" />}
         fixed
         color="white"
-        changeColorOnScroll={{
-          height: 400,
-          color: "info"
-        }}
       />
       {(page.sections.some(s => s.title === 'homepage_slider_top') >= 0) &&<div className={classes.carousel}><SectionCarousel section={page.sections.find(s => s.title === 'homepage_slider_top')} /></div>}
         {(page.sections.some(s => s.id === 'homepage_3boxes') >= 0) &&<SectionCards section={page.sections.find(s => s.id === 'homepage_3boxes')} />}
         {(page.sections.some(s => s.id === 'homepage_best_sellers') >= 0) &&<SectionProducts section={page.sections.find(s => s.id === 'homepage_best_sellers')} />}
-      <SectionDescription />
-      <SectionComponents />
-      <SectionContent />
-      <SectionSections />
-      <SectionExamples />
-      <SectionFreeDemo />
       <SectionOverview />
-      <SectionPricing />
-      <Footer
+      <SectionDescription />
+   
+    <Footer
         theme="white"
         content={
           <div>
             <div className={classes.left}>
-              <a
-                href="https://www.creative-tim.com/product/material-kit-pro-react?ref=mkpr-presentation"
-                target="_blank"
-                className={classes.footerBrand}
-              >
-                Material Kit PRO React
-              </a>
+            {<img src={logo} />}
             </div>
             <div className={classes.pullCenter}>
               <List className={classes.list}>

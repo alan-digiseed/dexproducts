@@ -5,8 +5,6 @@ import LocationOn from "@material-ui/icons/LocationOn";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 // core components
-import GridContainer from "../../../components/Grid/GridContainer.js";
-import GridItem from "../../../components/Grid/GridItem.js";
 import Card from "../../../components/Card/Card.js";
 
 import carouselStyle from "../../../pagestyles/componentsSections/carouselStyle.js";
