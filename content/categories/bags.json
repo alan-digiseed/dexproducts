@@ -1,0 +1,16 @@
+{
+    "name": "Bags",
+    "title": "Bags",
+    "slug": "bags",
+    "imageUrl": "./bags.jpg",
+    "subcategories": [
+        {
+            "name": "Non Woven Bags",
+            "slug": "non-woven-bags"
+        },
+        {
+            "name": "Paper Bags",
+            "slug": "paper-bags"
+        }
+    ]
+}

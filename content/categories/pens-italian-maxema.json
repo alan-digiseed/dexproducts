@@ -1,0 +1,17 @@
+{
+    "name": "Pens Germany MAXEMA",
+    "alias": "Pens",
+    "title": "Pens Germany MAXEMA",
+    "slug": "pens-italian-maxema",
+    "imageUrl": "./pens.jpg",
+    "subcategories": [
+        {
+            "name": "Local Stock",
+            "slug": "local-stock"
+        },
+        {
+            "name": "Off Shore Indent",
+            "slug": "off-shore-indent"
+        }
+    ]
+}

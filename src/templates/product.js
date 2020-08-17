@@ -71,16 +71,58 @@ export default function ProductPage({ data }) {
         )
     });
 
-    if (product.additionalInfo) {
-        pageSections.push({
-            title: "Additional Information",
-            content: (
-                <p>
-                    {product.additionalInfo}
-                </p>
-            )
-        });
+
+    let itemSizes = product.parts.map(p => {
+        let dimensions = []
+        if (p.length) dimensions.push (`${p.length} mm`);
+        if (p.height) dimensions.push (`${p.height} mm`);
+        if (p.width) dimensions.push (`${p.width} mm`);
+        
+        if (dimensions.length == 0)
+            return null;
+        
+        if (p.partName && p.partName !== '')
+            return `${p.partName}: ${dimensions.join(' x ')}`;
+        else
+            return `${dimensions.join(' x ')}`;
+    }).filter(pis => pis);
+
+    let colors = product.parts.map(p => {       
+        if (p.colours.length === 0)
+            return null;
+
+        if (p.partName && p.partName !== '')
+            return `${p.partName}: ${p.colours.join(', ')}`;
+        else
+            return `${p.colours.join(', ')}`;
+    }).filter(pc => pc);
+
+    let printOptions = product.printOptions.filter(po => po.printType && po.printType !== '');
+
+    const cartonSize = (packing) => {
+        let dimensions = new Array();
+        if (packing.cartonLength) dimensions.push (packing.cartonLength);
+        if (packing.cartonHeight) dimensions.push (packing.cartonHeight);
+        if (packing.cartonWidth) dimensions.push (packing.cartonWidth);
+
+        return(dimensions.join("*"));
     }
+
+    pageSections.push({
+        title: "Additional Information",
+        content: (
+            <div>
+                {product.additionalInfo && <p>
+                    {product.additionalInfo}                
+                </p>}
+                {(itemSizes.length > 0) && <p><strong>Item Size: </strong>{itemSizes.join('; ')}</p>}
+                {(colors.length > 0) && <p><strong>Color Range: </strong>{colors.join('; ')}</p>}
+                {(product.packing.description && product.packing.description !== '') && <p><strong>Package: </strong>{product.packing.description}</p>}
+                {(printOptions.length > 0) && <p><strong>Branding Options</strong><br/>{printOptions.map(po => (<span key={po.printType}><strong>{po.printType}</strong> {po.description}<br/></span>))}</p>}
+                <p><strong>Qty per box: {product.packing.cartonQuantity}</strong><br/><strong>Packaging size (cm):</strong> {cartonSize(product.packing)}<br/><strong>Packaging weight (kg):</strong> {product.packing.cartonWeight}</p>
+            </div>
+        )
+    });
 
     const classes = useStyles();
     const images = [
@@ -376,5 +418,24 @@ query ($id : String!) {
       additionalInfo
       id
       productCode
+      parts {
+        colours
+        partName
+        height
+        width
+        length
+      }
+      packing {
+        description
+        cartonHeight
+        cartonLength
+        cartonQuantity
+        cartonWeight
+        cartonWidth        
+      }
+      printOptions {
+        description
+        printType
+      }
     }
   }`;
