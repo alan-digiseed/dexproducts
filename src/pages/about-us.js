@@ -53,7 +53,7 @@ export default function AboutUsPage({data}) {
         color="white"
       />
       <Parallax
-        image={require("../images/shop/shop-header.png")}
+        image={require("../images/shop/shop-header2.png")}
         filter="dark"
         small
       >
@@ -69,14 +69,18 @@ export default function AboutUsPage({data}) {
               )}
             >
               <div className={classes.brand}>
-                <h1 className={classes.title}>Ecommerce Page!</h1>
-                <h4>
-                  Free global delivery for all products. Use coupon{" "}
-                  <b>25summer</b> for an extra 25% Off
-                </h4>
+                <h1 className={classes.title}>About Us</h1>
               </div>
             </GridItem>
           </GridContainer>
         </div>
       </Parallax>
+      <h1>WELCOME TO DEX COLLECTIONS</h1>
+    <p>Dex Group is a small company however we are highly focused on our Quality and Service. 
+With our competitive prices, we are the first and only company in the industry that provides China Express services. 
+
+Dex Group provides different level of services, such as 24 hours, 3 working days, 7 working days, 12 working days and the 28 working days China Express service. The prices of these services are online which you can access 7 days a week, 24 hours a day. The prices are very clear and there are no hidden charges which makes it so easy to quote your clients at any time. 
+
+Dex is the first company in our industry to introduce a 24 hour service. We have 30 people working at our Melbourne premises. If you have any urgent orders and need help, please contact us and we will do our best to support you. 
+</p>
       </div>)}  

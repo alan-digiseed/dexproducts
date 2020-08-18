@@ -53,7 +53,7 @@ export default function EcommercePage({data}) {
         color="white"
       />
       <Parallax
-        image={require("../images/shop/shop-header.png")}
+        image={require("../images/shop/shop-header2.png")}
         filter="dark"
         small
       >
@@ -69,10 +69,9 @@ export default function EcommercePage({data}) {
               )}
             >
               <div className={classes.brand}>
-                <h1 className={classes.title}>Ecommerce Page!</h1>
+                <h1 className={classes.title}>ONLINE STORE</h1>
                 <h4>
-                  Free global delivery for all products. Use coupon{" "}
-                  <b>25summer</b> for an extra 25% Off
+                  Choose your products, your customisation and your delivery times to get a custom quote{" "}
                 </h4>
               </div>
             </GridItem>
