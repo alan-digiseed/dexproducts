@@ -155,12 +155,21 @@ exports.createSchemaCustomization = ({ actions }) => {
       productDisclaimer: String
     }
       
-      type ProductsJsonParts implements Node {
+      type ProductsJsonParts implements Node @dontInfer {
         partName: String
         colours: [String]
         width: String
         height: String
         length: String
+      }
+
+      type ProductsJsonPacking implements Node {
+        cartonHeight: String
+        cartonLength: String
+        cartonQuantity: String
+        cartonWeight: String
+        cartonWidth: String
+        description: String
       }`
 
       createTypes(typeDefs)
