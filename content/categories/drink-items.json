@@ -1,0 +1,16 @@
+{
+    "name": "Drink Items",
+    "title": "Drink Items",
+    "slug": "drink",
+    "imageUrl": "./drink2.jpg",
+    "subcategories": [
+        {
+            "name": "Stainless Steel Mugs",
+            "slug": "drink-stainless-steel-mugs"
+        },
+        {
+            "name": "Plastic Mugs",
+            "slug": "drink-plastic-mugs"
+        }
+    ]
+}

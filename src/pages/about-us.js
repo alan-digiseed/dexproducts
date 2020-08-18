@@ -30,15 +30,11 @@ export default function AboutUsPage() {
   const classes = useStyles();
   return (
     <div>
-      <Header
+<Header
         brand={<img src={logo} />}
         links={<HeaderLinks dropdownHoverColor="info" />}
         fixed
-        color="transparent"
-        changeColorOnScroll={{
-          height: 300,
-          color: "info"
-        }}
+        color="white"
       />
       <Parallax image={require("../images/shop/shop-header2.png")} filter="dark" small>
         <div className={classes.container}>
