@@ -1,5 +1,6 @@
 /*eslint-disable*/
 import React from "react";
+import { graphql } from 'gatsby'
 // nodejs library that concatenates classes
 import classNames from "classnames";
 // core components
