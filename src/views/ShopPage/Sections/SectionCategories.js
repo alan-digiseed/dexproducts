@@ -1,6 +1,6 @@
 import React from "react";
 // nodejs library that concatenates classes
-import classNames from "classnames";
+//import classNames from "classnames";
 // core components
 import GridContainer from "../../../components/Grid/GridContainer.js";
 import GridItem from "../../../components/Grid/GridItem.js";
@@ -11,6 +11,8 @@ import CardBody from "../../../components/Card/CardBody.js";
 import { makeStyles } from "@material-ui/core/styles";
 // @material-ui icons
 
+import {getAliasedCategories} from "../../../utils/categoryHelpers";
+
 import styles from "../../../pagestyles/ecommerceSections/categoriesStyle.js";
 
 const useStyles = makeStyles(styles);
@@ -18,24 +20,10 @@ const useStyles = makeStyles(styles);
 const categoryImages = require.context('../../../images/categories', true);
 const categoriesImagePath = name => categoryImages(name, true);
 
-const camelize = (str) => {
-  return str.replace(/(?:^\w|[A-Z]|\b\w)/g, function(word, index) {
-    return index === 0 ? word.toLowerCase() : word.toUpperCase();
-  }).replace(/\s+/g, '');
-}
 
 export default function SectionCategories(props) {
 
-  const aliasedCategories = [
-    ...props.categories.filter(c => c.alias === null),
-    ...props.categories.filter(c => c.alias).reduce((accumulator, currentValue) => {
-      console.log(accumulator);
-       if (!accumulator.find( x => x.name === currentValue.alias)) {
-        accumulator = [...accumulator, {name: currentValue.alias, title: currentValue.alias, imageUrl: currentValue.imageUrl, slug: camelize(currentValue.alias) }];
-       }
-       return accumulator;
-      }, new Array() )
-  ];
+  const aliasedCategories = getAliasedCategories(props.categories);
 
   const classes = useStyles();
   return (

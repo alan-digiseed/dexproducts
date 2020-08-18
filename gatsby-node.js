@@ -1,5 +1,5 @@
-const path = require(`path`)
-const { createFilePath } = require(`gatsby-source-filesystem`)
+const path = require(`path`);
+const { createFilePath } = require(`gatsby-source-filesystem`);
 
 exports.onCreateNode = ({ node, getNode, actions}) => {
     if (node.internal.type === `PagesJson` && node.type==='page') {
@@ -42,7 +42,8 @@ exports.createPages = async ({ graphql, actions }) => {
       })
     });
     
-    createProductPages({actions, graphql});
+    await createProductPages({actions, graphql});
+    await createCategoryPages({actions, graphql});
 }
 
 const  createProductPages = async ({actions, graphql}) => {
@@ -60,22 +61,62 @@ const  createProductPages = async ({actions, graphql}) => {
         }
       }`);
 
-    if (result.errors) {
-      console.error(result.errors)
-    }
+  if (result.errors) {
+    console.error(result.errors)
+  }
 
-    result.data.allProductsJson.nodes.forEach(( node ) => {
+  for (i = 0; i < result.data.allProductsJson.nodes.length; i++) {
+    product = result.data.allProductsJson.nodes[i];
 
-    createPage({
-        path: `/products/${node.productCode}`,
+    await createPage({
+        path: `/products/${product.productCode}`,
         component: path.resolve(`src/templates/product.js`),
         context: {
-          id: node.id
+          id: product.id
         }
-      })
-    })
-  
+      });
+  } 
 };
+
+const  createCategoryPages = async ({actions, graphql}) => {
+  const { createPage } = actions
+
+  const result = await graphql(`
+  query MyQuery {
+    allCategoriesJson {
+      nodes {
+        title
+        alias
+        slug
+        imageUrl
+        name
+        subcategories {
+          name
+          slug
+        }
+        slug
+      }
+    }
+  }`);
+
+  if (result.errors) {
+    console.error(result.errors)
+  }
+
+  let categories = result.data.allCategoriesJson.nodes;
+
+  for (i = 0; i < categories.length; i++) {
+    let category = categories[i];    
+    await createPage({
+        path: `/categories/${category.slug}`,
+        component: path.resolve(`src/templates/category.js`),
+        context: {
+          slug: category.slug,
+          name: category.name
+        }
+      });
+  }
+}
 
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions
