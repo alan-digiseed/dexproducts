@@ -174,7 +174,7 @@ exports.createSchemaCustomization = ({ actions }) => {
 
       type ProductsJsonPriceList implements Node {
         blanks: [ProductsJsonPriceListBlank]
-        services: [ProductJsonPriceListService]
+        services: [ProductJsonPriceListServices]
       }
 
       type ProductsJsonPriceListBlank implements Node {
@@ -196,7 +196,13 @@ exports.createSchemaCustomization = ({ actions }) => {
         Setup: Int
         minOrderQty: Int
         maxOrderQty: Int
-      }`
+      }
+      
+      type ProductsJsonPrintOptions implements Node {
+        printType: String
+        description: String
+      }
+      `
 
 
       createTypes(typeDefs)
