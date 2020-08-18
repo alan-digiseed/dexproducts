@@ -52,13 +52,24 @@ import { Provider } from 'react-redux';
 import store from '../../dex-pricing-calculator/store/index';
 import PricingCalculator from '../../dex-pricing-calculator/container/PricingCalculator/PricingCalculator';
 
-
 const useStyles = makeStyles(productStyle);
+
+const productImages = require.context('../images/products', true);
+const productsImagePath = name => {
+  try {
+    return productImages(`./${name}`, true);
+  }
+  catch {
+    return productImages('./place-holder.jpg', true);
+  }
+}
 
 export default function ProductPage({ data }) {
 
     const product = data.productsJson;
 
+
+    
 
     let pageSections = [];
 
@@ -125,24 +136,14 @@ export default function ProductPage({ data }) {
     });
 
     const classes = useStyles();
-    const images = [
-        {
-            original: product3,
-            thumbnail: product3
-        },
-        {
-            original: product4,
-            thumbnail: product4
-        },
-        {
-            original: product1,
-            thumbnail: product1
-        },
-        {
-            original: product2,
-            thumbnail: product2
+    const images = product.images.map(i => {
+        return {
+            original: productsImagePath(i),
+            thumbnail: productsImagePath(i)
         }
-    ];
+    })
+
+
     return (
         <div className={classes.productPage}>
             <Header
@@ -242,170 +243,8 @@ export default function ProductPage({ data }) {
                             </GridItem>
                         </GridContainer>
                     </div>
-                    <div className={classes.relatedProducts}>
-                        <h3 className={classNames(classes.title, classes.textCenter)}>
-                            You may also be interested in:
-            </h3>
-                        <GridContainer>
-                            <GridItem sm={6} md={3}>
-                                <Card product>
-                                    <CardHeader image>
-                                        <a href="#pablo">
-                                            <img src={cardProduct1} alt="cardProduct" />
-                                        </a>
-                                    </CardHeader>
-                                    <CardBody>
-                                        <h6
-                                            className={classNames(
-                                                classes.cardCategory,
-                                                classes.textRose
-                                            )}
-                                        >
-                                            Trending
-                    </h6>
-                                        <h4 className={classes.cardTitle}>Dolce & Gabbana</h4>
-                                        <div className={classes.cardDescription}>
-                                            Dolce & Gabbana{"'"}s {"'"}Greta{"'"} tote has been
-                      crafted in Italy from hard-wearing red textured-leather.
-                    </div>
-                                    </CardBody>
-                                    <CardFooter className={classes.justifyContentBetween}>
-                                        <div className={classes.price}>
-                                            <h4>$1,459</h4>
-                                        </div>
-                                        <div className={classes.stats}>
-                                            <Tooltip
-                                                id="tooltip-top"
-                                                title="Save to Wishlist"
-                                                placement="top"
-                                                classes={{ tooltip: classes.tooltip }}
-                                            >
-                                                <Button justIcon color="rose" simple>
-                                                    <Favorite />
-                                                </Button>
-                                            </Tooltip>
-                                        </div>
-                                    </CardFooter>
-                                </Card>
-                            </GridItem>
-                            <GridItem sm={6} md={3}>
-                                <Card product>
-                                    <CardHeader image>
-                                        <a href="#pablo">
-                                            <img src={cardProduct3} alt="cardProduct3" />
-                                        </a>
-                                    </CardHeader>
-                                    <CardBody>
-                                        <h6 className={classes.cardCategory}>Popular</h6>
-                                        <h4 className={classes.cardTitle}>Balmain</h4>
-                                        <div className={classes.cardDescription}>
-                                            Balmain{"'"}s mid-rise skinny jeans are cut with stretch
-                      to ensure they retain their second-skin fit but move
-                      comfortably.
-                    </div>
-                                    </CardBody>
-                                    <CardFooter className={classes.justifyContentBetween}>
-                                        <div className={classes.price}>
-                                            <h4>$459</h4>
-                                        </div>
-                                        <div className={classes.stats}>
-                                            <Tooltip
-                                                id="tooltip-top"
-                                                title="Save to Wishlist"
-                                                placement="top"
-                                                classes={{ tooltip: classes.tooltip }}
-                                            >
-                                                <Button justIcon link>
-                                                    <Favorite />
-                                                </Button>
-                                            </Tooltip>
-                                        </div>
-                                    </CardFooter>
-                                </Card>
-                            </GridItem>
-                            <GridItem sm={6} md={3}>
-                                <Card product>
-                                    <CardHeader image>
-                                        <a href="#pablo">
-                                            <img src={cardProduct4} alt="cardProduct4" />
-                                        </a>
-                                    </CardHeader>
-                                    <CardBody>
-                                        <h6 className={classes.cardCategory}>Popular</h6>
-                                        <h4 className={classes.cardTitle}>Balenciaga</h4>
-                                        <div className={classes.cardDescription}>
-                                            Balenciaga{"'"}s black textured-leather wallet is finished
-                      with the label{"'"}s iconic {"'"}Giant{"'"} studs. This is
-                      where you can...
-                    </div>
-                                    </CardBody>
-                                    <CardFooter className={classes.justifyContentBetween}>
-                                        <div className={classes.price}>
-                                            <h4>$590</h4>
-                                        </div>
-                                        <div className={classes.stats}>
-                                            <Tooltip
-                                                id="tooltip-top"
-                                                title="Save to Wishlist"
-                                                placement="top"
-                                                classes={{ tooltip: classes.tooltip }}
-                                            >
-                                                <Button justIcon color="rose" simple>
-                                                    <Favorite />
-                                                </Button>
-                                            </Tooltip>
-                                        </div>
-                                    </CardFooter>
-                                </Card>
-                            </GridItem>
-                            <GridItem sm={6} md={3}>
-                                <Card product>
-                                    <CardHeader image>
-                                        <a href="#pablo">
-                                            <img src={cardProduct2} alt="cardProduct2" />
-                                        </a>
-                                    </CardHeader>
-                                    <CardBody>
-                                        <h6
-                                            className={classNames(
-                                                classes.cardCategory,
-                                                classes.textRose
-                                            )}
-                                        >
-                                            Trending
-                    </h6>
-                                        <h4 className={classes.cardTitle}>Dolce & Gabbana</h4>
-                                        <div className={classes.cardDescription}>
-                                            Dolce & Gabbana{"'"}s {"'"}Greta{"'"} tote has been
-                      crafted in Italy from hard-wearing red textured-leather.
-                    </div>
-                                    </CardBody>
-                                    <CardFooter className={classes.justifyContentBetween}>
-                                        <div className={classes.price}>
-                                            <h4>$1,459</h4>
-                                        </div>
-                                        <div className={classes.stats}>
-                                            <Tooltip
-                                                id="tooltip-top"
-                                                title="Save to Wishlist"
-                                                placement="top"
-                                                classes={{ tooltip: classes.tooltip }}
-                                            >
-                                                <Button justIcon link>
-                                                    <Favorite />
-                                                </Button>
-                                            </Tooltip>
-                                        </div>
-                                    </CardFooter>
-                                </Card>
-                            </GridItem>
-                        </GridContainer>
-                    </div>
                 </div>
             </div>
-
-            <h1>{product.name}</h1>
-
         </div>
     );
 }
@@ -418,6 +257,7 @@ query ($id : String!) {
       additionalInfo
       id
       productCode
+      images
       parts {
         colours
         partName
