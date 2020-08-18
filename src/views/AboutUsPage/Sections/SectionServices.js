@@ -29,17 +29,20 @@ export default function SectionServices() {
             classes.textCenter
           )}
         >
-          <h2 className={classes.title}>We build awesome products</h2>
+          <h2 className={classes.title}>WELCOME TO DEX</h2>
           <h5 className={classes.description}>
-            This is the paragraph where you can write more details about your
-            product. Keep you user engaged by providing meaningful information.
+          Dex is one of the largest promotional product suppliers in the industry with a large selection of Bags, Stress Shapes, Drinkware, Umbrellas, Key rings, Pens & USB’s - including exclusive supply arrangements with a host of Quality European brands. We at Dex also offer the largest range of Stress Shapes available outside the USA, and are able to offer multiple colour prints on stress items in house. 
+          
+          The Dex website features all the current products & images in all color variations, line drawings are also available. When you log into the Dex Site you will have the convenience of on-line prices for you to see at a glance so it’s fast & easy for quoting.
+
+Local Can't find what you are looking for, please do not hesitate to contact us; we are here to assist with all your promotional needs.
           </h5>
         </GridItem>
       </GridContainer>
       <GridContainer>
         <GridItem md={4} sm={4}>
           <InfoArea
-            title="1. Design"
+            title="1. View our selection"
             description={
               <span>
                 <p>
@@ -47,7 +50,7 @@ export default function SectionServices() {
                   anything like it. With a single use, this powerfull UI Kit
                   lets you do more than ever before.{" "}
                 </p>
-                <a href="#pablo">Find more...</a>
+                
               </span>
             }
             icon={Gesture}
@@ -56,7 +59,7 @@ export default function SectionServices() {
         </GridItem>
         <GridItem md={4} sm={4}>
           <InfoArea
-            title="2. Develop"
+            title="2. Choose your items"
             description={
               <span>
                 <p>
@@ -64,7 +67,7 @@ export default function SectionServices() {
                   Write a few lines about each one. A paragraph describing a
                   feature will be enough.{" "}
                 </p>
-                <a href="#pablo">Find more...</a>
+                
               </span>
             }
             icon={Build}
@@ -73,7 +76,7 @@ export default function SectionServices() {
         </GridItem>
         <GridItem md={4} sm={4}>
           <InfoArea
-            title="3. Make Edits"
+            title="3. Customise"
             description={
               <span>
                 <p>
@@ -81,7 +84,7 @@ export default function SectionServices() {
                   Write a few lines about each one. A paragraph describing a
                   feature will be enough.{" "}
                 </p>
-                <a href="#pablo">Find more...</a>
+               
               </span>
             }
             icon="mode_edit"
