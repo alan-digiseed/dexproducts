@@ -32,21 +32,18 @@ const SectionCards = (props) => {
                   style={{ backgroundImage: `url(${ci.image})` }}
                 >
                   <CardBody background>
-                    <h6 className={classes.cardCategory}>{ci.title}</h6>
-                    {ci.subtitle && 
+                     {ci.subtitle && 
                       <a href={ci.callToActionUrl} onClick={e => e.preventDefault()}>
-                        <h3 className={classes.cardTitleWhite}>
-                          {ci.subtitle}
-                        </h3>
+
                       </a>}
                     {ci.description &&
                       <p>
                       {ci.description}
                       </p>}
                     {ci.callToAction &&
-                        <Button href={ci.callToActionUrl} color="white">
-                          <Icon></Icon> {ci.callToAction}
-                        </Button>}
+                        <Button href={ci.callToActionUrl} color="black">
+                           <h3 className={classes.cardCategory}>{ci.title}</h3>
+                           </Button>}
                   </CardBody>
                 </Card>
               </GridItem>		

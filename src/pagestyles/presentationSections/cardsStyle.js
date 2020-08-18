@@ -21,7 +21,7 @@ const cardsStyle = {
     ...title,
     color: whiteColor,
     marginTop: "30px",
-    marginBottom: "25px",
+    marginBottom: "30px",
     minHeight: "32px"
   },
   description: {
