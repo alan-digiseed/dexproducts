@@ -196,7 +196,13 @@ exports.createSchemaCustomization = ({ actions }) => {
         Setup: Int
         minOrderQty: Int
         maxOrderQty: Int
-      }`
+      }
+      
+      type ProductsJsonPrintOptions implements Node {
+        printType: String
+        description: String
+      }
+      `
 
 
       createTypes(typeDefs)
