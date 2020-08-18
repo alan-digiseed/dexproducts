@@ -174,7 +174,7 @@ exports.createSchemaCustomization = ({ actions }) => {
 
       type ProductsJsonPriceList implements Node {
         blanks: [ProductsJsonPriceListBlank]
-        services: [ProductJsonPriceListService]
+        services: [ProductJsonPriceListServices]
       }
 
       type ProductsJsonPriceListBlank implements Node {
