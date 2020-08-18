@@ -1,9 +1,9 @@
 {
     "name": "Pens Germany KLIO",
-    "alias": "Pens",
+    "alias": "Pens-KLIO",
     "title": "Pens Germany KLIO",
     "slug": "pens-germany-klio",
-    "imageUrl": "./pens.jpg",
+    "imageUrl": "./pen-klio.jpg",
     "subcategories": [
         {
             "name": "Local Stock",
