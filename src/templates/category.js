@@ -74,12 +74,13 @@ export const query = graphql`
         allProductsJson(filter: {category1: {eq: $name}}) {
           nodes {
             productCode
+            name
             description
             additionalInfo
             category1
             category2
             category3
-            images
+            images            
           }
         }
         categoriesJson(slug: {eq: $slug}) {

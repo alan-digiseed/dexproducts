@@ -82,9 +82,7 @@ export default function EcommercePage({data}) {
 
       <div className={classNames(classes.main, classes.mainRaised)}>
         <SectionCategories categories={data.allCategoriesJson.nodes}/>
-        {/* <SectionProducts /> */}
       </div>
-      {/* <SectionBlog /> */}
       <div
         className={classNames(
           classes.subscribeLine,

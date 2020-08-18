@@ -149,19 +149,55 @@ exports.createSchemaCustomization = ({ actions }) => {
       name: String
       packing: ProductsJsonPacking
       parts: [ProductsJsonParts]
-      priceLists: ProductsJsonPriceLists
+      priceLists: [ProductsJsonPriceList]
       printOptions: ProductsJsonPrintOptions
       productCode: String
       productDisclaimer: String
     }
       
-      type ProductsJsonParts implements Node {
+      type ProductsJsonParts implements Node @dontInfer {
         partName: String
         colours: [String]
         width: String
         height: String
         length: String
+      }
+
+      type ProductsJsonPacking implements Node {
+        cartonHeight: String
+        cartonLength: String
+        cartonQuantity: String
+        cartonWeight: String
+        cartonWidth: String
+        description: String
+      }
+
+      type ProductsJsonPriceList implements Node {
+        blanks: [ProductsJsonPriceListBlank]
+        services: [ProductJsonPriceListService]
+      }
+
+      type ProductsJsonPriceListBlank implements Node {
+        type: String
+        description: String
+        prices: [ProductsJsonPriceListBlanksPrices]
+      }
+
+      type ProductsJsonPriceListBlanksPrices implements Node {
+        qty: Int!
+        unitPrice: Float!
+      }
+      
+      type ProductJsonPriceListServices implements Node {
+        priceListType: String
+        days: Int
+        serviceType: String
+        unitPrice: Float
+        Setup: Int
+        minOrderQty: Int
+        maxOrderQty: Int
       }`
+
 
       createTypes(typeDefs)
 }
