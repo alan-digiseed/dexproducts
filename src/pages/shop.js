@@ -130,7 +130,7 @@ export default function EcommercePage({data}) {
                       </GridItem>
                       <GridItem xs={12} sm={6} md={6} lg={4}>
                         <Button
-                          color="rose"
+                          color="danger"
                           block
                           className={classes.subscribeButton}
                         >
