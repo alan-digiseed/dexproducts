@@ -6,11 +6,11 @@
     "subcategories": [
         {
             "name": "Non Woven Bags",
-            "slug": "non-woven-bags"
+            "slug": "bags-non-woven-bags"
         },
         {
             "name": "Paper Bags",
-            "slug": "paper-bags"
+            "slug": "bags-paper-bags"
         }
     ]
 }

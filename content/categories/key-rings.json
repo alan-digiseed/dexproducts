@@ -6,11 +6,11 @@
     "subcategories": [
         {
             "name": "Key Rings",
-            "slug": "key-rings"
+            "slug": "key-rings-key-rings"
         },
         {
-            "name": "Paper Bags",
-            "slug": "paper-bags"
+            "name": "Torch Key Rings",
+            "slug": "key-rings-torch_keyrings"
         }
     ]
 }

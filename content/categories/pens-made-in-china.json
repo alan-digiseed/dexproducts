@@ -1,11 +1,11 @@
   { "name": "Pens Made In China", "alias": "Pens", "title": "Pens Made In China", "slug": "pens-made-in-china", "imageUrl": "./pens.jpg", "subcategories": [
-      {"name": "Plastic Pens", "slug": "plastic-pens"
+      {"name": "Plastic Pens", "slug": "pens-made-in-china-plastic-pens"
       },
-      {"name": "Metal Pens","slug": "metal-pens"
+      {"name": "Metal Pens","slug": "pens-made-in-china-metal-pens"
       },
-      {"name": "Touch Stylus Pens", "slug": "touch-stylus-pens"
+      {"name": "Touch Stylus Pens", "slug": "pens-made-in-china-touch-stylus-pens"
       },
-      {"name": "Wheat Straw Pens", "slug": "wheat-straw-pens"
+      {"name": "Wheat Straw Pens", "slug": "pens-made-in-china-wheat-straw-pens"
       }
     ]
   }

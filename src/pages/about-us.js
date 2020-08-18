@@ -17,7 +17,7 @@ import Footer from "../components/Footer/Footer.js";
 // sections for this page
 import HeaderLinks from "../components/Header/HeaderLinks.js";
 import SectionServices from "../views/AboutUsPage/Sections/SectionServices.js";
-
+import logo from "../images/logo.png";
 import aboutUsStyle from "../pagestyles/aboutUsStyle.js";
 
 const useStyles = makeStyles(aboutUsStyle);
@@ -31,7 +31,7 @@ export default function AboutUsPage() {
   return (
     <div>
       <Header
-        brand="Material Kit PRO React"
+        brand={<img src={logo} />}
         links={<HeaderLinks dropdownHoverColor="info" />}
         fixed
         color="transparent"
@@ -40,7 +40,7 @@ export default function AboutUsPage() {
           color: "info"
         }}
       />
-      <Parallax image={require("../images/bg9.jpg")} filter="dark" small>
+      <Parallax image={require("../images/shop/shop-header2.png")} filter="dark" small>
         <div className={classes.container}>
           <GridContainer justify="center">
             <GridItem
