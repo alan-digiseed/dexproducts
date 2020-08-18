@@ -35,6 +35,8 @@ import CardBody from "../components/Card/CardBody.js";
 import CardFooter from "../components/Card/CardFooter.js";
 import Tooltip from "@material-ui/core/Tooltip";
 
+import logo from "../images/logo.png";
+
 import productStyle from "../pagestyles/productStyle.js";
 
 // images
@@ -146,22 +148,29 @@ export default function ProductPage({ data }) {
 
     return (
         <div className={classes.productPage}>
-            <Header
-                brand="Material Kit PRO React"
-                links={<HeaderLinks dropdownHoverColor="rose" />}
-                fixed
-                color="transparent"
-                changeColorOnScroll={{
-                    height: 100,
-                    color: "rose"
-                }}
-            />
-            <Parallax
-                image={require("../images/bg6.jpg")}
-                filter="rose"
-                className={classes.pageHeader}
+      <Header
+        brand={<img src={logo} />}
+        links={<HeaderLinks dropdownHoverColor="info" />}
+        fixed
+        color="white"
+      />
+      <Parallax image={require("../images/shop/shop-header2.png")} filter="dark" small>
+        <div className={classes.container}>
+          <GridContainer justify="center">
+            <GridItem
+              md={8}
+              sm={8}
+              className={classNames(
+                classes.mlAuto,
+                classes.mrAuto,
+                classes.textCenter
+              )}
             >
-            </Parallax>
+              <h1 className={classes.title}>About Us</h1>
+            </GridItem>
+          </GridContainer>
+        </div>
+      </Parallax>
             <div className={classNames(classes.section, classes.sectionGray)}>
                 <div className={classes.container}>
                     <div className={classNames(classes.main, classes.mainRaised)}>
@@ -248,7 +257,6 @@ export default function ProductPage({ data }) {
         </div>
     );
 }
-
 export const pageQuery = graphql`
 query ($id : String!) {
     productsJson(id: {eq: $id}) {

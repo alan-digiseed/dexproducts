@@ -36,7 +36,7 @@ export default function CategoryPage({ data }) {
                 color="white"
             />
       <Parallax
-        image={require("../images/examples/clark-street-merc.jpg")}
+        image={require("../images/shop/shop-header2.png")}
         filter="dark"
         small
       >
@@ -52,11 +52,7 @@ export default function CategoryPage({ data }) {
               )}
             >
               <div className={classes.brand}>
-                <h1 className={classes.title}>Ecommerce Page!</h1>
-                <h4>
-                  Free global delivery for all products. Use coupon{" "}
-                  <b>25summer</b> for an extra 25% Off
-                </h4>
+                <h1 className={classes.title}>Categories</h1>
               </div>
             </GridItem>
           </GridContainer>
