@@ -6,7 +6,7 @@ import {
   mrAuto,
   whiteColor,
   mlAuto
-} from "../../shared/material-kit-pro-react.js";
+} from "../shared/material-kit-pro-react.js";
 
 const aboutUsStyle = {
   main,

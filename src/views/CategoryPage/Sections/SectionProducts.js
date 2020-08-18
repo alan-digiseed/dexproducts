@@ -43,18 +43,6 @@ import styles from "../../../pagestyles/productStyle.js";
 const useStyles = makeStyles(styles);
 
 export default function SectionProducts(props) {
-  const [checked, setChecked] = React.useState([1, 9, 27]);
-  const [priceRange, setPriceRange] = React.useState([101, 790]);
-  const handleToggle = value => {
-    const currentIndex = checked.indexOf(value);
-    const newChecked = [...checked];
-    if (currentIndex === -1) {
-      newChecked.push(value);
-    } else {
-      newChecked.splice(currentIndex, 1);
-    }
-    setChecked(newChecked);
-  };
   const classes = useStyles();
 
 
@@ -69,28 +57,27 @@ export default function SectionProducts(props) {
             </div>
         )
     };      
-  });
+  });  
 
-
-
+  var selectedCategoryIndex = props.allCategories.map(c => c.slug).indexOf(props.category.slug);
 
   return (
     <div className={classes.section}>
       <div className={classes.container}>
         <h2>Find what you need</h2>
         <GridContainer>
-          <GridItem md={3} sm={3}>
+          <GridItem md={4} sm={4}>
             <Card plain>
               <CardBody className={classes.cardBodyRefine}>
                 <Accordion
-                  active={[0, 2]}
+                  active={[selectedCategoryIndex]}
                   activeColor="rose"
                   collapses={categoriesCollapses}
                 />
               </CardBody>
             </Card>
           </GridItem>
-          <GridItem md={9} sm={9}>
+          <GridItem md={8} sm={8}>
             <GridContainer>
               <GridItem md={4} sm={4}>
                 <Card plain product>

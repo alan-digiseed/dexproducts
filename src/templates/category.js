@@ -8,31 +8,13 @@ import Header from "../components/Header/Header.js";
 import GridContainer from "../components/Grid/GridContainer.js";
 import GridItem from "../components/Grid/GridItem.js";
 import Parallax from "../components/Parallax/Parallax.js";
-import Button from "../components/CustomButtons/Button.js";
-import Card from "../components/Card/Card.js";
-import CardBody from "../components/Card/CardBody.js";
-import CustomInput from "../components/CustomInput/CustomInput.js";
-import Footer from "../components/Footer/Footer.js";
 // sections for this page
 import HeaderLinks from "../components/Header/HeaderLinks.js";
 import SectionProducts from "../views/CategoryPage/Sections/SectionProducts.js";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import InputAdornment from "@material-ui/core/InputAdornment";
 // @material-ui icons
-import Mail from "@material-ui/icons/Mail";
 
-import ecommerceHeader from "../images/examples/ecommerce-header.jpg";
-import face1 from "../images/faces/card-profile6-square.jpg";
-import face2 from "../images/faces/christian.jpg";
-import face3 from "../images/faces/card-profile4-square.jpg";
-import face4 from "../images/faces/card-profile1-square.jpg";
-import face5 from "../images/faces/marc.jpg";
-import face6 from "../images/faces/kendall.jpg";
-import face7 from "../images/faces/card-profile5-square.jpg";
-import face8 from "../images/faces/card-profile2-square.jpg";
 import logo from "../images/logo.png";
 
 import styles from "../pagestyles/ecommerceStyle.js";

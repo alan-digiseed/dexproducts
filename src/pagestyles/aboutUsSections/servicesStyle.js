@@ -3,7 +3,7 @@ import {
   description,
   mrAuto,
   mlAuto
-} from "assets/jss/material-kit-pro-react.js";
+} from "../../shared/material-kit-pro-react.js";
 
 const servicesStyle = {
   title,
