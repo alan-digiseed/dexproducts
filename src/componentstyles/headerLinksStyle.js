@@ -48,7 +48,7 @@ const headerLinksStyle = theme => ({
           content: '""',
           display: "block",
           height: "1px",
-          marginLeft: "15px",
+          marginLeft: "0px",
           backgroundColor: grayColor[14]
         }
       }
@@ -61,8 +61,8 @@ const headerLinksStyle = theme => ({
     color: "inherit",
     position: "relative",
     padding: "0.9375rem",
-    fontWeight: "400",
-    fontSize: "12px",
+    fontWeight: "500",
+    fontSize: "16px",
     textTransform: "uppercase",
     lineHeight: "20px",
     textDecoration: "none",
@@ -105,8 +105,8 @@ const headerLinksStyle = theme => ({
   },
   navButton: {
     position: "relative",
-    fontWeight: "400",
-    fontSize: "12px",
+    fontWeight: "600",
+    fontSize: "16px",
     textTransform: "uppercase",
     lineHeight: "20px",
     textDecoration: "none",

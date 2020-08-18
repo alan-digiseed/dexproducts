@@ -20,23 +20,13 @@ export default function SectionDescription() {
   return (
     <div className={classes.section}>
       <div className={classes.container}>
-        <GridContainer justify="center">
-          <GridItem md={8} sm={8}>
-            <h4 className={classes.description}>
-              Material Kit React PRO is a Material-UI Kit with a fresh, new
-              design inspired by Google{"'"}s Material Design. You asked for it,
-              so we built it. It{"'"}s a great pleasure to introduce to you the
-              material concepts in an easy to use and beautiful set of
-              components.
-            </h4>
-          </GridItem>
-        </GridContainer>
         <div className={classes.features}>
           <GridContainer>
             <GridItem md={4} sm={4}>
               <InfoArea
-                title="Huge Number of Components"
-                description="Every element that you need in a product comes built in as a component. All components fit perfectly with each other and can take variations in colour."
+                title="EASY TO USE WEBSITE
+                MAKES IT A BREEZE TO
+                QUOTE YOUR CLIENTS"
                 icon={Apps}
                 iconColor="danger"
                 vertical={true}
@@ -44,8 +34,8 @@ export default function SectionDescription() {
             </GridItem>
             <GridItem md={4} sm={4}>
               <InfoArea
-                title="Multi-Purpose Sections"
-                description="Putting together a page has never been easier than matching together sections. From team presentation to pricing options, you can easily customise and built your pages."
+                title="WE OFFER FAST TURN
+                AROUND ON ORDERS"
                 icon={ViewDay}
                 iconColor="primary"
                 vertical={true}
@@ -53,8 +43,9 @@ export default function SectionDescription() {
             </GridItem>
             <GridItem md={4} sm={4}>
               <InfoArea
-                title="Example Pages"
-                description="If you want to get inspiration or just show something directly to your clients, you can jump start your development with our pre-built example pages."
+                title="MANY DIFFERENT BRANDING
+                SOLUTIONS TO PERSONALISE
+                YOUR PRODUCTS"
                 icon={ViewCarousel}
                 iconColor="success"
                 vertical={true}

@@ -42,7 +42,9 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `Material Icons`
+          `Material Icons`,
+          `Cairo`,
+          'PT Sans'
         ],
         display: 'swap'
       }

@@ -44,7 +44,7 @@ const SectionCards = (props) => {
                       {ci.description}
                       </p>}
                     {ci.callToAction &&
-                        <Button href={ci.callToActionUrl} round color="danger">
+                        <Button href={ci.callToActionUrl} color="white">
                           <Icon></Icon> {ci.callToAction}
                         </Button>}
                   </CardBody>
