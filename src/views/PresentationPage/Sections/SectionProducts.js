@@ -15,7 +15,7 @@ import Tooltip from "@material-ui/core/Tooltip";
 // @material-ui icons
 import Favorite from "@material-ui/icons/Favorite";
 
-import styles from "../../../pageStyles/ecommerceSections/latestOffersStyle.js";
+import styles from "../../../pagestyles/ecommerceSections/latestOffersStyle.js";
 
 const useStyles = makeStyles(styles);
 
