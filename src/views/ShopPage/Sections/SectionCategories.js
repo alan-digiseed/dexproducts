@@ -29,14 +29,13 @@ export default function SectionCategories(props) {
   return (
     <div className={classes.section}>
       <div className={classes.container}>
-        {/* <h2>Categories</h2> */}
         <GridContainer>
           { aliasedCategories.map( c => {
               return (
                 <GridItem md={4} sm={4}>
                 <Card product plain>
                   <CardHeader image plain>
-                    <a href={`/categories/${c.name}`}>
+                    <a href={`/categories/${c.slug}`}>
                       <img src={categoriesImagePath(c.imageUrl)} alt="..." />
                     </a>
                     <div
