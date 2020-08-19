@@ -1,0 +1,16 @@
+{
+    "name": "Technology",
+    "title": "Technology",
+    "slug": "technology",
+    "imageUrl": "./tech.jpg",
+    "subcategories": [
+        {
+            "name": "USB Accessories and Cables",
+            "slug": "tech-USB-accessories-and-cables"
+        },
+        {
+            "name": "Chargers",
+            "slug": "tech-chargers"
+        }
+    ]
+}

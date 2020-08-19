@@ -1,0 +1,24 @@
+{
+    "name": "Umbrella and Ponchos",
+    "title": "Umbrella and Ponchos",
+    "slug": "umbrella",
+    "imageUrl": "./umbrellas.jpg",
+    "subcategories": [
+        {
+            "name": "Golf Umbrella",
+            "slug": "umbrella-golf-umbrella"
+        },
+        {
+            "name": "Foldable Umbrella",
+            "slug": "umbrella-foldable-umbrella"
+        },
+        {
+            "name": "Inverted Umbrella",
+            "slug": "umbrella-inverted-umbrella"
+        },
+        {
+            "name": "Ponchos",
+            "slug": "umbrella-ponchos"
+        }
+    ]
+}

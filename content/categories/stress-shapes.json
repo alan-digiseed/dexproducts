@@ -1,0 +1,16 @@
+{
+    "name": "Stress Shapes",
+    "title": "Stress Shapes",
+    "slug": "stress-shapes",
+    "imageUrl": "./stress2.jpg",
+    "subcategories": [
+        {
+            "name": "Stress Balls",
+            "slug": "stress-shapes-stress-balls"
+        },
+        {
+            "name": "Stress Animals",
+            "slug": "stress-animals-stress-animals"
+        }
+    ]
+}

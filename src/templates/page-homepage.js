@@ -55,71 +55,45 @@ export default function PresentationPage({data}) {
       <SectionOverview />
       <SectionDescription />
    
-    <Footer
-        theme="white"
+      <Footer
+        theme="dark"
         content={
           <div>
-            <div className={classes.left}>
-            {<img src={logo} />}
-            </div>
-            <div className={classes.pullCenter}>
-              <List className={classes.list}>
-                <ListItem className={classes.inlineBlock}>
-                  <a
-                    href="https://www.creative-tim.com/presentation?ref=mkpr-presentation"
-                    target="_blank"
-                    className={classes.block}
-                  >
-                    About us
-                  </a>
-                </ListItem>
-                <ListItem className={classes.inlineBlock}>
-                  <a href="//blog.creative-tim.com/" className={classes.block}>
-                  FAQ
-                  </a>
-                </ListItem>
-              </List>
-            </div>
-            <div className={classes.rightLinks}>
-              <ul>
-                <li>
-                  <Button
-                    href="https://twitter.com/CreativeTim?ref=creativetim"
-                    target="_blank"
-                    color="twitter"
-                    justIcon
-                    simple
-                  >
-                    <i className="fab fa-twitter" />
-                  </Button>
-                </li>
-                <li>
-                  <Button
-                    href="https://dribbble.com/creativetim?ref=creativetim"
-                    target="_blank"
-                    color="dribbble"
-                    justIcon
-                    simple
-                  >
-                    <i className="fab fa-dribbble" />
-                  </Button>
-                </li>
-                <li>
-                  <Button
-                    href="https://instagram.com/CreativeTimOfficial?ref=creativetim"
-                    target="_blank"
-                    color="instagram"
-                    justIcon
-                    simple
-                  >
-                    <i className="fab fa-instagram" />
-                  </Button>
-                </li>
-              </ul>
+            <div className={classes.right}>
+              Copyright &copy; {1900 + new Date().getYear()}{" "}
+              <a
+                href="https://www.creative-tim.com?ref=mkpr-e-ecommerce"
+                target="_blank"
+                className={classes.aClasses}
+              >
+                DEX
+              </a>{" "}
+              All Rights Reserved.
             </div>
           </div>
         }
-      />
+      >
+        <GridContainer>
+          <GridItem xs={12} sm={4} md={4}>
+            <h5>About Us</h5>
+            <p>
+            Dex Group is a small company however we are highly focused on our Quality and Service. {" "}
+With our competitive prices, we are the first and only company in the industry that provides China Express services. 
+{" "}Dex is the first company in our industry to introduce a 24 hour service. We have 30 people working at our Melbourne premises. If you have any urgent orders and need help, please contact us and we will do our best to support you. 
+{" "}
+            </p>
+          </GridItem>
+          <GridItem xs={12} sm={4} md={4}>
+            <h5>Facebook Feed</h5>
+            <div className={classes.socialFeed}>
+                </div>
+          </GridItem>
+          <GridItem xs={12} sm={4} md={4}>
+            <h5>Instagram Feed</h5>
+            
+          </GridItem>
+        </GridContainer>
+      </Footer>
     </div>
   );
 }
