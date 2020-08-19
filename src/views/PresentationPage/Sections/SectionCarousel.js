@@ -12,7 +12,7 @@ import carouselStyle from "../../../pagestyles/componentsSections/carouselStyle.
 import correctionTapesImage from "../../../images/slider/CORRECTION TAPE -2.jpg";
 import potPlantImage from "../../../images/slider/DESK PLANT POT -2.jpg";
 import lanyardsImage from "../../../images/slider/LANYARDS -2.jpg";
-import lipBalmImage from "../../../images/slider/LIP BALMS -2.jpg";
+import lipBalmImage from "../../../images/slider/LIPBALM.jpg";
 import stressShapesImage from "../../../images/slider/STRESS SHAPES -2.jpg";
 
 const useStyles = makeStyles(carouselStyle);
