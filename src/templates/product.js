@@ -257,7 +257,7 @@ export default function ProductPage({ data }) {
         </div>
     );
 }
-export const pageQuery = graphql`
+export const query = graphql`
 query ($id : String!) {
     productsJson(id: {eq: $id}) {
       name
