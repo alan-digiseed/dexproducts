@@ -30,17 +30,18 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     `);
 
-    result.data.allPagesJson.nodes.forEach(( node ) => {
-      createPage({
-         path: node.slug != "home" ? node.slug : "/",
-         component: path.resolve(`./src/templates/${node.layout}.js`),
+    for (i = 0; i < result.data.allPagesJson.nodes.length; i++) {
+      let page = result.data.allPagesJson.nodes[i];
+      await createPage({
+         path: page.slug != "home" ? page.slug : "/",
+         component: path.resolve(`./src/templates/${page.layout}.js`),
          context: {
            // Data passed to context is available
            // in page queries as GraphQL variables.
-           slug: node.slug,
+           slug: page.slug,
          },      
       })
-    });
+    };
     
     await createProductPages({actions, graphql});
     await createCategoryPages({actions, graphql});
