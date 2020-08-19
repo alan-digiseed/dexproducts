@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 const SetupMarkupsStep = (props) => {
     return (
         <form className="setup-markups-step">
-            <Typography variant="h4">Select Service</Typography>
+            <Typography variant="h3">Select Service</Typography>
 
             <QuoteDetailsForm />
             <PriceSummary wholesale={false} displayIncludeSetupToggle={false}/>

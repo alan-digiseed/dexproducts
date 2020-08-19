@@ -1,9 +1,9 @@
 {
     "name": "Pens Italian EGRA",
-    "alias": "Pens",
+    "alias": "Pens Italian EGRA",
     "title": "Pens Italian ERGA",
     "slug": "pens-italian-erga",
-    "imageUrl": "./pens.jpg",
+    "imageUrl": "./pen-erga.jpg",
     "subcategories": [
         {
             "name": "Local Stock",

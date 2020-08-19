@@ -19,7 +19,7 @@ const contactUsStyle = {
   },
   contactContent: {
     paddingBottom: "40px",
-    paddingTop: "40px"
+    paddingTop: "100px"
   },
   bigMap: {
     height: "55vh",

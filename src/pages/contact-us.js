@@ -20,7 +20,7 @@ import InfoArea from "../components/InfoArea/InfoArea.js";
 import CustomInput from "../components/CustomInput/CustomInput.js";
 import Button from "../components/CustomButtons/Button.js";
 import Footer from "../components/Footer/Footer.js";
-
+import logo from "../images/logo.png";
 import contactUsStyle from "../pagestyles/contactUsStyle.js";
 
 const useStyles = makeStyles(contactUsStyle);
@@ -34,10 +34,10 @@ export default function ContactUsPage() {
   return (
     <div>
       <Header
-        brand="Material Kit PRO React"
-        links={<HeaderLinks dropdownHoverColor="dark" />}
+        brand={<img src={logo} />}
+        links={<HeaderLinks dropdownHoverColor="info" />}
         fixed
-        color="dark"
+        color="white"
       />
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.contactContent}>
@@ -114,18 +114,6 @@ export default function ContactUsPage() {
                     </p>
                   }
                   icon={Phone}
-                  iconColor="primary"
-                />
-                <InfoArea
-                  className={classes.info}
-                  title="Legal Information"
-                  description={
-                    <p>
-                      Creative Tim Ltd. <br /> VAT · EN2341241 <br /> IBAN ·
-                      EN8732ENGB2300099123 <br /> Bank · Great Britain Bank
-                    </p>
-                  }
-                  icon={BusinessCenter}
                   iconColor="primary"
                 />
               </GridItem>

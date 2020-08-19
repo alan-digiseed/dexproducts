@@ -96,8 +96,8 @@ const productStyle = {
       fontWeight: "bolder",
       marginTop: "30px",
       marginBottom: "25px",
-      fontSize: "15px",
-      fontFamily: `"Roboto", "Helvetica", "Arial", sans-serif`
+      fontSize: "20px",
+      fontFamily: `"Cairo", "Helvetica", "Arial", sans-serif`
     }
   },
   titleRow: {
