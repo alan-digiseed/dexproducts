@@ -66,15 +66,6 @@ export default function PresentationPage({data}) {
               <List className={classes.list}>
                 <ListItem className={classes.inlineBlock}>
                   <a
-                    href="https://www.creative-tim.com/?ref=mkpr-presentation"
-                    target="_blank"
-                    className={classes.block}
-                  >
-                    Creative Tim
-                  </a>
-                </ListItem>
-                <ListItem className={classes.inlineBlock}>
-                  <a
                     href="https://www.creative-tim.com/presentation?ref=mkpr-presentation"
                     target="_blank"
                     className={classes.block}
@@ -84,16 +75,7 @@ export default function PresentationPage({data}) {
                 </ListItem>
                 <ListItem className={classes.inlineBlock}>
                   <a href="//blog.creative-tim.com/" className={classes.block}>
-                    Blog
-                  </a>
-                </ListItem>
-                <ListItem className={classes.inlineBlock}>
-                  <a
-                    href="https://www.creative-tim.com/license?ref=mkpr-presentation"
-                    target="_blank"
-                    className={classes.block}
-                  >
-                    Licenses
+                  FAQ
                   </a>
                 </ListItem>
               </List>

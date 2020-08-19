@@ -45,12 +45,12 @@ export default function ContactUsPage() {
             <h2 className={classes.title}>Send us a message</h2>
             <GridContainer>
               <GridItem md={6} sm={6}>
-                <p>
-                  You can contact us with anything related to our Products. We
+                <h3>
+                  Contact us if you have any questions about DEX or our products  <br />We
                   {"'"}ll get in touch with you as soon as possible.
                   <br />
                   <br />
-                </p>
+                </h3>
                 <form>
                   <CustomInput
                     labelText="Your Name"
@@ -97,8 +97,8 @@ export default function ContactUsPage() {
                   title="Find us at the office"
                   description={
                     <p>
-                      Bld Mihail Kogalniceanu, nr. 8, <br /> 7652 Bucharest,{" "}
-                      <br /> Romania
+                      Dex Group Pty. Ltd., <br /> 171 Hammond Road,{" "} <br /> (Entry through Rodeo Dr){" "}
+                      <br /> Dandenong South VIC 3175
                     </p>
                   }
                   icon={PinDrop}
@@ -106,11 +106,10 @@ export default function ContactUsPage() {
                 />
                 <InfoArea
                   className={classes.info}
-                  title="Give us a ring"
+                  title="Get in Touch"
                   description={
                     <p>
-                      Michael Jordan <br /> +40 762 321 762 <br /> Mon - Fri,
-                      8:00-22:00
+                     Phone: (03) 9768 3668 <br /> Fax: (03) 9768 3662 <br /> Email: sales@dexgroup.com.au
                     </p>
                   }
                   icon={Phone}

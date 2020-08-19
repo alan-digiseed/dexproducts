@@ -15,7 +15,7 @@ import Tooltip from "@material-ui/core/Tooltip";
 // @material-ui icons
 import Favorite from "@material-ui/icons/Favorite";
 
-import styles from "../../../pagestyles/ecommerceSections/latestOffersStyle.js";
+import styles from "../../../pageStyles/ecommerceSections/latestOffersStyle.js";
 
 const useStyles = makeStyles(styles);
 
@@ -39,7 +39,7 @@ const SectionProducts = (props) => {
                   />
                 </CardHeader>
                 <CardBody className={classes.textCenter} plain>
-                  <h4 className={classes.cardTitle}>{ci.title}</h4>
+                  <h3 className={classes.cardTitle}>{ci.title}</h3>
                   <p className={classes.cardDescription}>
                     {ci.description}
                   </p>

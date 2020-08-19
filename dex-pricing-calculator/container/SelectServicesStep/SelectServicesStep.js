@@ -13,7 +13,7 @@ class SelectServicesStep extends Component {
     render() {
         return (
             <form className="select-services-step">
-                <Typography variant="h3">Select Service</Typography>
+                <Typography variant="h4">Select Service</Typography>
 
                 <Box>
                     <Typography subtitle="true">Select your required delivery time frame and the decorations you require:</Typography>

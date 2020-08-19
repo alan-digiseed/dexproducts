@@ -12,7 +12,7 @@ import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
 import PropTypes from 'prop-types';
-import { makeStyles, withStyles } from '@material-ui/core/styles';
+import { makeStyles, withStyles, createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import SettingsIcon from '@material-ui/icons/Settings';
 import MoneyIcon from '@material-ui/icons/AttachMoney';
@@ -110,6 +110,9 @@ function getSteps() {
   return ['Service Specifications', 'Customise Quotation', 'Generate Quote'];
 }
 
+
+
+
 const PricingCalculator = (props) => {
   const [activeStep, setActiveStep] = React.useState(0);
   const steps = getSteps();
@@ -130,9 +133,25 @@ const PricingCalculator = (props) => {
     return <h1>loading...</h1>
   }
 
-  return (
+  const theme = createMuiTheme({
+    typography: {
+      fontFamily: [
+        'Cairo  ',
+        'BlinkMacSystemFont',
+        '"Segoe UI"',
+        'Roboto',
+        '"Helvetica Neue"',
+        'Arial',
+        'sans-serif',
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"',
+      ].join(','),
+    },  });
 
-    <div>
+  return (
+    <ThemeProvider theme={theme}>
+    <div style={{border: '12px solid blue', padding:15}} > 
       <Box>
         <Stepper activeStep={activeStep} orientation="horizontal" connector={<ColorlibConnector />}   >
           {steps.map((label, index) => (
@@ -168,6 +187,7 @@ const PricingCalculator = (props) => {
       </Box>
 
     </div>
+    </ThemeProvider>
   )
 }
 

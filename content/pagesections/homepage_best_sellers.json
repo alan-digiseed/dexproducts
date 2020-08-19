@@ -4,19 +4,19 @@
 	"layout": "section-featuredproducts",
 	"contentItems": [
 		{
-			"title": "item1",
-			"image": "/img/sa008_1_l.jpg"
+			"title": "Fashion Bags",
+			"image": "/img/bags.jpg"
 		},
 		{
-			"title": "item2",
-			"image": "/img/umbrella.png"
+			"title": "Branded Caps",
+			"image": "/img/aprons2.jpg"
 		},
 		{
-			"title": "item3",
-			"image": "/img/nwb020_1_l.jpg"
+			"title": "Drinkware",
+			"image": "/img/drink2.jpg"
 		},
 		{
-			"title": "item4",
+			"title": "Pens",
 			"image": "/img/mtp027-euroauz-matt.png"
 		}
 	]

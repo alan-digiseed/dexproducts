@@ -39,9 +39,18 @@ export default function SectionOverview() {
           backgroundImage: `url(${require("../../../images/features-6.jpg")})`
         }}
       >
-        <GridItem md={6} className={classNames(classes.mlAuto, classes.mrAuto)}>
+
+
+
+        <div className={classes.container}>
+          <GridContainer justify="center">
+          <GridItem md={6} className={classNames(classes.mlAuto, classes.mrAuto)}>
           <h2 className={classes.title}>Why choose DEX?</h2>
         </GridItem>
+           </GridContainer>
+        </div>
+
+
         <div className={classes.container}>
           <GridContainer justify="center">
             <GridItem md={4} className={classes.featuresShow}>

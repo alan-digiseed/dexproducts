@@ -21,35 +21,34 @@ export default function SectionDescription() {
     <div className={classes.section}>
       <div className={classes.container}>
         <div className={classes.features}>
+
+
+
+
+          
           <GridContainer>
             <GridItem md={4} sm={4}>
-              <InfoArea
-                title="EASY TO USE WEBSITE
+              <div>{<img src={"/img/1.png"} />}</div>
+              <div>
+                EASY TO USE WEBSITE
                 MAKES IT A BREEZE TO
-                QUOTE YOUR CLIENTS"
-                icon={Apps}
-                iconColor="danger"
-                vertical={true}
-              />
+                QUOTE YOUR CLIENTS
+                </div>
             </GridItem>
             <GridItem md={4} sm={4}>
-              <InfoArea
-                title="WE OFFER FAST TURN
-                AROUND ON ORDERS"
-                icon={ViewDay}
-                iconColor="primary"
-                vertical={true}
-              />
+            <div>{<img src={"/img/2.png"} />}</div>
+              <div>
+               WE OFFER FAST TURN <br/>
+               AROUND ON ORDERS
+                </div>
             </GridItem>
             <GridItem md={4} sm={4}>
-              <InfoArea
-                title="MANY DIFFERENT BRANDING
-                SOLUTIONS TO PERSONALISE
-                YOUR PRODUCTS"
-                icon={ViewCarousel}
-                iconColor="success"
-                vertical={true}
-              />
+            <div>{<img src={"/img/3.png"} />}</div>
+              <div>
+              MANY DIFFERENT BRANDING<br/>
+                SOLUTIONS TO PERSONALISE <br/>
+                YOUR PRODUCTS
+                </div>
             </GridItem>
           </GridContainer>
         </div>
