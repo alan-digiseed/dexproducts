@@ -213,7 +213,7 @@ export default function ProductPage({ data }) {
                         </GridContainer>
                         <GridContainer className={classes.pricingCalculator}>
                             <GridItem md={12} sm={12}>
-                                <h4 className={classes.title}>Pricing Calculator</h4>
+                                <h3 className={classes.title}>Price Your Product</h3>
                                 <Provider store={store}>
                                     <PricingCalculator></PricingCalculator>
                                 </Provider>

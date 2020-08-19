@@ -1,4 +1,4 @@
-  { "name": "Pens Made in China", "alias": "Pens", "title": "Pens Made In China", "slug": "pens-made-in-china", "imageUrl": "./pen-china.jpg", "subcategories": [
+  { "name": "Pens Made in China", "alias": "Pens Made In China", "title": "Pens Made In China", "slug": "pens-made-in-china", "imageUrl": "./pen-china.jpg", "subcategories": [
       {"name": "Plastic Pens", "slug": "pens-made-in-china-plastic-pens"
       },
       {"name": "Metal Pens","slug": "pens-made-in-china-metal-pens"
