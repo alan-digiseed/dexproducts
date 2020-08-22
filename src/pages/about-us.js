@@ -48,8 +48,8 @@ export default function AboutUsPage() {
         <div className={classes.container}>
           <GridContainer justify="center">
             <GridItem
-              md={8}
-              sm={8}
+              md={12}
+              sm={12}
               className={classNames(
                 classes.mlAuto,
                 classes.mrAuto,

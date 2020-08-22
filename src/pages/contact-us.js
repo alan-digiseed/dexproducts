@@ -16,6 +16,7 @@ import Header from "../components/Header/Header.js";
 import HeaderLinks from "../components/Header/HeaderLinks.js";
 import GridContainer from "../components/Grid/GridContainer.js";
 import GridItem from "../components/Grid/GridItem.js";
+import Parallax from "../components/Parallax/Parallax.js";
 import InfoArea from "../components/InfoArea/InfoArea.js";
 import CustomInput from "../components/CustomInput/CustomInput.js";
 import Button from "../components/CustomButtons/Button.js";
@@ -33,17 +34,33 @@ export default function ContactUsPage() {
   const classes = useStyles();
   return (
     <div>
-      <Header
+<Header
         brand={<img src={logo} />}
         links={<HeaderLinks dropdownHoverColor="info" />}
         fixed
         color="white"
       />
+      <Parallax image={require("../images/shop/shop-header2.png")} filter="dark" small>
+        <div className={classes.container}>
+          <GridContainer justify="center">
+            <GridItem
+              md={12}
+              sm={12}
+              className={classNames(
+                classes.mlAuto,
+                classes.mrAuto,
+                classes.textCenter
+              )}
+            >
+              <h1 className={classes.title}>Contact Us</h1>
+            </GridItem>
+          </GridContainer>
+        </div>
+      </Parallax>
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.contactContent}>
           <div className={classes.container}>
-            <h2 className={classes.title}>Send us a message</h2>
-            <GridContainer>
+                        <GridContainer>
               <GridItem md={6} sm={6}>
                 <h3>
                   Contact us if you have any questions about DEX or our products  <br />We
