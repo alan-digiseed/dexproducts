@@ -13,11 +13,14 @@ class SelectServicesStep extends Component {
     render() {
         return (
             <form className="select-services-step">
-                <Typography variant="h4">Select Service</Typography>
+                            
+                    <Typography> Select your required delivery time frame from the select service dropdown.  Then select the decorations you require. </Typography>
+                
 
-                <Box>
-                    <Typography subtitle="true">Select your required delivery time frame and the decorations you require:</Typography>
-                </Box>
+                <br/>
+                <Typography variant="h6">Step 1. Select Service (Delivery Time)</Typography>
+
+<br/>
 
                 <Box style={{marginTop: 20}}>
                     <ServiceSelector />

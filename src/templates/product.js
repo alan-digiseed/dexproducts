@@ -76,6 +76,16 @@ export default function ProductPage({ data }) {
     let pageSections = [];
 
     pageSections.push({
+        title: "Pricing Calculator",
+        content: (
+                <Provider store={store}>
+                    <PricingCalculator></PricingCalculator>
+                </Provider>
+
+        )
+    });
+
+    pageSections.push({
         title: "Description",
         content: (
             <p>
@@ -155,24 +165,11 @@ export default function ProductPage({ data }) {
         color="white"
       />
       <Parallax image={require("../images/shop/shop-header2.png")} filter="dark" small>
-        <div className={classes.container}>
-          <GridContainer justify="center">
-            <GridItem
-              md={8}
-              sm={8}
-              className={classNames(
-                classes.mlAuto,
-                classes.mrAuto,
-                classes.textCenter
-              )}
-            >
-              <h1 className={classes.title}>About Us</h1>
-            </GridItem>
-          </GridContainer>
+        <div className={classes.containerFluid}>
         </div>
       </Parallax>
             <div className={classNames(classes.section, classes.sectionGray)}>
-                <div className={classes.container}>
+                <div className={classes.containeFluid}>
                     <div className={classNames(classes.main, classes.mainRaised)}>
                         <GridContainer>
                             <GridItem md={6} sm={6}>
@@ -206,18 +203,9 @@ export default function ProductPage({ data }) {
                                 <h2 className={classes.title}>{product.name}</h2>
                                 <Accordion
                                     active={0}
-                                    activeColor="rose"
+                                    activeColor="danger"
                                     collapses={pageSections}
                                 />
-                            </GridItem>
-                        </GridContainer>
-                        <GridContainer className={classes.pricingCalculator}>
-                            <GridItem md={12} sm={12}>
-                                <h3 className={classes.title}>Price Your Product</h3>
-                                <Provider store={store}>
-                                    <PricingCalculator></PricingCalculator>
-                                </Provider>
-
                             </GridItem>
                         </GridContainer>
                     </div>

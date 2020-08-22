@@ -7,7 +7,7 @@ import Box from '@material-ui/core/Box';
 const GenerateQuoteStep = (props) => {
     return (
         <form className="generate-quote-step">
-            <Typography variant="h4">Quotation</Typography>
+            <Typography variant="h6">Quotation</Typography>
 
             <Box>
                 <Typography subtitle="true">.........................</Typography>

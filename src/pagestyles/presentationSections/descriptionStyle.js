@@ -22,8 +22,9 @@ const descriptionStyle = {
     paddingTop: "30px",
     paddingBottom: "0px",
     "& p": {
-      fontSize: "16px",
-      lineHeight: "1.6em"
+      fontSize: "20px",
+      lineHeight: "1.6em",
+      fontWeight: "600"
     }
   }
 };

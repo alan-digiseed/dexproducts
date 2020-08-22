@@ -52,7 +52,6 @@ export default function PresentationPage({data}) {
       {(page.sections.some(s => s.title === 'homepage_slider_top') >= 0) &&<div className={classes.carousel}><SectionCarousel section={page.sections.find(s => s.title === 'homepage_slider_top')} /></div>}
         {(page.sections.some(s => s.id === 'homepage_3boxes') >= 0) &&<SectionCards section={page.sections.find(s => s.id === 'homepage_3boxes')} />}
         {(page.sections.some(s => s.id === 'homepage_best_sellers') >= 0) &&<SectionProducts section={page.sections.find( s => s.id === 'homepage_best_sellers')} />} 
-      <SectionOverview />
       <SectionDescription />
    
       <Footer

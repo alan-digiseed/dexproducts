@@ -8,7 +8,7 @@ import classes from './CustomerQuote.module.css';
 const CustomerQuote = (props) => (
     // <RenderAsImage format="png">
         <div className="customer-quote">
-            <h2>MTP027 – EUROAUZ MATT</h2>
+            <h4>MTP027 – EUROAUZ MATT</h4>
             <div className="product-image float-left">
                 <img alt="MTP027-EUROAUZ-MATT" src="http://dexproducts.wpengine.com/wp-content/uploads/2020/04/MTP027-EUROAUZ-MATT.png" />
             </div>
