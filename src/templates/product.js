@@ -13,6 +13,9 @@ import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
+import Tabs from "@material-ui/core/Tabs";
+import Tab from "@material-ui/core/Tab";
+
 // @material-ui/icons
 import ShoppingCart from "@material-ui/icons/ShoppingCart";
 import LocalShipping from "@material-ui/icons/LocalShipping";
@@ -34,6 +37,7 @@ import CardHeader from "../components/Card/CardHeader.js";
 import CardBody from "../components/Card/CardBody.js";
 import CardFooter from "../components/Card/CardFooter.js";
 import Tooltip from "@material-ui/core/Tooltip";
+import TabPanel from "../components/TabPanel/TabPanel.js";
 
 import logo from "../images/logo.png";
 
@@ -58,34 +62,37 @@ const useStyles = makeStyles(productStyle);
 
 const productImages = require.context('../images/products', true);
 const productsImagePath = name => {
-  try {
-    return productImages(`./${name}`, true);
-  }
-  catch {
-    return productImages('./place-holder.jpg', true);
-  }
+    try {
+        return productImages(`./${name}`, true);
+    }
+    catch {
+        return productImages('./place-holder.jpg', true);
+    }
 }
 
 export default function ProductPage({ data }) {
 
+    const [selectedTab, setSelectedTab] = React.useState(0);
     const product = data.productsJson;
 
 
-    
+
 
     let pageSections = [];
 
     pageSections.push({
+        index: 2,
         title: "Pricing Calculator",
         content: (
-                <Provider store={store}>
-                    <PricingCalculator></PricingCalculator>
-                </Provider>
+            <Provider store={store}>
+                <PricingCalculator></PricingCalculator>
+            </Provider>
 
         )
     });
 
     pageSections.push({
+        index: 0,
         title: "Description",
         content: (
             <p>
@@ -97,20 +104,20 @@ export default function ProductPage({ data }) {
 
     let itemSizes = product.parts.map(p => {
         let dimensions = []
-        if (p.length) dimensions.push (`${p.length} mm`);
-        if (p.height) dimensions.push (`${p.height} mm`);
-        if (p.width) dimensions.push (`${p.width} mm`);
-        
+        if (p.length) dimensions.push(`${p.length} mm`);
+        if (p.height) dimensions.push(`${p.height} mm`);
+        if (p.width) dimensions.push(`${p.width} mm`);
+
         if (dimensions.length == 0)
             return null;
-        
+
         if (p.partName && p.partName !== '')
             return `${p.partName}: ${dimensions.join(' x ')}`;
         else
             return `${dimensions.join(' x ')}`;
     }).filter(pis => pis);
 
-    let colors = product.parts.map(p => {       
+    let colors = product.parts.map(p => {
         if (p.colours.length === 0)
             return null;
 
@@ -124,25 +131,26 @@ export default function ProductPage({ data }) {
 
     const cartonSize = (packing) => {
         let dimensions = new Array();
-        if (packing.cartonLength) dimensions.push (packing.cartonLength);
-        if (packing.cartonHeight) dimensions.push (packing.cartonHeight);
-        if (packing.cartonWidth) dimensions.push (packing.cartonWidth);
+        if (packing.cartonLength) dimensions.push(packing.cartonLength);
+        if (packing.cartonHeight) dimensions.push(packing.cartonHeight);
+        if (packing.cartonWidth) dimensions.push(packing.cartonWidth);
 
-        return(dimensions.join("*"));
+        return (dimensions.join("*"));
     }
 
     pageSections.push({
         title: "Additional Information",
+        index: 1,
         content: (
             <div>
                 {product.additionalInfo && <p>
-                    {product.additionalInfo}                
+                    {product.additionalInfo}
                 </p>}
                 {(itemSizes.length > 0) && <p><strong>Item Size: </strong>{itemSizes.join('; ')}</p>}
                 {(colors.length > 0) && <p><strong>Color Range: </strong>{colors.join('; ')}</p>}
                 {(product.packing.description && product.packing.description !== '') && <p><strong>Package: </strong>{product.packing.description}</p>}
-                {(printOptions.length > 0) && <p><strong>Branding Options</strong><br/>{printOptions.map(po => (<span key={po.printType}><strong>{po.printType}</strong> {po.description}<br/></span>))}</p>}
-                <p><strong>Qty per box: {product.packing.cartonQuantity}</strong><br/><strong>Packaging size (cm):</strong> {cartonSize(product.packing)}<br/><strong>Packaging weight (kg):</strong> {product.packing.cartonWeight}</p>
+                {(printOptions.length > 0) && <p><strong>Branding Options</strong><br />{printOptions.map(po => (<span key={po.printType}><strong>{po.printType}</strong> {po.description}<br /></span>))}</p>}
+                <p><strong>Qty per box: {product.packing.cartonQuantity}</strong><br /><strong>Packaging size (cm):</strong> {cartonSize(product.packing)}<br /><strong>Packaging weight (kg):</strong> {product.packing.cartonWeight}</p>
             </div>
         )
     });
@@ -155,19 +163,22 @@ export default function ProductPage({ data }) {
         }
     })
 
+    const handleChangeTab = (event, newValue) => {
+        setSelectedTab(newValue);
+    }
 
     return (
         <div className={classes.productPage}>
-      <Header
-        brand={<img src={logo} />}
-        links={<HeaderLinks dropdownHoverColor="info" />}
-        fixed
-        color="white"
-      />
-      <Parallax image={require("../images/shop/shop-header2.png")} filter="dark" small>
-        <div className={classes.containerFluid}>
-        </div>
-      </Parallax>
+            <Header
+                brand={<img src={logo} />}
+                links={<HeaderLinks dropdownHoverColor="info" />}
+                fixed
+                color="white"
+            />
+            <Parallax image={require("../images/shop/shop-header2.png")} filter="dark" small>
+                <div className={classes.containerFluid}>
+                </div>
+            </Parallax>
             <div className={classNames(classes.section, classes.sectionGray)}>
                 <div className={classes.containeFluid}>
                     <div className={classNames(classes.main, classes.mainRaised)}>
@@ -201,11 +212,29 @@ export default function ProductPage({ data }) {
                             </GridItem>
                             <GridItem md={6} sm={6}>
                                 <h2 className={classes.title}>{product.name}</h2>
-                                <Accordion
+                                <Tabs
+                                    value={selectedTab}
+                                    onChange={handleChangeTab}
+                                    indicatorColor="primary"
+                                    textColor="primary"
+                                    centered
+                                >
+                                    <Tab label="Description" />
+                                    <Tab label="Additional Information" />
+                                    <Tab label="Pricing Calculator" />
+                                </Tabs>
+                                {pageSections.map(ps => (
+                                    <TabPanel value={selectedTab} index={ps.index} >
+                                        {ps.content}
+                                    </TabPanel>
+
+                                ))}
+
+                                {/* <Accordion
                                     active={0}
                                     activeColor="danger"
                                     collapses={pageSections}
-                                />
+                                /> */}
                             </GridItem>
                         </GridContainer>
                     </div>
