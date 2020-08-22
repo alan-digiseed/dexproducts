@@ -10,6 +10,7 @@ import {
 } from "../../shared/material-kit-pro-react.js";
 
 import tooltipsStyle from "../../shared/tooltipsStyle.js";
+import { red } from "@material-ui/core/colors";
 
 const styles = {
   title: {
@@ -20,7 +21,8 @@ const styles = {
   ...tooltipsStyle,
   section: {
     ...section,
-    padding: "70px 0px"
+    padding: "70px 0px",
+    backgroundColor: '#FFF',
   },
   coloredShadow,
   cardDescription: {

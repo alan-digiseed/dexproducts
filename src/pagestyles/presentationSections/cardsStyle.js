@@ -14,7 +14,7 @@ const cardsStyle = {
     ...section,
     padding: "0px 30px"
   },
-  sectionDark,
+  
   container,
   sectionDescription,
   title: {
@@ -31,7 +31,7 @@ const cardsStyle = {
     maxWidth: "1040px",
     marginTop: "-140px",
     position: "relative",
-    height: "660px",
+    height: "1000px",
     "& img": {
       maxWidth: "1040px",
       width: "auto",
