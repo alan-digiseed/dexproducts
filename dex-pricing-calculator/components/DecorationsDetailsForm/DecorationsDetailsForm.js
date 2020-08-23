@@ -127,10 +127,7 @@ const DecorationsDetailsForm = (props) =>{
 
         </Grid>
         <Grid item xs={3}>
-          <Box padding={2}>
-            <p>To get a more precise quote, use the <strong><em>Choose Service</em></strong> dropdown to identify the timeframe you require.</p>
-            <p>Alternatively, you can proceed and we will provide you with a summary quote.</p>
-          </Box>
+
         </Grid>
       </Grid>
 

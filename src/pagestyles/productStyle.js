@@ -7,6 +7,7 @@ import {
   title,
   cardTitle,
   grayColor,
+  blackColor,
   roseColor
 } from "../shared/material-kit-pro-react.js";
 
@@ -74,7 +75,7 @@ const productStyle = {
         width: "80%",
         maxWidth: "85px",
         margin: "0 auto",
-        padding: "8px",
+        padding: "5px",
         display: "block",
         border: "1px solid transparent",
         background: "transparent",
@@ -91,12 +92,12 @@ const productStyle = {
   },
   pricingCalculator: {
     "& $title": {
-      color: grayColor[1],
+      color: blackColor[1],
       textDecoration: "none",
       fontWeight: "bolder",
       marginTop: "30px",
       marginBottom: "25px",
-      fontSize: "20px",
+      fontSize: "18px",
       fontFamily: `"Cairo", "Helvetica", "Arial", sans-serif`
     }
   },

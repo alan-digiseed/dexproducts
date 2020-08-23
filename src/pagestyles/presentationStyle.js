@@ -1,5 +1,5 @@
 import {
-  container,
+  containerFluid,
   title,
   main,
   whiteColor,
@@ -23,8 +23,8 @@ const presentationStyle = {
     height: "90vh",
     overflow: "hidden"
   },
-  container: {
-    ...container,
+  containerFluid: {
+    ...containerFluid,
     zIndex: 1
   },
   title: {

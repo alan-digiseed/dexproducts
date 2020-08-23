@@ -1,8 +1,12 @@
-thead td {
+table {
+    border-collapse: collapse;
+  }
+  
+  td, th {
+    border: 1px solid #000 !important;
+    padding-top: 2px !important;
+    padding-left: 15px !important;
+    padding-bottom: 2px !important;
     text-align: center;
-}
-
-tbody td input {
-    text-align: center;
-    width: 40px;
-}
+    font-size: 12px !important;
+  }

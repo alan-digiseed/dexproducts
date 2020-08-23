@@ -151,7 +151,7 @@ const PricingCalculator = (props) => {
 
   return (
     <ThemeProvider theme={theme}>
-    <div style={{border: '12px solid blue', padding:15}} > 
+    <div style={{border: '5px solid red', padding:15}} > 
       <Box>
         <Stepper activeStep={activeStep} orientation="horizontal" connector={<ColorlibConnector />}   >
           {steps.map((label, index) => (

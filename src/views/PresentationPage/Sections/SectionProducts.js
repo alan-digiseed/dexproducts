@@ -39,7 +39,7 @@ const SectionProducts = (props) => {
                   />
                 </CardHeader>
                 <CardBody className={classes.textCenter} plain>
-                  <h3 className={classes.cardTitle}>{ci.title}</h3>
+                  <h4 className={classes.cardTitle}>{ci.title}</h4>
                   <p className={classes.cardDescription}>
                     {ci.description}
                   </p>
