@@ -8,15 +8,13 @@ import classes from './CustomerQuote.module.css';
 const CustomerQuote = (props) => (
     // <RenderAsImage format="png">
         <div className="customer-quote">
-            <h4>MTP027 – EUROAUZ MATT</h4>
+            <h4>{props.product.productCode} - {props.product.name}</h4>
             <div className="product-image float-left">
-                <img alt="MTP027-EUROAUZ-MATT" src="http://dexproducts.wpengine.com/wp-content/uploads/2020/04/MTP027-EUROAUZ-MATT.png" />
+                <img alt={props.product.productCode} src={props.mainImage} />
             </div>
             <div className="clear-floats">
                 <div className={classes.productDescription}>
-                    Aluminium Stylish design pen with Shiny Silver Fittings in a Range of 4 Metallic colours, Click Action with Plastic Parker-Type Germany black ink Refill Supplied.<br/>
-                    <br/>
-                    With Genuine Copper Metal Tip
+                    {props.product.description}
                 </div>
                 <div className={classes.pricingChart}>
                     <PricingChart title="Unbranded"></PricingChart>
@@ -32,8 +30,9 @@ const CustomerQuote = (props) => (
 const mapStateToProps = state => {
      return {
          productPrices: state.currentPriceList.productPrices,
-         userDecorations: state.userDecorations
-
+         userDecorations: state.userDecorations,
+         product: state.product,
+         mainImage: state.mainImage
      }
 }
 

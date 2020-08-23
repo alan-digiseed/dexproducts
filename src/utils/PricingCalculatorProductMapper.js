@@ -2,6 +2,7 @@ const mapToPricingCalculatorProduct = (prod) => {
 
     return {
         productCode: prod.productCode,
+        name: prod.name,
         productPriceLists: prod.priceLists.map(pl => mapToPricingCalculatorPriceList(pl))    
     }
 }

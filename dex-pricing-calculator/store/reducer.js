@@ -38,6 +38,7 @@ function PricingCalculatorReducer(state = initialState, action) {
       state = {
         ...state,
         product: action.payload.product,
+        mainImage: action.payload.mainImage,
         userDecorations: getInitialUserDecorations(action.payload.product),
       }
       break;

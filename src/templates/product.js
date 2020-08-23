@@ -75,7 +75,7 @@ function ProductPage({ data, ...props }) {
     const [selectedTab, setSelectedTab] = React.useState(0);
     const product = data.productsJson;
     useEffect(() => {
-        props.setProduct(mapToPricingCalculatorProduct(product))
+        props.setProduct(mapToPricingCalculatorProduct(product), productsImagePath(product.images[0]))
     })
     
     let pageSections = [];
@@ -323,8 +323,8 @@ query ($id : String!) {
 
   const mapDispatchToProps = dispatch => {
     return {
-      setProduct: (product) => {
-        dispatch({ type: 'SET_PRODUCT', payload: {product: product} })
+      setProduct: (product, mainImage) => {
+        dispatch({ type: 'SET_PRODUCT', payload: {product: product, mainImage: mainImage} })
       }      
     }
   }
