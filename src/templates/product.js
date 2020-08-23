@@ -82,10 +82,7 @@ function ProductPage({ data, ...props }) {
     pageSections.push({
         title: "Pricing Calculator",
         content: (
-                <Provider store={store}>
-                    <PricingCalculator></PricingCalculator>
-                </Provider>
-
+            <PricingCalculator></PricingCalculator>
         )
     });
 
