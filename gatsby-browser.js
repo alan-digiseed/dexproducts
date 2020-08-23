@@ -5,3 +5,5 @@
  */
 
 // You can delete this file if you're not using it
+import wrapWithProvider from "./src/store/wrapWithProvider"
+export const wrapRootElement = wrapWithProvider

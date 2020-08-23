@@ -92,10 +92,12 @@ export const selectRetailPricingTable = (state) => {
 export const selectAvailableTimeframes = (state) => {
     let availableTimeFrames = [];
 
-    availableTimeFrames = state.product.productPriceLists.reduce( (result, pl) => {
-        let newResult = [...result, ...getTimeFramesForPriceList(pl)];
-        return newResult;
-    }, availableTimeFrames);
+    if (state.product) {
+        availableTimeFrames = state.product.productPriceLists.reduce( (result, pl) => {
+            let newResult = [...result, ...getTimeFramesForPriceList(pl)];
+            return newResult;
+        }, availableTimeFrames);   
+    }
     
     return availableTimeFrames;
 }
