@@ -2,12 +2,7 @@ import React from "react";
 // core components
 import GridContainer from "../../../components/Grid/GridContainer.js";
 import GridItem from "../../../components/Grid/GridItem.js";
-import InfoArea from "../../../components/InfoArea/InfoArea.js";
 
-// @material-ui icons
-import Apps from "@material-ui/icons/Apps";
-import ViewDay from "@material-ui/icons/ViewDay";
-import ViewCarousel from "@material-ui/icons/ViewCarousel";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -23,7 +18,7 @@ export default function SectionDescription() {
         <div className={classes.features}>        
           <GridContainer>
             <GridItem md={4} sm={4}>
-              <div>{<img src={"/img/1.png"} />}</div>
+              <div>{<img alt="EASY" src={"/img/1.png"} />}</div>
              
               <div style= {{fontSize: '20px', fontWeight: 800}}>
                 EASY TO USE WEBSITE
@@ -32,14 +27,14 @@ export default function SectionDescription() {
                 </div>
             </GridItem>
             <GridItem md={4} sm={4}>
-            <div>{<img src={"/img/Asset2.png"} />}</div>
+            <div>{<img alt="SPEEDY" src={"/img/Asset2.png"} />}</div>
             <div style= {{fontSize: '20px', fontWeight: 800}}>
                WE OFFER FAST TURN <br/>
                AROUND ON ORDERS
                 </div>
             </GridItem>
             <GridItem md={4} sm={4}>
-            <div>{<img src={"/img/3.png"} />}</div>
+            <div>{<img alt="PERSONALISED" src={"/img/3.png"} />}</div>
             <div style= {{fontSize: '20px', fontWeight: 800}}>
               MANY DIFFERENT BRANDING<br/>
                 SOLUTIONS TO PERSONALISE <br/>

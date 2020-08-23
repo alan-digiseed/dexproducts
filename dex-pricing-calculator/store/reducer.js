@@ -1,7 +1,4 @@
-import products from '../services/productcatalogue';
 import { getPriceList } from '../store/calculator';
-
-const prod = products.find((product) => product.productCode === 'MTP027');
 
 const getInitialUserDecorations = (prod) => {
   let allDecorationServices = prod.productPriceLists.reduce((prevResult, currValue) => prevResult.concat(currValue.decorations) , []);
@@ -28,15 +25,23 @@ const initialState = {
   initialized: false,
   deliveryTimeFrameDays: 0,
   includeSetupsInUnitPrice: false,
-  product: prod,
-  userDecorations: getInitialUserDecorations(prod),
   markups: [],
   markupOnSetupPrice: 0,
   additionalInfo: 'Additional Info'
 };
   
-function rootReducer(state = initialState, action) {
+function PricingCalculatorReducer(state = initialState, action) {
+  if (!action)
+    return;
   switch (action.type) {
+    case 'SET_PRODUCT': {
+      state = {
+        ...state,
+        product: action.payload.product,
+        userDecorations: getInitialUserDecorations(action.payload.product),
+      }
+      break;
+    }
     case 'INITIALIZE': {
       state = {
         ...state,
@@ -138,4 +143,4 @@ function rootReducer(state = initialState, action) {
     return state;
   }
 
-  export default rootReducer;
+  export default PricingCalculatorReducer;

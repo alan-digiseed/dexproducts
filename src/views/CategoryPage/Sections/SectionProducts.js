@@ -1,20 +1,9 @@
 import React from "react";
 import { Link } from "gatsby";
 // nodejs library that concatenates classes
-import classNames from "classnames";
-// plugin that creates slider
-import Slider from "nouislider";
+//import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-import Checkbox from "@material-ui/core/Checkbox";
-import Tooltip from "@material-ui/core/Tooltip";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-// @material-ui icons
-import Favorite from "@material-ui/icons/Favorite";
-import FavoriteBorder from "@material-ui/icons/FavoriteBorder";
-import Cached from "@material-ui/icons/Cached";
-import Subject from "@material-ui/icons/Subject";
-import Check from "@material-ui/icons/Check";
 // core components
 import Accordion from "../../../components/Accordion/Accordion.js";
 import GridContainer from "../../../components/Grid/GridContainer.js";
@@ -22,13 +11,6 @@ import GridItem from "../../../components/Grid/GridItem.js";
 import Card from "../../../components/Card/Card.js";
 import CardHeader from "../../../components/Card/CardHeader.js";
 import CardBody from "../../../components/Card/CardBody.js";
-import CardFooter from "../../../components/Card/CardFooter.js";
-import Button from "../../../components/CustomButtons/Button.js";
-import Clearfix from "../../../components/Clearfix/Clearfix.js";
-
-import suit1 from "../../../images/examples/suit-1.jpg";
-import dg3 from "../../../images/dg3.jpg";
-import dg1 from "../../../images/dg1.jpg";
 
 import styles from "../../../pagestyles/productStyle.js";
 

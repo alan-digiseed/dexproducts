@@ -1,6 +1,6 @@
-
 /*eslint-disable*/
-import React from "react";
+import  React, { useEffect} from "react";
+import { connect } from 'react-redux';
 import { graphql } from "gatsby";
 // nodejs library that concatenates classes
 import classNames from "classnames";
@@ -55,8 +55,8 @@ import product4 from "../images/examples/product4.jpg";
 
 // pricing calculator
 import { Provider } from 'react-redux';
-import store from '../../dex-pricing-calculator/store/index';
 import PricingCalculator from '../../dex-pricing-calculator/container/PricingCalculator/PricingCalculator';
+import mapToPricingCalculatorProduct from "../utils/PricingCalculatorProductMapper";
 
 const useStyles = makeStyles(productStyle);
 
@@ -70,24 +70,21 @@ const productsImagePath = name => {
     }
 }
 
-export default function ProductPage({ data }) {
+function ProductPage({ data, ...props }) {
 
     const [selectedTab, setSelectedTab] = React.useState(0);
     const product = data.productsJson;
-
-
-
-
+    useEffect(() => {
+        props.setProduct(mapToPricingCalculatorProduct(product))
+    })
+    
     let pageSections = [];
 
     pageSections.push({
         index: 2,
         title: "Pricing Calculator",
         content: (
-            <Provider store={store}>
-                <PricingCalculator></PricingCalculator>
-            </Provider>
-
+            <PricingCalculator></PricingCalculator>
         )
     });
 
@@ -302,5 +299,34 @@ query ($id : String!) {
         description
         printType
       }
+      priceLists {
+        blanks {
+          type
+          description
+          prices {
+            qty
+            unitPrice
+          }
+        }
+        services {
+          Setup
+          days
+          maxOrderQty
+          minOrderQty
+          priceListType
+          serviceType
+          unitPrice
+        }
+      }
     }
   }`;
+
+  const mapDispatchToProps = dispatch => {
+    return {
+      setProduct: (product) => {
+        dispatch({ type: 'SET_PRODUCT', payload: {product: product} })
+      }      
+    }
+  }
+    
+  export default connect(null, mapDispatchToProps)(ProductPage);
