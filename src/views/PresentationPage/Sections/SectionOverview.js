@@ -5,25 +5,10 @@ import classNames from "classnames";
 import GridContainer from "../../../components/Grid/GridContainer.js";
 import GridItem from "../../../components/Grid/GridItem.js";
 import InfoArea from "../../../components/InfoArea/InfoArea.js";
-import Card from "../../../components/Card/Card.js";
-import CardHeader from "../../../components/Card/CardHeader.js";
-import CardBody from "../../../components/Card/CardBody.js";
 // @material-ui icons
 import Grid from "@material-ui/icons/GridOn";
-import PhoneLink from "@material-ui/icons/Phonelink";
-import AccessTime from "@material-ui/icons/AccessTime";
-import AttachMoney from "@material-ui/icons/AttachMoney";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-
-// images
-import Vodafone from "../../../images/ourClients/vodafone.jpg";
-import Microsoft from "../../../images/ourClients/microsoft.jpg";
-import Harvard from "../../../images/ourClients/harvard.jpg";
-import Standford from "../../../images/ourClients/stanford.jpg";
-import profilePic1 from "../../../images/test1.jpg";
-import profilePic2 from "../../../images/test2.jpg";
-import profilePic3 from "../../../images/test3.jpg";
 
 import overviewStyle from "../../../pagestyles/presentationSections/overviewStyle.js";
 

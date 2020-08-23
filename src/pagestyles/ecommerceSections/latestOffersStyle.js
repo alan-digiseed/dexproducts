@@ -6,7 +6,6 @@ import {
   grayColor,
   dangerColor,
   mlAuto,
-  mrAuto
 } from "../../shared/material-kit-pro-react.js";
 
 import tooltipsStyle from "../../shared/tooltipsStyle.js";

@@ -1,5 +1,4 @@
 import { getPriceList } from '../store/calculator';
-import PricingCalculator from '../container/PricingCalculator/PricingCalculator';
 
 const getInitialUserDecorations = (prod) => {
   let allDecorationServices = prod.productPriceLists.reduce((prevResult, currValue) => prevResult.concat(currValue.decorations) , []);
