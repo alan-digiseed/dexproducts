@@ -92,9 +92,9 @@ function ProductPage({ data, ...props }) {
         index: 0,
         title: "Description",
         content: (
-            <p>
+            <div>
                 {product.description}
-            </p>
+            </div>
         )
     });
 
@@ -221,7 +221,7 @@ function ProductPage({ data, ...props }) {
                                     <Tab label="Pricing Calculator" />
                                 </Tabs>
                                 {pageSections.map(ps => (
-                                    <TabPanel value={selectedTab} index={ps.index} >
+                                    <TabPanel key={ps.index} value={selectedTab} index={ps.index} >
                                         {ps.content}
                                     </TabPanel>
 
