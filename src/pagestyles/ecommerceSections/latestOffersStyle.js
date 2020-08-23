@@ -9,7 +9,6 @@ import {
 } from "../../shared/material-kit-pro-react.js";
 
 import tooltipsStyle from "../../shared/tooltipsStyle.js";
-import { red } from "@material-ui/core/colors";
 
 const styles = {
   title: {

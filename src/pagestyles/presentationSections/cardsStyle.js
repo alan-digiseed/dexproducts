@@ -1,7 +1,6 @@
 import {
   container,
   section,
-  sectionDark,
   sectionDescription,
   title,
   whiteColor,
