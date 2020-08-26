@@ -109,6 +109,22 @@ const getTimeFramesForPriceList = (priceList) => {
     return availableTimeFrames
 }
 
+const combinePriceLists = (product) => {
+    return  {
+        type: "combined",
+        mindays: product.productPriceLists.map(pl => pl.minDays).reduce((prevValue, currValue) => Math.min(prevValue, currValue), 1000),
+        maxdays: product.productPriceLists.map(pl => pl.maxDays).reduce((prevValue, currValue) => Math.max(prevValue, currValue), 0),
+        productPrices:  [].concat(...product.productPriceLists.map(pl => pl.productPrices)),
+        decorations: [].concat(...product.productPriceLists.map(pl => pl.decorations))
+    }
+}
+
 export const getPriceList = (days, product) => {
-    return product.productPriceLists.find(pl => pl.decorations.find( d => d.days === days));
+
+    if (days !== 0) {
+        return product.productPriceLists.find(pl => pl.decorations.find( d => d.days === days));
+    }
+    else {
+        return combinePriceLists(product);
+    }
 }

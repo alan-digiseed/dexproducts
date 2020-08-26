@@ -176,6 +176,7 @@ const PricingCalculator = (props) => {
             Back
                         </Button>
           <Button
+            disabled={activeStep === 0 && props.deliveryTimeFrameDays === 0}
             variant="contained"
             color="primary"
             onClick={handleNext}
@@ -188,6 +189,11 @@ const PricingCalculator = (props) => {
   )
 }
 
+const mapStateToProps = state => {
+  return {
+     deliveryTimeFrameDays: state.deliveryTimeFrameDays,
+  }
+}
 const mapDispatchToProps = dispatch => {
   return {
     initalize: () => {
@@ -197,4 +203,4 @@ const mapDispatchToProps = dispatch => {
 }
 
 
-export default connect(null, mapDispatchToProps)(PricingCalculator);
+export default connect(mapStateToProps, mapDispatchToProps)(PricingCalculator);
