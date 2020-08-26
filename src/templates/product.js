@@ -76,6 +76,7 @@ function ProductPage({ data, ...props }) {
     const product = data.productsJson;
     useEffect(() => {
         props.setProduct(mapToPricingCalculatorProduct(product), productsImagePath(product.images[0]));
+        props.setDeliveryTimeFrameDays(0);        
     })
     
     let pageSections = [];
@@ -325,6 +326,9 @@ query ($id : String!) {
     return {
       setProduct: (product, mainImage) => {
         dispatch({ type: 'SET_PRODUCT', payload: {product: product, mainImage: mainImage} })
+      },
+      setDeliveryTimeFrameDays: (deliveryTimeFrameDays) => {
+          dispatch({type: 'UPDATE_DELIVERY_TIME_FRAME_DAYS', payload: { deliveryTimeFrameDays: 0}})
       }
     }
   }

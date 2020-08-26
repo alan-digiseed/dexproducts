@@ -114,7 +114,8 @@ const combinePriceLists = (product) => {
         type: "combined",
         mindays: product.productPriceLists.map(pl => pl.minDays).reduce((prevValue, currValue) => Math.min(prevValue, currValue), 1000),
         maxdays: product.productPriceLists.map(pl => pl.maxDays).reduce((prevValue, currValue) => Math.max(prevValue, currValue), 0),
-        decorations: [].concate(...product.productPriceLists.map(pl => pl.decorations))
+        productPrices:  [].concat(...product.productPriceLists.map(pl => pl.productPrices)),
+        decorations: [].concat(...product.productPriceLists.map(pl => pl.decorations))
     }
 }
 
