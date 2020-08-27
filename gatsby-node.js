@@ -116,8 +116,24 @@ const  createCategoryPages = async ({actions, graphql}) => {
           name: category.name
         }
       });
+
+    for (j=0; j < category.subcategories.length; j++) {
+      let subcategory = category.subcategories[j];    
+      await createPage({
+          path: `/subcategory/${subcategory.slug}`,
+          component: path.resolve(`src/templates/category.js`),
+          context: {            
+            slug: category.slug,
+            name: category.name,
+            subcategorySlug: subcategory.slug,
+            subcategoryName: subcategory.name
+          }
+        });
+        
+    }
   }
 }
+
 
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions

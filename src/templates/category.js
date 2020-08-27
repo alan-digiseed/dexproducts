@@ -21,7 +21,9 @@ import styles from "../pagestyles/ecommerceStyle.js";
 
 const useStyles = makeStyles(styles);
 
-export default function CategoryPage({ data }) {
+export default function CategoryPage({ data, pageContext }) {
+    let subcategorySlug = pageContext.subcategorySlug;
+
     React.useEffect(() => {
         window.scrollTo(0, 0);
         document.body.scrollTop = 0;
@@ -59,48 +61,48 @@ export default function CategoryPage({ data }) {
         </div>
       </Parallax>
       <div className={classNames(classes.main, classes.mainRaised)}>
-        <SectionProducts allCategories={data.allCategoriesJson.nodes} category={data.categoriesJson} products={data.allProductsJson.nodes}/>
+        <SectionProducts allCategories={data.allCategoriesJson.nodes} subcategorySlug={subcategorySlug} category={data.categoriesJson} products={data.allProductsJson.nodes}/>
       </div>
     </div>
     );
 }
 
 export const query = graphql`
-    query ($slug: String!, $name: String!) {
-        allProductsJson(filter: {category1: {eq: $name}}) {
-          nodes {
-            productCode
-            name
-            description
-            additionalInfo
-            category1
-            category2
-            category3
-            images            
-          }
-        }
-        categoriesJson(slug: {eq: $slug}) {
-            id
-            imageUrl
-            name
-            slug
-            title
-            subcategories {
-                name
-                slug
-            }
-        }
-        allCategoriesJson {
-            nodes {
-                id
-                imageUrl
-                name
-                slug
-                title
-                subcategories {
-                    name
-                    slug
-                }
-            }
-        }
-      }`;
+query ($slug: String!, $name: String!, $subcategoryName: String) {
+  allProductsJson(filter: {category1: {eq: $name}, category2: {eq: $subcategoryName}}) {
+    nodes {
+      productCode
+      name
+      description
+      additionalInfo
+      category1
+      category2
+      category3
+      images
+    }
+  }
+  categoriesJson(slug: {eq: $slug}) {
+    id
+    imageUrl
+    name
+    slug
+    title
+    subcategories {
+      name
+      slug
+    }
+  }
+  allCategoriesJson {
+    nodes {
+      id
+      imageUrl
+      name
+      slug
+      title
+      subcategories {
+        name
+        slug
+      }
+    }
+  }
+}`;
