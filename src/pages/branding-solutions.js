@@ -16,7 +16,7 @@ import Parallax from "../components/Parallax/Parallax.js";
 import Footer from "../components/Footer/Footer.js";
 // sections for this page
 import HeaderLinks from "../components/Header/HeaderLinks.js";
-import SectionServices from "../views/AboutUsPage/Sections/SectionServices.js";
+import SectionServices from "../views/BrandingPage/Sections/SectionServices.js";
 import logo from "../images/logo.png";
 import face1 from "../images/faces/card-profile6-square.jpg";
 import face2 from "../images/faces/christian.jpg";
