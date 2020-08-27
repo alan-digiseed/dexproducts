@@ -1,5 +1,6 @@
 import {
   whiteColor,
+  roseColor,
   defaultFont,
   hexToRgb
 } from "../shared/material-kit-pro-react.js";
@@ -11,7 +12,7 @@ const customTabsStyle = {
     padding: "10px 10px 10px 0",
     lineHeight: "24px",
     fontSize: "14px",
-    color: whiteColor
+    color: roseColor
   },
   cardTitleRTL: {
     float: "right",

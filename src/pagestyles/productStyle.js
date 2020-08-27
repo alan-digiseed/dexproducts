@@ -14,6 +14,7 @@ import {
 import tooltipsStyle from "../shared/tooltipsStyle.js";
 import imagesStyles from "../shared/imagesStyles.js";
 import customSelectStyle from "../shared/customSelectStyle.js";
+import { pink } from "@material-ui/core/colors";
 
 const productStyle = {
   mlAuto,
@@ -34,7 +35,7 @@ const productStyle = {
   },
   title: {
     ...title,
-    marginBottom: 0
+    marginBottom: 0,
   },
   sectionGray: {
     background: grayColor[14]
@@ -131,7 +132,7 @@ const productStyle = {
   },
   cardTitle: {
     ...cardTitle,
-    textAlign: "center"
+    textAlign: "left"
   },
   cardDescription: {
     textAlign: "center",

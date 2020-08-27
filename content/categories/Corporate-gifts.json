@@ -1,0 +1,16 @@
+{
+    "name": "Corporate Gifts",
+    "title": "Corporate Gifts",
+    "slug": "corporate",
+    "imageUrl": "./corp.jpg",
+    "subcategories": [
+        {
+            "name": "Drink Gift Sets",
+            "slug": "drink-gift-sets"
+        },
+        {
+            "name": "Car Cupholder Tissue",
+            "slug": "car-cupholder-tissue"
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "name": "Trade Show",
+    "title": "Trade Show",
+    "slug": "trade-show",
+    "imageUrl": "./trade2.jpg",
+    "subcategories": [
+        {
+            "name": "Lanyards and Accessories",
+            "slug": "lanyards-and-accessories"
+        },
+        {
+            "name": "Button Badges",
+            "slug": "button-badges"
+        }
+    ]
+}

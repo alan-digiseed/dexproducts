@@ -152,6 +152,16 @@ function ProductPage({ data, ...props }) {
         )
     });
 
+    pageSections.push({
+        index: 3,
+        title: "Comments",
+        content: (
+            <div>
+                {product.description}
+            </div>
+        )
+    });
+
     const classes = useStyles();
     const images = product.images.map(i => {
         return {

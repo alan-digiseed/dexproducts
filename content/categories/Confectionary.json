@@ -1,0 +1,12 @@
+{
+    "name": "Confectionery",
+    "title": "Confectionery",
+    "slug": "confectionery",
+    "imageUrl": "./confect.jpg",
+    "subcategories": [
+        {
+            "name": "Mints",
+            "slug": "mints"
+        }
+    ]
+}
