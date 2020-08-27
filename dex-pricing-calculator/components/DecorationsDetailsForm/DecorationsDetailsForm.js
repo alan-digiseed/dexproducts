@@ -9,6 +9,7 @@ import TableRow from '@material-ui/core/TableRow';
 import TableCell from '@material-ui/core/TableCell';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
+import styles from './DecorationsDetailsForm.module.css'
 
 const DecorationsDetailsForm = (props) =>{
 
@@ -98,7 +99,7 @@ const DecorationsDetailsForm = (props) =>{
 
       <Grid container>
         <Grid item xs={9}>
-          <Table>
+          <Table className={styles.allServicesTable}>
             <TableHead>
               <TableRow>
                 <TableCell align="center">Decoration Service</TableCell>
@@ -125,8 +126,8 @@ const DecorationsDetailsForm = (props) =>{
           </Table>
 
         </Grid>
-        <Grid item xs={3}>
-
+        <Grid item xs={3} className={styles.instructions}>
+          Unit pricing varies depending on the service selected.<br/><br/> Please select a service to continue with your quote.
         </Grid>
       </Grid>
 
