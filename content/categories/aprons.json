@@ -1,0 +1,16 @@
+{
+    "name": "Aprons and Caps",
+    "title": "Aprons and Caps",
+    "slug": "aprons",
+    "imageUrl": "./aprons2.jpg",
+    "subcategories": [
+        {
+            "name": "Aprons",
+            "slug": "aprons-aprons"
+        },
+        {
+            "name": "Caps",
+            "slug": "aprons-caps"
+        }
+    ]
+}
