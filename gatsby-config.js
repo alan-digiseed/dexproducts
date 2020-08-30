@@ -1,3 +1,42 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`
+})
+
+console.log('ALGOLIA_APP_ID=' + process.env.ALGOLIA_APP_ID);
+console.log('ALGOLIA_API_KEY=' + process.env.ALGOLIA_API_KEY);
+console.log('ALGOLIA_INDEX_NAME=' + process.env.ALGOLIA_INDEX_NAME);  
+
+const productQuery = `{
+  allProductsJson {
+    nodes {
+      objectID: productCode
+      productCode
+      name
+      description
+      additionalInfo
+      category1
+      category2
+      category3
+      images  
+    }
+  }
+}`;
+
+
+const queries = [
+  {
+    query: productQuery,
+    transformer: ({ data }) => data.allProductsJson.nodes, // optional
+    indexName: 'Dex-Products', // overrides main index name, optional
+    settings: {
+      // optional, any index settings
+    },
+    matchFields: ['name', 'productCode', 'description'], // Array<String> overrides main match fields, optional
+  },
+];
+
+
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -5,6 +44,24 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    {
+      // This plugin must be placed last in your list of plugins to ensure that it can query all the GraphQL data
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: process.env.ALGOLIA_APP_ID,
+        // Use Admin API key without GATSBY_ prefix, so that the key isn't exposed in the application
+        // Tip: use Search API key with GATSBY_ prefix to access the service from within components
+        apiKey: process.env.ALGOLIA_API_KEY,
+        indexName: process.env.ALGOLIA_INDEX_NAME, // for all queries
+        queries,
+        chunkSize: 10000, // default: 1000
+        settings: {
+          // optional, any index settings
+        },
+        enablePartialUpdates: true, // default: false
+        matchFields: ['name', 'productCode', 'description'], // Array<String> default: ['modified']
+      },
+    },    
     `gatsby-plugin-material-ui`,
     `gatsby-plugin-react-helmet`,
     {
@@ -49,7 +106,7 @@ module.exports = {
         ],
         display: 'swap'
       }
-    }
+     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
