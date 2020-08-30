@@ -1,0 +1,16 @@
+{
+    "name": "Office",
+    "title": "Office",
+    "slug": "office",
+    "imageUrl": "./office2.jpg",
+    "subcategories": [
+        {
+            "name": "Clips",
+            "slug": "office-clips"
+        },
+        {
+            "name": "Letter Openers",
+            "slug": "office-letter-openers"
+        }
+    ]
+}
