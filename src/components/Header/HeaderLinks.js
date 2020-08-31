@@ -108,7 +108,7 @@ export default function HeaderLinks(props) {
         <Button href="/" className={classes.navButton} link>FAQ</Button>
       </ListItem>
       <ListItem className={classes.listItem}>
-        <Button href="/shop" className={classes.navButton} link>Shop</Button>
+        <Button href="/shop" className={classes.navButton} link>Our Products</Button>
       </ListItem>
       <ListItem className={classes.listItem}>
         <Button href="/contact-us" className={classes.navButton} link>Contact</Button>
