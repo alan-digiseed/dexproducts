@@ -1,0 +1,239 @@
+@color-accent: #247BA0;
+@color-light: #ffffff;
+@menu-link-padding: 15px 20px;
+
+// General styling
+nav {
+   ul, li {
+     list-style: none;
+     padding: 0;
+     margin: 0;
+  } 
+  a {
+    display: block;
+    text-decoration: none;
+    &:hover, &:visited {
+      text-decoration: none;
+    }
+  }
+}
+
+// Shared styles for all links
+.menu-link {
+  padding: @menu-link-padding;
+  background: @color-light;
+  color: @color-accent;
+  transition: background .2s, color .2s;
+  &:hover {
+    background: @color-accent;
+    color: @color-light;
+    .mega-menu & {
+      background: tint(@color-accent, 85%);
+      color: darken(@color-accent, 5%);
+    }
+  }
+  &[aria-haspopup="true"] {
+    ~ ul {
+      display: none;
+    }
+  }
+}
+
+// Basic styling for the menu bar
+.menu-bar {
+  position: relative;
+  display: flex;
+  background: @color-light;
+}
+
+// Basic styling for the mega menu dropdown
+.mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: @color-light;
+  overflow: hidden;
+}
+
+// Hide mobile specific elements
+.mobile-menu-trigger, .mobile-menu-trigger, .mobile-menu-back-item {
+  display: none;
+}
+
+
+.menu-bar {
+    > li {
+      > [aria-haspopup="true"] {
+        &:focus {
+          ~ ul {
+            display: block;
+            transform-origin: top;
+            animation: dropdown .2s ease-out;
+          }
+        }
+      }
+      &:focus-within {
+        > [aria-haspopup="true"] {
+          ~ ul {
+            display: block;
+          }
+        }
+      }
+    }
+    .mega-menu {
+      &:hover {
+        display: block;
+      }
+    }
+  }
+  @keyframes dropdown {
+    0% {
+      opacity: 0;
+      transform: scaleY(0);
+    }
+    40% {
+      opacity: 1;
+    }
+    100% {
+      transform: scaleY(1);
+    }
+  }
+
+  .menu-bar {
+    > li {
+      &:hover {
+        > [aria-haspopup="true"] {
+          background: @color-accent;
+          color: @color-light;
+        }
+      }
+      > [aria-haspopup="true"] {
+        &:focus {
+          background: @color-accent;
+          color: @color-light;
+        }
+      }
+      &:focus-within {
+        > [aria-haspopup="true"] {
+          background: @color-accent;
+          color: @color-light;
+        }
+      }
+    }
+  }
+
+  @mega-menu-multiLevel-colWidth: 100/10 + 0%;
+
+.mega-menu--multiLevel {
+  flex-direction: column;
+  [aria-haspopup="true"] {
+    ~ ul {
+       position: absolute;
+       top: 0;
+       height: 100%;
+    }
+  }
+  > li {
+    width: @mega-menu-multiLevel-colWidth;
+    float: left;
+    > [aria-haspopup="true"] {
+      ~ ul {
+        left: @mega-menu-multiLevel-colWidth;
+        width: @mega-menu-multiLevel-colWidth;
+        ul {
+          width: 100%;
+          left: 100%;
+        }
+      }
+    }
+  }
+}
+
+.mega-menu--multiLevel {
+    li {
+      &:hover {
+        [aria-haspopup="true"] {
+          ~ ul {
+            display: flex;
+            transform-origin: left;
+            animation: flyout .2s ease-out;
+          }
+        }
+      }
+    }
+    [aria-haspopup="true"] {
+      ~ ul {
+        &:hover {
+          display: flex;
+        }
+      }
+    }
+    li {
+      &:focus-within {
+        > [aria-haspopup="true"] {
+          ~ ul {
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+  @keyframes flyout {
+    0% {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    100% {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+  }
+
+  .mega-menu--multiLevel {
+    li {
+      &:hover, &:focus-within {
+        > [aria-haspopup="true"] {
+          background: tint(@color-accent, 85%);
+          color: darken(@color-accent, 5%);
+        }
+      }
+    }
+  }
+
+  .mega-menu--flat {
+    > * {
+      flex: 1;
+    }
+  }
+
+  .menu-link {
+    &[aria-haspopup="true"] {
+      &:after {
+        content: "\203A";
+        display: inline-block;
+        font-size: 1.5em;
+        float: right;
+        line-height: 1;
+        margin-top: -3px; // Font offset
+        .menu-bar > li > & {
+          margin-top: 0;
+          margin-left: 30px;
+          transform-origin: center;
+          transform: rotate(90deg);
+        }
+              }
+    }
+  }
+  
+  .mega-menu--multiLevel {
+    [aria-haspopup="true"] {
+      ~ ul {
+        border-left: 1px solid #f0f0f0;
+      }
+    }
+  }
+  
+  .mega-menu-header{
+font-weight: 800;
+  }

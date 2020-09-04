@@ -90,22 +90,22 @@ export default function HeaderLinks(props) {
   return (
     <List className={classes.list + " " + classes.mlAuto}>
       <ListItem className={classes.listItem}>
-        <Button href="/about-us" className={classes.navButton} link>About</Button>
+        <Button href="/about-us" className={classes.navButton} link>Pens Made In China</Button>
       </ListItem>
       <ListItem className={classes.listItem}>
-        <Button href="/branding-solutions" className={classes.navButton} link>Branding Solutions</Button>
+        <Button href="/branding-solutions" className={classes.navButton} link>Pens Germany KLIO</Button>
       </ListItem>
       <ListItem className={classes.listItem}>
-        <Button href="/" className={classes.navButton} link>FAQ</Button>
+        <Button href="/categories/bags" className={classes.navButton} link>Bags</Button>
       </ListItem>
       <ListItem className={classes.listItem}>
-        <Button href="/shop" className={classes.navButton} link>Our Products</Button>
+        <Button href="/shop" className={classes.navButton} link>Key Rings</Button>
       </ListItem>
       <ListItem className={classes.listItem}>
-        <Button href="/contact-us" className={classes.navButton} link>Contact</Button>
+        <Button href="/contact-us" className={classes.navButton} link>Drink Items</Button>
       </ListItem>
       <ListItem className={classes.listItem}>
-        <Button href="/" className={classes.navButton} link>Login</Button>
+        <Button href="/" className={classes.navButton} link>Stress Shapes</Button>
       </ListItem>
     </List>
   );
