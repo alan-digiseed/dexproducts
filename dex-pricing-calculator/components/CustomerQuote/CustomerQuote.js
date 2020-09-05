@@ -17,7 +17,7 @@ const CustomerQuote = (props) => (
                     {props.product.description}
                 </div>
                 <div className={classes.pricingChart}>
-                    <PricingChart title="Unbranded"></PricingChart>
+                    <PricingChart title="Unbranded" productPrices={props.productPrices}></PricingChart>
                 </div>
                 <div className={classes.priceSummary}>
                     <PriceSummary title="Summary">  </PriceSummary>

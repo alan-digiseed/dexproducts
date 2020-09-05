@@ -17,6 +17,9 @@ table {
     align-items: center;
   }
 
+
+
   .allServicesTable {
     margin-bottom: 0;
+    height:100%;
   }

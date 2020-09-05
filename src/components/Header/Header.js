@@ -15,10 +15,24 @@ import Drawer from "@material-ui/core/Drawer";
 // @material-ui/icons
 import Menu from "@material-ui/icons/Menu";
 import Close from "@material-ui/icons/Close";
+// Other Compontnes
+// import DexAutoComplete from "../AutoComplete/AutoComplete";
+
+// Search components
+import algoliasearch from "algoliasearch";
+import { Highlight, Hits, SearchBox, InstantSearch } from 'react-instantsearch-dom';
+
 // core components
 import styles from "../../componentstyles/headerStyle.js";
 
+
 const useStyles = makeStyles(styles);
+
+
+const searchClient = algoliasearch(
+  'GHNA0QVIGW',
+  'f65a6c7d2e68f88fec7e0f8950835c87'
+);
 
 export default function Header(props) {
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -69,6 +83,19 @@ export default function Header(props) {
         <Button className={classes.title}>
           <Link to="/">{brand}</Link>
         </Button>
+        {/* <InstantSearch
+          indexName="Dex-Products"
+          searchClient={searchClient}
+        >
+
+          <div>
+            <SearchBox />
+        <Hits hitComponent={Hit} /> */}
+            {/* Widgets */}
+            {/* <DexAutoComplete /> */}
+{/*          </div>
+        </InstantSearch>
+ */}
         <Hidden smDown implementation="css" className={classes.hidden}>
           <div className={classes.collapse}>{links}</div>
         </Hidden>
@@ -148,3 +175,19 @@ Header.propTypes = {
     ]).isRequired
   })
 };
+
+
+function Hit(props) {
+  return (
+    <div>
+      <img src={props.hit.image} align="left" alt={props.hit.name} />
+      <div className="hit-name">
+        <Highlight attribute="name" hit={props.hit} />
+      </div>
+      <div className="hit-description">
+        <Highlight attribute="description" hit={props.hit} />
+      </div>
+      <div className="hit-price">${props.hit.price}</div>
+    </div>
+  );
+}

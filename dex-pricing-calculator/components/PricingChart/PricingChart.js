@@ -32,11 +32,6 @@ const PricingChart = (props) => (
     </div>
 );
 
-const mapStateToProps = state => {
-     return {
-         productPrices: state.currentPriceList?.productPrices
-     }
-}
 
-export default connect(mapStateToProps)(PricingChart);
+export default PricingChart;
 

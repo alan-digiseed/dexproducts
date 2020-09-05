@@ -9,14 +9,17 @@ import TableRow from '@material-ui/core/TableRow';
 import TableCell from '@material-ui/core/TableCell';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
 import styles from './DecorationsDetailsForm.module.css'
 
-const DecorationsDetailsForm = (props) =>{
+const DecorationsDetailsForm = (props) => {
 
-  const [state, setState] = useState(props);
-  if (state.deliveryTimeframeDays !== props.deliveryTimeframeDays) {
-    setState(props);
-  }
+  const [state, setState] = useState({
+    ...props,
+    decorationRows: combineDecorationsArrays(props.decorationServices, props.userDecorations) 
+  }); 
+
+
 
   const updateNumChangesinInternalState = (service, value) => {
     let copyState = {
@@ -56,7 +59,7 @@ const DecorationsDetailsForm = (props) =>{
 
   let specificServiceSelectedJsx = (
     <div className="decorations-form">
-      {props.title && <Typography variant="h6" align="center">{props.title}</Typography>}
+      {props.title && <Box style={{marginTop: 20}}><Typography variant="h6" align="center">{props.title}</Typography></Box>}
 
       <Table size="small">
         <TableHead >
@@ -72,7 +75,7 @@ const DecorationsDetailsForm = (props) =>{
           </TableRow>
         </TableHead>
         <TableBody>
-          {state.decorationRows.map(row => {
+          {state.decorationRows && state.decorationRows.map(row => {
             let rowName = getDeliveryTimeFrameDisplayText(row.days) + ' - ' + row.service;
 
             return (
@@ -93,65 +96,62 @@ const DecorationsDetailsForm = (props) =>{
       </Table>
     </div>);
 
-  let allServicesSelectedJsx = (   
-    <div className="decorations-form">
-      {props.title && <Typography variant="h6" align="center">{props.title}</Typography>}
+let allServicesSelectedJsx = (   
+  <div className="decorations-form">
+    {props.title && <Typography variant="h6" align="center">{props.title}</Typography>}
 
-      <Grid container>
-        <Grid item xs={9}>
-          <Table className={styles.allServicesTable}>
-            <TableHead>
-              <TableRow>
-                <TableCell align="center">Decoration Service</TableCell>
-                <TableCell align="center">Per Unit</TableCell>
-                <TableCell align="center">New Setup Price</TableCell>
-                <TableCell align="center">Repeat Setup Price</TableCell>
-                <TableCell align="center">Qty Limited</TableCell>
+    <Grid container>
+      <Grid item xs={9} className={styles.allServicesGrid}>
+        <Table className={styles.allServicesTable}>
+          <TableHead>
+            <TableRow>
+              <TableCell align="center">Decoration Service</TableCell>
+              <TableCell align="center">Per Unit</TableCell>
+              <TableCell align="center">New Setup Price</TableCell>
+              <TableCell align="center">Repeat Setup Price</TableCell>
+              <TableCell align="center">Qty Limited</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {state.decorationRows && state.decorationRows.map(row => {
+              let key=getDeliveryTimeFrameDisplayText(row.days) + ' - ' + row.service;
+
+              return (
+              <TableRow key={key}>
+                <TableCell>{key}</TableCell>
+                <TableCell>{row.unitPrice}</TableCell>
+                <TableCell>{row.newSetup}</TableCell>
+                <TableCell>{row.repeatSetup}</TableCell>
+                <TableCell>{row.qtyLimited}</TableCell>
               </TableRow>
-            </TableHead>
-            <TableBody>
-              {state.decorationRows.map(row => {
-                let key=getDeliveryTimeFrameDisplayText(row.days) + ' - ' + row.service;
+            )})}
+          </TableBody>
+        </Table>
 
-                return (
-                <TableRow key={key}>
-                  <TableCell>{key}</TableCell>
-                  <TableCell>{row.unitPrice}</TableCell>
-                  <TableCell>{row.newSetup}</TableCell>
-                  <TableCell>{row.repeatSetup}</TableCell>
-                  <TableCell>{row.qtyLimited}</TableCell>
-                </TableRow>
-              )})}
-            </TableBody>
-          </Table>
-
-        </Grid>
-        <Grid item xs={3} className={styles.instructions}>
-          Unit pricing varies depending on the service selected.<br/><br/> Please select a service to continue with your quote.
-        </Grid>
       </Grid>
+      <Grid item xs={3} className={styles.instructions}>
+        Unit pricing varies depending on the service selected.<br/><br/> Please select a service to continue with your quote.
+      </Grid>
+    </Grid>
 
-    </div>);
+  </div>);
 
-  return (props.deliveryTimeframeDays === 0) ? allServicesSelectedJsx : specificServiceSelectedJsx;
-
-
+return (props.deliveryTimeframeDays === 0) ? allServicesSelectedJsx : specificServiceSelectedJsx;
 }
 
 const mapStateToProps = state => {
   return {
     deliveryTimeframeDays: state.deliveryTimeFrameDays,
-    decorationRows: combineDecorationsArrays(state.currentDecorationServices, state.userDecorations)
+    userDecorations: state.userDecorations
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
     updateDecorationQty: (service, fieldName, value) => {
-      dispatch({ type: 'UPDATE_DECORATION_QTY', payload: { service: service, fieldName: fieldName, value: value }})
+      dispatch({ type: 'UPDATE_DECORATION_QTY', payload: { service: service, fieldName: fieldName, value: value } })
     }
   }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(DecorationsDetailsForm);
-

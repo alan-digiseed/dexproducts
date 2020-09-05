@@ -9,9 +9,15 @@ const mapPriceListServices = (productRow) => {
             case "24 Hours": return 1;
             case "3 Working Days": return 3;
             case "7 Working Days": return 7;
+            case "9 Working Days": return 9;
             case "12 Working Days": return 12;
+            case "15 Working Days": return 15;
+            case "25 Working Days": return 25;
             case "28 Working Days": return 28;
-            default: return NaN;
+            case "33 Working Days": return 33;
+            case "35 Working Days": return 35;
+            case "38 Working Days": return 38;
+            default: throw `Unknown Service Name: ${name}`;
         }
     }
     
