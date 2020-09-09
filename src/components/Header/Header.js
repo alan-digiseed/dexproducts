@@ -6,21 +6,18 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import IconButton from "@material-ui/core/IconButton";
 import Button from "@material-ui/core/Button";
 import Hidden from "@material-ui/core/Hidden";
-import Drawer from "@material-ui/core/Drawer";
+import Grid from "@material-ui/core/Grid";
 // @material-ui/icons
-import Menu from "@material-ui/icons/Menu";
-import Close from "@material-ui/icons/Close";
-// Other Compontnes
+
 // import DexAutoComplete from "../AutoComplete/AutoComplete";
 
 // Search components
 import algoliasearch from "algoliasearch";
 import { Highlight, Hits, SearchBox, InstantSearch } from 'react-instantsearch-dom';
+
+import UtilityMenu from '../../components/Header/UtilityMenu';
 
 // core components
 import styles from "../../componentstyles/headerStyle.js";
@@ -77,60 +74,37 @@ export default function Header(props) {
     [classes.absolute]: absolute,
     [classes.fixed]: fixed
   });
-  return (
-    <AppBar className={appBarClasses}>
-      <Toolbar className={classes.container}>
-        <Button className={classes.title}>
-          <Link to="/">{brand}</Link>
-        </Button>
-        {/* <InstantSearch
-          indexName="Dex-Products"
-          searchClient={searchClient}
-        >
 
-          <div>
-            <SearchBox />
-        <Hits hitComponent={Hit} /> */}
-            {/* Widgets */}
-            {/* <DexAutoComplete /> */}
-{/*          </div>
-        </InstantSearch>
- */}
-        <Hidden smDown implementation="css" className={classes.hidden}>
-          <div className={classes.collapse}>{links}</div>
-        </Hidden>
-        <Hidden mdUp>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerToggle}
+  return (
+    <div>
+      <UtilityMenu />
+      <Grid container>
+        <Grid item xs={3}>
+          <Button className={classes.title}>
+            <Link to="/">{brand}</Link>
+          </Button>
+        </Grid>
+        <Grid item xs={3}>
+          <Hidden smDown implementation="css" className={classes.hidden}>
+              <div className={classes.collapse}>{links}</div>
+          </Hidden>
+        </Grid>
+      </Grid>
+      <UtilityMenu />
+          {/* <InstantSearch
+            indexName="Dex-Products"
+            searchClient={searchClient}
           >
-            <Menu />
-          </IconButton>
-        </Hidden>
-      </Toolbar>
-      <Hidden mdUp implementation="js">
-        <Drawer
-          variant="temporary"
-          anchor={"right"}
-          open={mobileOpen}
-          classes={{
-            paper: classes.drawerPaper
-          }}
-          onClose={handleDrawerToggle}
-        >
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerToggle}
-            className={classes.closeButtonDrawer}
-          >
-            <Close />
-          </IconButton>
-          <div className={classes.appResponsive}>{links}</div>
-        </Drawer>
-      </Hidden>
-    </AppBar>
+
+            <div>
+              <SearchBox />
+          <Hits hitComponent={Hit} />
+              <DexAutoComplete />
+          </div>
+          </InstantSearch>
+  */}
+    </div>
+
   );
 }
 
