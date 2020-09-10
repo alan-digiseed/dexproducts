@@ -21,6 +21,7 @@ import SectionDescription from "../views/PresentationPage/Sections/SectionDescri
 import SectionCards from "../views/PresentationPage/Sections/SectionCards.js";
 import SectionProducts from "../views/PresentationPage/Sections/SectionProducts.js";
 import SectionOverview from "../views/PresentationPage/Sections/SectionOverview.js";
+import UtilityMenu from '../components/Header/UtilityMenu';
 
 import logo from "../images/logo.png";
 
@@ -49,6 +50,7 @@ export default function PresentationPage({data}) {
         fixed
         color="white"
       />
+      
       {(page.sections.some(s => s.title === 'homepage_slider_top') >= 0) &&<div className={classes.carousel}><SectionCarousel section={page.sections.find(s => s.title === 'homepage_slider_top')} /></div>}
         {(page.sections.some(s => s.id === 'homepage_3boxes') >= 0) &&<SectionCards section={page.sections.find(s => s.id === 'homepage_3boxes')} />}
         {(page.sections.some(s => s.id === 'homepage_best_sellers') >= 0) &&<SectionProducts section={page.sections.find( s => s.id === 'homepage_best_sellers')} />} 

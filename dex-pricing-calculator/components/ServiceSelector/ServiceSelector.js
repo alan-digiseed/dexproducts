@@ -28,6 +28,7 @@ class ServiceSelector extends Component {
 
 
 const mapStateToProps = state => {
+    
      return {
         deliveryTimeFrameDays: state.deliveryTimeFrameDays,
         availableTimeFrames:  selectAvailableTimeframes(state)

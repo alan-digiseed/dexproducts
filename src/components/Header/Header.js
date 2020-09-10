@@ -77,8 +77,7 @@ export default function Header(props) {
 
   return (
     <div>
-      <UtilityMenu />
-      <Grid container>
+            <Grid container>
         <Grid item xs={3}>
           <Button className={classes.title}>
             <Link to="/">{brand}</Link>
@@ -90,7 +89,7 @@ export default function Header(props) {
           </Hidden>
         </Grid>
       </Grid>
-      <UtilityMenu />
+     
           {/* <InstantSearch
             indexName="Dex-Products"
             searchClient={searchClient}
@@ -103,6 +102,7 @@ export default function Header(props) {
           </div>
           </InstantSearch>
   */}
+   <UtilityMenu />
     </div>
 
   );

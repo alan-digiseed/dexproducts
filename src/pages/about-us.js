@@ -41,9 +41,10 @@ export default function AboutUsPage() {
 <Header
         brand={<img src={logo} />}
         links={<HeaderLinks dropdownHoverColor="info" />}
-        fixed
+          fixed
         color="white"
       />
+      
       <Parallax image={require("../images/shop/shop-header2.png")} filter="dark" small>
         <div className={classes.container}>
           <GridContainer justify="center">
