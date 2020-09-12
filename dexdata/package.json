@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "node index"
+    "import-products": "node products",
+    "import-categories": "node categories"
   },
   "author": "",
   "license": "ISC",

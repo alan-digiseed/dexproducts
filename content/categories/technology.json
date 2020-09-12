@@ -1,16 +1,1 @@
-{
-    "name": "Technology",
-    "title": "Technology",
-    "slug": "technology",
-    "imageUrl": "./tech.jpg",
-    "subcategories": [
-        {
-            "name": "USB Accessories and Cables",
-            "slug": "tech-USB-accessories-and-cables"
-        },
-        {
-            "name": "Chargers",
-            "slug": "tech-chargers"
-        }
-    ]
-}
+{"name":"Technology","slug":"technology","title":"Technology","alias":"technology","imageUrl":"technology.jpg","subcategories":[{"category":"Technology","name":"USB Accessories and Cables","slug":"USB-accessories-and-cables"},{"category":"Technology","name":"Chargers","slug":"chargers"},{"category":"Technology","name":"Phone Accessories","slug":"phone-accessories"},{"category":"Technology","name":"Security Webcam Cover","slug":"security-webcam-cover"},{"category":"Technology","name":"Screen Cleaner","slug":"screen-cleaner"},{"category":"Technology","name":"PVC USB and Powerbank","slug":"PVC-USB-and-powerbank"}]}

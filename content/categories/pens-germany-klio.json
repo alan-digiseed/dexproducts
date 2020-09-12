@@ -1,17 +1,1 @@
-{
-    "name": "Pens Germany KLIO",
-    "alias": "Pens Germany KLIO",
-    "title": "Pens Germany KLIO",
-    "slug": "pens-germany-klio",
-    "imageUrl": "./pen-klio.jpg",
-    "subcategories": [
-        {
-            "name": "Local Stock",
-            "slug": "pens-germany-klio-local-stock"
-        },
-        {
-            "name": "Off Shore Indent",
-            "slug": "pens-germany-klio-off-shore-indent"
-        }
-    ]
-}
+{"name":"Pens Germany KLIO","slug":"pens-germany-KLIO","title":"Pens Germany KLIO","alias":"Pens","imageUrl":"pens.jpg","subcategories":[{"category":"Pens Germany KLIO","name":"Local Stock","slug":"local-stock"},{"category":"Pens Germany KLIO","name":"Off Shore Indent","slug":"off-shore-indent"}]}

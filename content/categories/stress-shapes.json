@@ -1,16 +1,1 @@
-{
-    "name": "Stress Shapes",
-    "title": "Stress Shapes",
-    "slug": "stress-shapes",
-    "imageUrl": "./stress2.jpg",
-    "subcategories": [
-        {
-            "name": "Stress Balls",
-            "slug": "stress-shapes-stress-balls"
-        },
-        {
-            "name": "Stress Animals",
-            "slug": "stress-animals-stress-animals"
-        }
-    ]
-}
+{"name":"Stress Shapes","slug":"stress-shapes","title":"Stress Shapes","alias":"stress","imageUrl":"stress.jpg","subcategories":[{"category":"Stress Shapes","name":"Stress Balls","slug":"stress-balls"},{"category":"Stress Shapes","name":"Stress Key Rings","slug":"stress-key-rings"},{"category":"Stress Shapes","name":"Stress Animals","slug":"stress-animals"},{"category":"Stress Shapes","name":"Stress Transport","slug":"stress-transport"},{"category":"Stress Shapes","name":"Stress Fruit and Vegetables","slug":"stress-fruit-and-vegetables"},{"category":"Stress Shapes","name":"Misc Stress Shapes","slug":"misc-stress-shapes"}]}

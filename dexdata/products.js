@@ -44,7 +44,7 @@ sheetToObj('data/Dex Group Database -3.xlsx', 1).then( productRows => {
                 packing: {...mapProductPacking(productRow)}
             }
 
-            let fileName = `output/product-${product.productCode}.json`.toLowerCase();
+            let fileName = `output/products/product-${product.productCode}.json`.toLowerCase();
             fs.writeFileSync(fileName, JSON.stringify(product));     
         }
         catch (error)

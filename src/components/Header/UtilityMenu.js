@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react"
+import { StaticQuery, graphql } from "gatsby"
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
@@ -9,188 +10,186 @@ import './UtilityMenu.css';
 
 const UtilityMenu = (props) => {
     return (
-        <div className="navbar">
-        <div class="dropdown">
-            <button class="dropbtn">Pens
-            <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-            <div class="row">
-                <div class="column">
-                <h3>Pens Made In China</h3>
-                <a href="#">Plastic Pens</a>
-                <a href="#">Metal Pens</a>
-                <a href="#">Touch Stylus Pens</a>
-                </div>
-                <div class="column">
-                <h3>Pens Germany KLIO</h3>
-                <a href="#">Local Stock</a>
-                <a href="#">Off Shore Indent</a>
-                </div>
-                <div class="column">
-                <h3>Pens Italian Maxema</h3>
-                <a href="#">Local Stock</a>
-                <a href="#">Off Shore Indent</a>
-                </div>
-                <div class="column">
-                <h3>Pens Italian ERGA</h3>
-                <a href="#">Erga Plastic Pens</a>
-                <a href="#">Erga Metal Pens</a>
-                </div>
-            </div>
-            </div>
-        </div>
-        <div class="dropdown">
+        <StaticQuery
+        query={graphql`
+          query HeadingQuery {
+            allCategoriesJson {
+                nodes {
+                  id
+                  imageUrl
+                  name
+                  slug
+                  title
+                  subcategories {
+                    name
+                    slug
+                  }
+                }
+            }
+          }
+        `}
+        render={data => (
+            <ul class="nav">              
+                { 
+                    data.allCategoriesJson.nodes.map(cat => {
+                        return (
+                            <li>
+                                <a href={`/categories/${cat.slug}`}>{cat.title}</a>
+                                <div class="nav-column">
+                                    <ul>
+                                        {
+                                            cat.subcategories.map( subcat => {
+                                                return (
+                                                <li><a href={`/subcategory/${subcat.slug}`}>{subcat.name}</a></li>
+                                                )
+                                            })
+                                        }
+                                    </ul>
+                                </div>
+                            </li>
+                        )
+                    })
+                }
+                {/* <li>
+                    <a href="#">What's new</a>
+                    <div>
+                        <div class="nav-column">
+                            <h3>Home</h3>
+                            <ul>
+                                <li><a href="#">Pampers Diapers</a></li>
+                                <li><a href="#">Huggies Diapers</a></li>
+                                <li><a href="#">Seventh Generation</a></li>
+                                <li><a href="#">Diapers</a></li>
+                                <li><a href="#">Derbies</a></li>
+                                <li><a href="#">Driving shoes</a></li>
+                                <li><a href="#">Espadrilles</a></li>
+                                <li><a href="#">Loafers</a></li>
+                            </ul>
+                        </div>
             
-            <button class="dropbtn">Bags
-            <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-            <div class="column">
-                <a href="/categories/bags">All Bags</a>
-                <a href="#">Non-Woven Bags</a>
-                <a href="#">Paper Bags</a>
-                </div>
-            </div>
-        </div>
-        <div class="dropdown">
-            <button class="dropbtn">Keyrings
-            <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-            <div class="column">
-                <a href="/categories/key-rings">All Key-Rings</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-                </div>
-            </div>
-        </div>
-        <div class="dropdown">
-            <button class="dropbtn">Drink Items
-            <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-            <div class="column">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-                </div>
-            </div>
-        </div>
-        <div class="dropdown">
-            <button class="dropbtn">Stress Shapes
-            <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-            <div class="column">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-                </div>
-            </div>
-        </div>
-        <div class="dropdown">
-            <button class="dropbtn">Technology
-            <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-            <div class="column">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-                </div>
-            </div>
-        </div>
-        <div class="dropdown">
-            <button class="dropbtn">Umbrella and Ponchos
-            <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-            <div class="column">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-                </div>
-            </div>
-        </div>
-        <div class="dropdown">
-            <button class="dropbtn">Personal Items
-            <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-            <div class="column">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-                </div>
-            </div>
-        </div>
-        <div class="dropdown">
-            <button class="dropbtn">Confectionery
-            <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-            <div class="column">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-                </div>
-            </div>
-        </div>
-        <div class="dropdown">
-            <button class="dropbtn">Trade Show
-            <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-            <div class="column">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-                </div>
-            </div>
-        </div>
-        <div class="dropdown">
-            <button class="dropbtn">Office
-            <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-            <div class="column">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-                </div>
-            </div>
-        </div>
-        <div class="dropdown">
-            <button class="dropbtn">Aprons and Caps
-            <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-            <div class="column">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-                </div>
-            </div>
-        </div>
-        <div class="dropdown">
-            <button class="dropbtn">Corporate Gifts
-            <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-            <div class="column">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-                </div>
-            </div>
-        </div>
-
-
-        </div>);
-
-
+                        <div class="nav-column">
+                            <h3>Home</h3>
+                            <ul>
+                                <li><a href="#">Driving shoes</a></li>
+                                <li><a href="#">Espadrilles</a></li>
+                                <li><a href="#">Loafers</a></li>
+                            </ul>
+            
+                            <h3>Home</h3>
+                            <ul>
+                                <li><a href="#">Driving shoes</a></li>
+                                <li><a href="#">Espadrilles</a></li>
+                                <li><a href="#">Loafers</a></li>
+                            </ul>
+                        </div>
+            
+                        <div class="nav-column">
+                            <h3>Home</h3>
+                            <ul>
+                                <li><a href="#">Pampers Diapers</a></li>
+                                <li><a href="#">Huggies Diapers</a></li>
+                                <li><a href="#">Seventh Generation</a></li>
+                                <li><a href="#">Diapers</a></li>
+                                <li><a href="#">Derbies</a></li>
+                                <li><a href="#">Driving shoes</a></li>
+                                <li><a href="#">Espadrilles</a></li>
+                                <li><a href="#">Loafers</a></li>
+                            </ul>
+                        </div>
+            
+                        <div class="nav-column">
+                            <h3 class="orange">Related Categories</h3>
+                            <ul>
+                                <li><a href="#">Pampers Diapers</a></li>
+                                <li><a href="#">Huggies Diapers</a></li>
+                                <li><a href="#">Diapers</a></li>
+                            </ul>
+            
+                            <h3 class="orange">Brands</h3>
+                            <ul>
+                                <li><a href="#">Driving shoes</a></li>
+                                <li><a href="#">Espadrilles</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#">Top rated</a></li>
+                <li>
+                    <a href="#">Earnings</a>
+                    <div>
+                        <div class="nav-column">
+                            <h3 class="orange">Related Categories</h3>
+                            <ul>
+                                <li><a href="#">Pampers Diapers</a></li>
+                                <li><a href="#">Huggies Diapers</a></li>
+                                <li><a href="#">Diapers</a></li>
+                            </ul>
+            
+                            <h3 class="orange">Brands</h3>
+                            <ul>
+                                <li><a href="#">Driving shoes</a></li>
+                                <li><a href="#">Espadrilles</a></li>
+                            </ul>
+                        </div>
+            
+                        <div class="nav-column">
+                            <h3>Home</h3>
+                            <ul>
+                                <li><a href="#">Pampers Diapers</a></li>
+                                <li><a href="#">Huggies Diapers</a></li>
+                                <li><a href="#">Seventh Generation</a></li>
+                                <li><a href="#">Diapers</a></li>
+                                <li><a href="#">Derbies</a></li>
+                                <li><a href="#">Driving shoes</a></li>
+                                <li><a href="#">Espadrilles</a></li>
+                                <li><a href="#">Loafers</a></li>
+                            </ul>
+                        </div>
+            
+                        <div class="nav-column">
+                            <h3>Home</h3>
+                            <ul>
+                                <li><a href="#">Driving shoes</a></li>
+                                <li><a href="#">Espadrilles</a></li>
+                                <li><a href="#">Loafers</a></li>
+                            </ul>
+            
+                            <h3>Home</h3>
+                            <ul>
+                                <li><a href="#">Driving shoes</a></li>
+                                <li><a href="#">Espadrilles</a></li>
+                                <li><a href="#">Loafers</a></li>
+                            </ul>
+                        </div>
+            
+                        <div class="nav-column">
+                            <h3>Home</h3>
+                            <ul>
+                                <li><a href="#">Pampers Diapers</a></li>
+                                <li><a href="#">Huggies Diapers</a></li>
+                                <li><a href="#">Seventh Generation</a></li>
+                                <li><a href="#">Diapers</a></li>
+                                <li><a href="#">Derbies</a></li>
+                                <li><a href="#">Driving shoes</a></li>
+                                <li><a href="#">Espadrilles</a></li>
+                                <li><a href="#">Loafers</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#">Rings</a></li>
+                <li><a href="#">Bracelets</a></li>
+                <li><a href="#">All Categories</a></li>
+                <li class="nav-search">
+                    <form action="#">
+                        <input type="text" placeholder="Search..." />
+                        <input type="submit" value="" />
+                    </form>
+                </li> */}
+            </ul>
+        )} />
+    );
   }
 
-export default UtilityMenu;
 
+export default UtilityMenu;

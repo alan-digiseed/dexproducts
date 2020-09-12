@@ -1,16 +1,1 @@
-{
-    "name": "Office",
-    "title": "Office",
-    "slug": "office",
-    "imageUrl": "./office2.jpg",
-    "subcategories": [
-        {
-            "name": "Clips",
-            "slug": "office-clips"
-        },
-        {
-            "name": "Letter Openers",
-            "slug": "office-letter-openers"
-        }
-    ]
-}
+{"name":"Office","slug":"office","title":"Office","alias":"office","imageUrl":"office.jpg","subcategories":[{"category":"Office","name":"Clips","slug":"Clips"},{"category":"Office","name":"Letter Openers","slug":"letter-openers"},{"category":"Office","name":"Notebooks","slug":"notebooks"},{"category":"Office","name":"Memo Holder and Sticky Note","slug":"memo-holder-and-sticky-note"},{"category":"Office","name":"Rulers and Tapes","slug":"rulers-and-tapes"},{"category":"Office","name":"Carpenter Pencil Sharpener","slug":"carpenter-pencil-sharpener"},{"category":"Office","name":"Wheelie Bin Pen Holder","slug":"wheelie-bin-pen-holder"},{"category":"Office","name":"Correction Tape","slug":"correction-tape"},{"category":"Office","name":"Glue Tape","slug":"glue-tape"},{"category":"Office","name":"Glue Stick","slug":"glue-stick"}]}

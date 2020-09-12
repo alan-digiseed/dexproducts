@@ -1,16 +1,1 @@
-{
-    "name": "Trade Show",
-    "title": "Trade Show",
-    "slug": "trade-show",
-    "imageUrl": "./trade2.jpg",
-    "subcategories": [
-        {
-            "name": "Lanyards and Accessories",
-            "slug": "lanyards-and-accessories"
-        },
-        {
-            "name": "Button Badges",
-            "slug": "button-badges"
-        }
-    ]
-}
+{"name":"Trade Show","slug":"trade-show","title":"Trade Show","alias":"trade","imageUrl":"trade.jpg","subcategories":[{"category":"Trade Show","name":"Lanyards and Accessories","slug":"lanyards-and-accessories"},{"category":"Trade Show","name":"Button Badges","slug":"button-badges"}]}

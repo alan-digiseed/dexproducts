@@ -1,16 +1,1 @@
-{
-    "name": "Key Rings",
-    "title": "Key Rings",
-    "slug": "key-rings",
-    "imageUrl": "./keyring.jpg",
-    "subcategories": [
-        {
-            "name": "Key Rings",
-            "slug": "key-rings-key-rings"
-        },
-        {
-            "name": "Torch Key Rings",
-            "slug": "key-rings-torch_keyrings"
-        }
-    ]
-}
+{"name":"Key Rings","slug":"key-rings","title":"Key Rings","alias":"Key-Rings","imageUrl":"keyrings.jpg","subcategories":[{"category":"Key Rings","name":"Key Rings","slug":"key-rings"},{"category":"Key Rings","name":"Torch Key Rings","slug":"torch-key-rings"}]}

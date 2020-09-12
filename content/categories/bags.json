@@ -1,16 +1,1 @@
-{
-    "name": "Bags",
-    "title": "Bags",
-    "slug": "bags",
-    "imageUrl": "./bags.jpg",
-    "subcategories": [
-        {
-            "name": "Non Woven Bags",
-            "slug": "bags-non-woven-bags"
-        },
-        {
-            "name": "Paper Bags",
-            "slug": "bags-paper-bags"
-        }
-    ]
-}
+{"name":"Bags","slug":"Bags","title":"Bags","alias":"Bags","imageUrl":"bags.jpg","subcategories":[{"category":"Bags","name":"Non-Woven Bags","slug":"non-woven-bags"},{"category":"Bags","name":"Paper Bags","slug":"paper-bags"},{"category":"Bags","name":"Nylon Bags","slug":"nylon-bags"},{"category":"Bags","name":"Calico Bags","slug":"calico-bags"},{"category":"Bags","name":"Colouring Bags","slug":"colouring-bags"},{"category":"Bags","name":"Laminated Non-Woven Bags","slug":"laminated-non-woven-bags"},{"category":"Bags","name":"Jute Bags","slug":"jute-bags"},{"category":"Bags","name":"Waist Fitnesss Belt Bags","slug":"waist-fitnesss-belt-bags"},{"category":"Bags","name":"Cooler Bags","slug":"cooler-bags"},{"category":"Bags","name":"Backpacks","slug":"backpacks"},{"category":"Bags","name":"Laptop Bags","slug":"laptop-bags"},{"category":"Bags","name":"Standard Briefcases","slug":"standard-briefcases"},{"category":"Bags","name":"Sports and Duffle Bags","slug":"sports-and-duffle-bags"},{"category":"Bags","name":"Felt Bags","slug":"felt-bags"},{"category":"Bags","name":"Dry Sacks","slug":"dry-sacks"},{"category":"Bags","name":"Clear PVC Bags","slug":"clear-PVC-bags"}]}
