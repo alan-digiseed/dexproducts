@@ -11,16 +11,15 @@ import {
 
 const parallaxStyle = {
   parallax: {
-    height: "100vh",
-    maxHeight: "1600px",
+    height: "50vh",
+    minHeight: "40vh",
+    maxHeight: "10px",
     overflow: "hidden",
     position: "relative",
     backgroundPosition: "50%",
     backgroundSize: "cover",
     margin: "0",
     padding: "0",
-    border: "0",
-    display: "flex",
     alignItems: "center"
   },
   filter: {},
@@ -178,9 +177,9 @@ const parallaxStyle = {
     }
   },
   small: {
-    height: "65vh",
-    minHeight: "65vh",
-    maxHeight: "650px"
+    height: "40vh",
+    minHeight: "40vh",
+    maxHeight: "100px"
   }
 };
 
