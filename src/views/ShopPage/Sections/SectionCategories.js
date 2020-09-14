@@ -36,7 +36,7 @@ export default function SectionCategories(props) {
                 <Card product plain>
                   <CardHeader image plain>
                     <a href={`/categories/${c.slug}`}>
-                      <img src={categoriesImagePath(c.imageUrl)} alt="..." />
+                      <img src={categoriesImagePath/(c.imageUrl)} alt="..." />
                     </a>
                     <div
                       className={classes.coloredShadow}
