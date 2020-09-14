@@ -32,7 +32,7 @@ const sheetToObj = (filename, sheet) => {
 }
 
 
-sheetToObj('data/Dex Group Database -3.xlsx', 1).then( productRows => {
+sheetToObj('data/Dex_Database_Rebecca_7.09.2020.xlsx', 1).then( productRows => {
     productRows.forEach(productRow => {
 
         try {

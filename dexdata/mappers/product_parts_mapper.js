@@ -4,21 +4,21 @@ const mapProductParts = (productRow) => {
     let partsColumns = [
         {
             nameColumn: "ItemPart1",
-            colorsColumn: "ColoursPart1",
+            colorsColumn: "ColourPart1Des",
             lengthColumn: "ItemLength1",
             heightColumn: "ItemHeight1",
             widthColumn: "ItemWidth1"
         },
         {
             nameColumn: "ItemPart2",
-            colorsColumn: "ColoursPart2",
+            colorsColumn: "ColourPart2Des",
             lengthColumn: "ItemLength2",
             heightColumn: "ItemHeight2",
             widthColumn: "ItemWidth2"
         },
         {
             nameColumn: "ItemPart3",
-            colorsColumn: "ColoursPart3",
+            colorsColumn: "ColourPart3Des",
             lengthColumn: "ItemLength3",
             heightColumn: "ItemHeight3",
             widthColumn: "ItemWidth3"
@@ -42,7 +42,7 @@ const mapProductParts = (productRow) => {
         if (!partName) {
             if (!colors && !length && !height && !width)
                 return null;
-            else
+            else 
                 throw `${columns.nameColumn} requires part name. ProductCode: ${productRow["Code"]}`;
         }
 
