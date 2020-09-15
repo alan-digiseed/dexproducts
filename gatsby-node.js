@@ -219,6 +219,21 @@ exports.createSchemaCustomization = ({ actions }) => {
         printType: String
         description: String
       }
+
+      type categoriesJson implements Node {
+        name: String
+        slug: String
+        title: String
+        alias: String
+        imageUrl: String
+        subcategories: [CategoriesJsonSubcategories]
+      }
+
+      type CategoriesJsonSubcategories implements Node {
+        category: String
+        name: String
+        slug: String
+      }
       `
 
 

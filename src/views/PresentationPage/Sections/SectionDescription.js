@@ -27,7 +27,7 @@ export default function SectionDescription() {
                 </div>
             </GridItem>
             <GridItem md={4} sm={4}>
-            <div>{<img alt="SPEEDY" src={"/img/Asset2.png"} />}</div>
+            <div>{<img alt="SPEEDY" src={"/img/2.png"} />}</div>
             <div style= {{fontSize: '20px', fontWeight: 800}}>
                WE OFFER FAST TURN <br/>
                AROUND ON ORDERS
