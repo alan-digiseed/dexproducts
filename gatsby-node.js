@@ -108,6 +108,7 @@ const  createCategoryPages = async ({actions, graphql}) => {
 
   for (i = 0; i < categories.length; i++) {
     let category = categories[i];    
+    console.log(`creating category page - ${category.name}`)
     await createPage({
         path: `/categories/${category.slug}`,
         component: path.resolve(`src/templates/category.js`),
@@ -117,19 +118,20 @@ const  createCategoryPages = async ({actions, graphql}) => {
         }
       });
 
-    for (j=0; j < category.subcategories.length; j++) {
-      let subcategory = category.subcategories[j];    
-      await createPage({
-          path: `/subcategory/${subcategory.slug}`,
-          component: path.resolve(`src/templates/category.js`),
-          context: {            
-            slug: category.slug,
-            name: category.name,
-            subcategorySlug: subcategory.slug,
-            subcategoryName: subcategory.name
-          }
-        });
-        
+    if (category.subcategories) {
+      for (j=0; j < category.subcategories.length; j++) {
+        let subcategory = category.subcategories[j];    
+        await createPage({
+            path: `/subcategory/${subcategory.slug}`,
+            component: path.resolve(`src/templates/category.js`),
+            context: {            
+              slug: category.slug,
+              name: category.name,
+              subcategorySlug: subcategory.slug,
+              subcategoryName: subcategory.name
+            }
+          });         
+      }  
     }
   }
 }
@@ -233,6 +235,7 @@ exports.createSchemaCustomization = ({ actions }) => {
         category: String
         name: String
         slug: String
+        subcategories: [CategoriesJsonSubcategories]
       }
       `
 

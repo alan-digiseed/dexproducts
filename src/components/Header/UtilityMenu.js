@@ -23,6 +23,10 @@ const UtilityMenu = (props) => {
                   subcategories {
                     name
                     slug
+                    subcategories {
+                        name
+                        slug
+                    }                    
                   }
                 }
             }
@@ -35,17 +39,41 @@ const UtilityMenu = (props) => {
                         return (
                             <li>
                                 <a href={`/categories/${cat.slug}`}>{cat.title}</a>
-                                <div class="nav-column">
-                                    <ul>
-                                        {
-                                            cat.subcategories.map( subcat => {
-                                                return (
-                                                <li><a href={`/subcategory/${subcat.slug}`}>{subcat.name}</a></li>
-                                                )
-                                            })
-                                        }
-                                    </ul>
-                                </div>
+                                {cat.subcategories &&                                 
+                                    <div class="nav-column">
+                                        <ul>
+                                            {
+                                                cat.subcategories.map( subcat => {
+                                                    if (!subcat.subcategories) {
+                                                        return (
+                                                            <li><a href={`/subcategory/${subcat.slug}`}>{subcat.name}</a></li>
+                                                        );       
+                                                    }
+                                                    else {
+                                                        return (
+                                                            <li>
+                                                                <div>
+                                                                    <h3><a href={`/subcategory/${subcat.slug}`}>{subcat.name}</a></h3>
+                                                                    <ul>
+                                                                        {
+                                                                            subcat.subcategories.map(
+                                                                                subsub => {
+                                                                                    return (
+                                                                                        <li><a href={`/subcategory/${subsub.slug}`}>{subsub.name}</a></li>
+                                                                                    )
+                                                                                } 
+                                                                            )
+                                                                        }
+                                                                    </ul>
+                                                                </div>
+                                                            </li>
+                                                        )
+                                                    }
+                                                })
+                                            }
+                                        </ul>
+                                    </div>
+                                }
                             </li>
                         )
                     })
