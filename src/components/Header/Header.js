@@ -102,6 +102,7 @@ export default function Header(props) {
           </div>
           </InstantSearch>
   */}
+
    <UtilityMenu />
     </div>
 

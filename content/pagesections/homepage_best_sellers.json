@@ -5,51 +5,63 @@
 	"contentItems": [
 		{
 			"title": "Colouring Bags",
-			"image": "/img/bestsellers/CCB002_1.jpg"
+			"image": "/img/bestsellers/CCB002_1.jpg",
+			"callToActionUrl":"www.google.com"
 		},
 		{
 			"title": "Tissues for the car",
-			"image": "/img/bestsellers/CCT002_2.jpg"
+			"image": "/img/bestsellers/CCT002_2.jpg",
+			"callToActionUrl":"www.google.com"
 		},
 		{
 			"title": "Candles",
-			"image": "/img/bestsellers/CD001_3.jpg"
+			"image": "/img/bestsellers/CD001_3.jpg",
+			"callToActionUrl":"www.google.com"
 		},
 		{
 			"title": "Pens",
-			"image": "/img/bestsellers/COBRA010_16.jpg"
+			"image": "/img/bestsellers/COBRA010_16.jpg",
+			"callToActionUrl":"www.google.com"
 		},
 		{
 			"title": "Pencils",
-			"image": "/img/bestsellers/CP001_1.jpg"
+			"image": "/img/bestsellers/CP001_1.jpg",
+			"callToActionUrl":"www.google.com"
 		},
 		{
 			"title": "Bags",
-			"image": "/img/bestsellers/CTB002_1.jpg"
+			"image": "/img/bestsellers/CTB002_1.jpg",
+			"callToActionUrl":"www.google.com"
 		},
 		{
 			"title": "Drink Bottles",
-			"image": "/img/bestsellers/DB002_4.jpg"
+			"image": "/img/bestsellers/DB002_4.jpg",
+			"callToActionUrl":"www.google.com"
 		},
 		{
 			"title": "Desk Plants",
-			"image": "/img/bestsellers/DPP001_2.jpg"
+			"image": "/img/bestsellers/DPP001_2.jpg",
+			"callToActionUrl":"www.google.com"
 		},
 		{
 			"title": "Pen holder",
-			"image": "/img/bestsellers/DS075B_1.jpg"
+			"image": "/img/bestsellers/DS075B_1.jpg",
+			"callToActionUrl":"www.google.com"
 		},
 		{
 			"title": "Bottle Opener",
-			"image": "/img/bestsellers/DS861_1.jpg"
+			"image": "/img/bestsellers/DS861_1.jpg",
+			"callToActionUrl":"www.google.com"
 		},
 		{
 			"title": "Fidget Toys",
-			"image": "/img/bestsellers/DS1008_2.jpg"
+			"image": "/img/bestsellers/DS1008_2.jpg",
+			"callToActionUrl":"www.google.com"
 		},
 		{
 			"title": "Eco Cups",
-			"image": "/img/bestsellers/EK002_6.jpg"
+			"image": "/img/bestsellers/EK002_6.jpg",
+			"callToActionUrl":"www.google.com"
 		}
 
 	]

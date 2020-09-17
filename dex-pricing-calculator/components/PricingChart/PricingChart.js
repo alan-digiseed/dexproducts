@@ -14,7 +14,8 @@ const PricingChart = (props) => (
             props.productPrices != null &&     <div className="pricing-chart">
         
             {props.title && <Typography variant="h6" align="center">{props.title}</Typography>}
-
+         
+            
             <Table>
                 <TableBody>
                     <TableRow>

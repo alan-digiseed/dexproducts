@@ -88,7 +88,11 @@ export default function HeaderLinks(props) {
   const { dropdownHoverColor } = props;
   const classes = useStyles();
   return (
+    <div class="top-menu">
     <List className={classes.list + " " + classes.mlAuto}>
+    <ListItem className={classes.listItem}>
+        <Button href="/shop" className={classes.navButton} link>All Products</Button>
+      </ListItem>
       <ListItem className={classes.listItem}>
         <Button href="/about-us" className={classes.navButton} link>About</Button>
       </ListItem>
@@ -98,20 +102,20 @@ export default function HeaderLinks(props) {
       <ListItem className={classes.listItem}>
         <Button href="/" className={classes.navButton} link>FAQ</Button>
       </ListItem>
-      <ListItem className={classes.listItem}>
-        <Button href="/shop" className={classes.navButton} link>Our Products</Button>
 
-
-
-
-      </ListItem>
       <ListItem className={classes.listItem}>
         <Button href="/contact-us" className={classes.navButton} link>Contact</Button>
       </ListItem>
       <ListItem className={classes.listItem}>
         <Button href="/" className={classes.navButton} link>Login</Button>
       </ListItem>
+      <div class="box-input">
+  <input type="text"></input>
+ 
+ <button type="submit" class="button " name="submit_search">Search</button></div>
     </List>
+    </div>
+
   );
 }
 
