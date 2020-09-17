@@ -33,6 +33,7 @@ const UtilityMenu = (props) => {
           }
         `}
         render={data => (
+            <div class="categories_menu">
             <ul class="nav">              
                 { 
                     data.allCategoriesJson.nodes.map(cat => {
@@ -72,6 +73,7 @@ const UtilityMenu = (props) => {
                                                 })
                                             }
                                         </ul>
+                                        
                                     </div>
                                 }
                             </li>
@@ -214,7 +216,9 @@ const UtilityMenu = (props) => {
                         <input type="submit" value="" />
                     </form>
                 </li> */}
+                
             </ul>
+            </div>
         )} />
     );
   }

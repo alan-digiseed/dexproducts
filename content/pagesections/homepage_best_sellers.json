@@ -4,68 +4,53 @@
 	"layout": "section-featuredproducts",
 	"contentItems": [
 		{
-			"title": "20ml Hand Sanitiser Spray Card",
-			"image": "/img/bags.jpg"
+			"title": "Colouring Bags",
+			"image": "/img/bestsellers/CCB002_1.jpg"
 		},
 		{
-			"title": "Wristband Hand Sanitiser Dispenser",
-			"image": "/img/aprons2.jpg"
+			"title": "Tissues for the car",
+			"image": "/img/bestsellers/CCT002_2.jpg"
 		},
 		{
-			"title": "Flip Top Mint Tin",
-			"image": "/img/drink2.jpg"
-		},
-		{
-			"title": "Full Colour Lanyards - 10mm",
-			"image": "/img/mtp027-euroauz-matt.png"
-		},
-		{
-			"title": "Vetto Wheat Straw Coffee Cup",
-			"image": "/../images/products/AP003_3.jpg"
-		},
-		{
-			"title": "Branded Caps",
-			"image": "/img/aprons2.jpg"
-		},
-		{
-			"title": "Drinkware",
-			"image": "/img/drink2.jpg"
+			"title": "Candles",
+			"image": "/img/bestsellers/CD001_3.jpg"
 		},
 		{
 			"title": "Pens",
-			"image": "/img/mtp027-euroauz-matt.png"
+			"image": "/img/bestsellers/COBRA010_16.jpg"
 		},
 		{
-			"title": "Fashion Bags",
-			"image": "/img/bags.jpg"
+			"title": "Pencils",
+			"image": "/img/bestsellers/CP001_1.jpg"
 		},
 		{
-			"title": "Branded Caps",
-			"image": "/img/aprons2.jpg"
+			"title": "Bags",
+			"image": "/img/bestsellers/CTB002_1.jpg"
 		},
 		{
-			"title": "Drinkware",
-			"image": "/img/drink2.jpg"
+			"title": "Drink Bottles",
+			"image": "/img/bestsellers/DB002_4.jpg"
 		},
 		{
-			"title": "Pens",
-			"image": "/img/mtp027-euroauz-matt.png"
+			"title": "Desk Plants",
+			"image": "/img/bestsellers/DPP001_2.jpg"
 		},
 		{
-			"title": "Fashion Bags",
-			"image": "/img/bags.jpg"
+			"title": "Pen holder",
+			"image": "/img/bestsellers/DS075B_1.jpg"
 		},
 		{
-			"title": "Branded Caps",
-			"image": "/img/aprons2.jpg"
+			"title": "Bottle Opener",
+			"image": "/img/bestsellers/DS861_1.jpg"
 		},
 		{
-			"title": "Drinkware",
-			"image": "/img/drink2.jpg"
+			"title": "Fidget Toys",
+			"image": "/img/bestsellers/DS1008_2.jpg"
 		},
 		{
-			"title": "Pens",
-			"image": "/img/mtp027-euroauz-matt.png"
+			"title": "Eco Cups",
+			"image": "/img/bestsellers/EK002_6.jpg"
 		}
+
 	]
 }
