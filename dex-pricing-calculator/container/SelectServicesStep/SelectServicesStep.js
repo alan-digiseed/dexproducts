@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 import ServiceSelector from '../../components/ServiceSelector/ServiceSelector';
 import PricingChart from '../../components/PricingChart/PricingChart';
@@ -19,28 +19,31 @@ class SelectServicesStep extends Component {
         else
             priceLists = this.props.product.productPriceLists;
 
+        console.log(JSON.stringify(priceLists));
+
         return (
             <form className="select-services-step">
-                
-                <Typography> Select your required delivery time frame from the select service dropdown.  Then select the decorations you require. </Typography>
-                 <br/>
-                 <Typography variant="h6">Step 1. Select Service (Delivery Time)</Typography>
-                 <br/>
-                 
-                 <Box style={{marginTop: 20}}>
-                     <ServiceSelector />
-                 </Box>
 
-                {priceLists && priceLists.map(pl =>  (
+                <Typography> Select your required delivery time frame from the select service dropdown.  Then select the decorations you require. </Typography>
+                <br />
+                <Typography variant="h6">Step 1. Select Service (Delivery Time)</Typography>
+                <br />
+
+                <Box style={{ marginTop: 20 }}>
+                    <ServiceSelector />
+                </Box>
+
+                {priceLists && priceLists.map(pl => (
                     <div>
-                        <Box style={{marginTop: 20}}>
+                        {pl.type}
+                        <Box style={{ marginTop: 20 }}>
                             <PricingChart title={this.props.currentPriceList ? "Unbranded" : null} productPrices={pl.productPrices}></PricingChart>
-                        </Box>                
+                        </Box>
                         <Box>
                             <DecorationsDetailsForm title={this.props.currentPriceList ? "Decorations" : null} decorationServices={pl.decorations} />
                         </Box>
-                        <Box style={{marginTop: 20}}>
-                            <PriceSummary wholesale={true} displayIncludeSetupToggle={true}/>
+                        <Box style={{ marginTop: 20 }}>
+                            <PriceSummary wholesale={true} displayIncludeSetupToggle={true} />
                         </Box>
                     </div>))
                 }

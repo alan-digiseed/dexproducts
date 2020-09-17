@@ -39,7 +39,7 @@ const UtilityMenu = (props) => {
                     data.allCategoriesJson.nodes.map(cat => {
                         return (
                             <li>
-                                <a href={`/categories/${cat.slug}`}>{cat.title}</a>
+                                <a href={`/category/${cat.slug}`}>{cat.title}</a>
                                 {cat.subcategories &&                                 
                                     <div class="nav-column">
                                         <ul>
@@ -47,20 +47,20 @@ const UtilityMenu = (props) => {
                                                 cat.subcategories.map( subcat => {
                                                     if (!subcat.subcategories) {
                                                         return (
-                                                            <li><a href={`/subcategory/${subcat.slug}`}>{subcat.name}</a></li>
+                                                            <li><a href={`/category/${cat.slug}/${subcat.slug}`}>{subcat.name}</a></li>
                                                         );       
                                                     }
                                                     else {
                                                         return (
                                                             <li>
                                                                 <div>
-                                                                    <h3><a href={`/subcategory/${subcat.slug}`}>{subcat.name}</a></h3>
+                                                                    <h3><a href={`/category/${subcat.slug}`}>{subcat.name}</a></h3>
                                                                     <ul>
                                                                         {
                                                                             subcat.subcategories.map(
                                                                                 subsub => {
                                                                                     return (
-                                                                                        <li><a href={`/subcategory/${subsub.slug}`}>{subsub.name}</a></li>
+                                                                                        <li><a href={`/category/${cat.slug}/${subcat.slug}/${subsub.slug}`}>{subsub.name}</a></li>
                                                                                     )
                                                                                 } 
                                                                             )

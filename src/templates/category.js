@@ -39,7 +39,7 @@ export default function CategoryPage({ data, pageContext }) {
             />
       <Parallax
         image={require("../images/shop/shop-header2.png")}
-        filter="dark"
+        filter="dark" 
         small
       >
         <div className={classes.container}>
@@ -68,8 +68,8 @@ export default function CategoryPage({ data, pageContext }) {
 }
 
 export const query = graphql`
-query ($slug: String!, $name: String!, $subcategoryName: String) {
-  allProductsJson(filter: {category1: {eq: $name}, category2: {eq: $subcategoryName}}) {
+query ($slug: String!, $name: String!, $subcategoryName: String, $subsubName: String) {
+  allProductsJson(filter: {category1: {eq: $name}, category2: {eq: $subcategoryName}, category3: {eq: $subsubName}}) {
     nodes {
       productCode
       name
@@ -102,6 +102,10 @@ query ($slug: String!, $name: String!, $subcategoryName: String) {
       subcategories {
         name
         slug
+        subcategories {
+          name
+          slug
+        }
       }
     }
   }

@@ -94,6 +94,10 @@ const  createCategoryPages = async ({actions, graphql}) => {
         subcategories {
           name
           slug
+          subcategories {
+            name
+            slug
+          }
         }
         slug
       }
@@ -122,7 +126,7 @@ const  createCategoryPages = async ({actions, graphql}) => {
       for (j=0; j < category.subcategories.length; j++) {
         let subcategory = category.subcategories[j];    
         await createPage({
-            path: `/subcategory/${subcategory.slug}`,
+            path: `/category/${category.slug}/${subcategory.slug}`,
             component: path.resolve(`src/templates/category.js`),
             context: {            
               slug: category.slug,
@@ -130,7 +134,26 @@ const  createCategoryPages = async ({actions, graphql}) => {
               subcategorySlug: subcategory.slug,
               subcategoryName: subcategory.name
             }
-          });         
+          });
+          if (subcategory.subcategories != null) {
+            for (k=0; k < subcategory.subcategories.length; k++) {
+              let subsub = subcategory.subcategories[k];    
+              await createPage({
+                  path: `/category/${category.slug}/${subcategory.slug}/${subsub.slug}`,
+                  component: path.resolve(`src/templates/category.js`),
+                  context: {            
+                    slug: category.slug,
+                    name: category.name,
+                    subcategorySlug: subcategory.slug,
+                    subcategoryName: subcategory.name,
+                    subsubSlug: subsub.slug,
+                    subsubName: subsub.name
+                  }
+                });
+                         
+            }  
+          }
+      
       }  
     }
   }

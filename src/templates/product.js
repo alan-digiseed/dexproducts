@@ -311,6 +311,7 @@ query ($id : String!) {
         printType
       }
       priceLists {
+        type
         blanks {
           type
           description

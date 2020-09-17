@@ -14,15 +14,28 @@ const useStyles = makeStyles(styles);
 export default function CategoryAccordion(props) {
     const classes = useStyles();
 
-
-    var categoriesCollapses = props.allCategories.map(c => {
+    var categoriesCollapses =   props.allCategories
+                                .filter(c => c.subcategories != null)
+                                .map(c => {
         return {
             title: c.title,
             content: (
                 <div className={classes.customExpandPanel}>
                     {c.subcategories.map(sc => (
                         <div>
-                            <span><Link className={props.subcategorySlug === sc.slug ? classes.primaryAccordionSummaryExpaned : null} to={`/subcategory/${sc.slug}`}>{sc.name}</Link></span>
+                            <div>
+                                <span><Link className={props.subcategorySlug === sc.slug ? classes.primaryAccordionSummaryExpaned : null} to={`/category/${c.slug}/${sc.slug}`}>{sc.name}</Link></span>
+                            </div>
+                            {
+                                    (sc.subcategories != null) && sc.subcategories.map( subsub =>
+                                    (
+                                        <div>
+                                            <span><Link className={props.subcategorySlug === subsub.slug ? classes.primaryAccordionSummaryExpaned : null} to={`/category/${c.slug}/${sc.slug}/${subsub.slug}`}>{subsub.name}</Link></span>                                    
+                                        </div>     
+    
+                                    )
+                                )
+                            }
                         </div>
                     ))}
                 </div>
@@ -31,7 +44,7 @@ export default function CategoryAccordion(props) {
     });
 
 
-    let selectedCategoryIndex = props.allCategories.map(c => c.slug).indexOf(props.category.slug);
+    let selectedCategoryIndex = props.allCategories.filter(c => c.subcategories != null).map(c => c.slug).indexOf(props.category.slug);
         
     return (
         <Accordion
