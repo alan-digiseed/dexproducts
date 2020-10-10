@@ -1,0 +1,17 @@
+{
+  "projectName": "dexproducts",
+  "version": "3.0",
+  "frontend": "javascript",
+  "javascript": {
+    "framework": "react",
+    "config": {
+      "SourceDir": ".",
+      "DistributionDir": "public",
+      "BuildCommand": "npm.cmd run-script build",
+      "StartCommand": "npm run-script develop"
+    }
+  },
+  "providers": [
+    "awscloudformation"
+  ]
+}

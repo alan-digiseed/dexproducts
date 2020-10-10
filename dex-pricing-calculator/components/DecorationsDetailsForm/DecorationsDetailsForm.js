@@ -16,18 +16,19 @@ const DecorationsDetailsForm = (props) => {
 
   const [state, setState] = useState({
     ...props,
-    decorationRows: combineDecorationsArrays(props.decorationServices, props.userDecorations) 
+    userDecorations: props.userDecorations 
   }); 
 
+  let decorationRows = combineDecorationsArrays(props.decorationServices, props.userDecorations); 
 
 
   const updateNumChangesinInternalState = (service, value) => {
     let copyState = {
       ...state,
-      decorationRows: [...state.decorationRows]
+      userDecorations: [...state.userDecorations]
     }
 
-    let row = copyState.decorationRows.find(row => row.service === service);
+    let row = copyState.userDecorations.find(row => row.service === service);
     row.numChanges = value;
 
     setState(copyState);
@@ -36,10 +37,10 @@ const DecorationsDetailsForm = (props) => {
   const updateNumNewSetupsinInternalState = (service, value) => {
     let copyState = {
       ...state,
-      decorationRows: [...state.decorationRows]
+      userDecorations: [...state.userDecorations]
     }
 
-    let row = copyState.decorationRows.find(row => row.service === service);
+    let row = copyState.userDecorations.find(row => row.service === service);
     row.numNewSetups = value;
 
     setState(copyState);
@@ -48,16 +49,16 @@ const DecorationsDetailsForm = (props) => {
   const updateNumRepeatSetupsinInternalState = (service, value) => {
     let copyState = {
       ...state,
-      decorationRows: [...state.decorationRows]
+      userDecorations: [...state.userDecorations]
     }
 
-    let row = copyState.decorationRows.find(row => row.service === service);
+    let row = copyState.userDecorations.find(row => row.service === service);
     row.numRepeatSetups = value;
 
     setState(copyState);
   }
 
-  let specificServiceSelectedJsx = (
+  return (
     <div className="decorations-form">
       {props.title && <Box style={{marginTop: 20}}><Typography variant="h6" align="center">{props.title}</Typography></Box>}
 
@@ -75,7 +76,7 @@ const DecorationsDetailsForm = (props) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {state.decorationRows && state.decorationRows.map(row => {
+          {decorationRows && decorationRows.map(row => {
             let rowName = getDeliveryTimeFrameDisplayText(row.days) + ' - ' + row.service;
 
             return (
@@ -95,49 +96,7 @@ const DecorationsDetailsForm = (props) => {
         </TableBody>
       </Table>
     </div>);
-
-let allServicesSelectedJsx = (   
-  <div className="decorations-form">
-    {props.title && <Typography variant="h6" align="center">{props.title}</Typography>}
-
-    <Grid container>
-      <Grid item xs={9} className={styles.allServicesGrid}>
-        <Table className={styles.allServicesTable}>
-          <TableHead>
-            <TableRow>
-              <TableCell align="center">Decoration Service</TableCell>
-              <TableCell align="center">Per Unit</TableCell>
-              <TableCell align="center">New Setup Price</TableCell>
-              <TableCell align="center">Repeat Setup Price</TableCell>
-              <TableCell align="center">Qty Limited</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {state.decorationRows && state.decorationRows.map(row => {
-              let key=getDeliveryTimeFrameDisplayText(row.days) + ' - ' + row.service;
-
-              return (
-              <TableRow key={key}>
-                <TableCell>{key}</TableCell>
-                <TableCell>{row.unitPrice}</TableCell>
-                <TableCell>{row.newSetup}</TableCell>
-                <TableCell>{row.repeatSetup}</TableCell>
-                <TableCell>{row.qtyLimited}</TableCell>
-              </TableRow>
-            )})}
-          </TableBody>
-        </Table>
-
-      </Grid>
-      <Grid item xs={3} className={styles.instructions}>
-        Unit pricing varies depending on the service selected.<br/><br/> Please select a service to continue with your quote.
-      </Grid>
-    </Grid>
-
-  </div>);
-
-return (props.deliveryTimeframeDays === 0) ? allServicesSelectedJsx : specificServiceSelectedJsx;
-}
+  }
 
 const mapStateToProps = state => {
   return {

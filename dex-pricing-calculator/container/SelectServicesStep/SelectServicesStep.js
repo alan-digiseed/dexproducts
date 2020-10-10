@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import ServiceSelector from '../../components/ServiceSelector/ServiceSelector';
 import PricingChart from '../../components/PricingChart/PricingChart';
 import DecorationsDetailsForm from '../../components/DecorationsDetailsForm/DecorationsDetailsForm';
+import DecorationsTable from '../../components/DecorationsDetailsForm/DecorationsTable';
 import PriceSummary from '../../components/PriceSummary/PriceSummary';
 
 import Typography from '@material-ui/core/Typography';
@@ -18,8 +19,6 @@ class SelectServicesStep extends Component {
             priceLists = [this.props.currentPriceList];
         else
             priceLists = this.props.product.productPriceLists;
-
-        console.log(JSON.stringify(priceLists));
 
         return (
             <form className="select-services-step">
@@ -40,13 +39,16 @@ class SelectServicesStep extends Component {
                             <PricingChart title={this.props.currentPriceList ? "Unbranded" : null} productPrices={pl.productPrices}></PricingChart>
                         </Box>
                         <Box>
-                            <DecorationsDetailsForm title={this.props.currentPriceList ? "Decorations" : null} decorationServices={pl.decorations} />
+                            {this.props.deliveryTimeFrameDays !== 0 && <DecorationsDetailsForm title={this.props.currentPriceList ? "Decorations" : null} decorationServices={pl.decorations.filter(dec => dec.days == this.props.deliveryTimeFrameDays)}/> }
+                            {this.props.deliveryTimeFrameDays === 0 && <DecorationsTable decorationServices={pl.decorations}/> }
                         </Box>
                         <Box style={{ marginTop: 20 }}>
                             <PriceSummary wholesale={true} displayIncludeSetupToggle={true} />
                         </Box>
                     </div>))
                 }
+
+
 
 
 
@@ -58,6 +60,7 @@ class SelectServicesStep extends Component {
 const mapStateToProps = state => {
     return {
         currentPriceList: state.currentPriceList,
+        deliveryTimeFrameDays: state.deliveryTimeFrameDays,
         product: state.product,
     }
 }
